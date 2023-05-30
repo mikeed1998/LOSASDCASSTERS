@@ -1,50 +1,105 @@
-<div id="slide-out" class="side-nav sn-bg-5 fixed">
-	<ul class="custom-scrollbar">
-	<li class="logo-sn waves-effect py-3">
-		<div class="text-center">
-			<a href="{{ url('admin') }}" class="pl-0">
-				<img class="img-fluid h-100" src="{{asset('img/design/logo_woz.png')}}">
-			</a>
-		</div>
-	</li>
-			<li>
-				<ul class="collapsible collapsible-accordion">
-				</ul>
+
+
+		<style>
+		/* mas estilisado */	
+		body{
+			background-color: #e5e8eb  !important;
+		}
+
+		.card-header {
+    		background-color: #b0c1d1  !important;
+			border-radius: 25px;
+		}
+
+		.black-skin .btn-primary {
+			background-color: #b0c1d1  !important;
+		}
+
+		.btn {
+			box-shadow: none;
+			border-radius: 15px;
+		}
+		/* mas estilisado */
+	</style>
+		
+		
+		 <div id="slide-out" class="side-nav  fixed">
+			<ul class="custom-scrollbar" >
+				<li class="logo-sn waves-effect py-3">
+					<div class="text-center" >
+						<a href="{{ url('admin') }}" class="pl-0">
+							<img class="img-fluid" style="width: 200px;" src="{{asset('img/design/logo_woz.png')}}">
+							 {{-- <div class="card mx-3 text-center d-flex justify-content-center align-items-centers" style="border-radius: 16px; height: 50px;" >
+								<div><img class="" style="width: 130px; " src="{{asset('img/design/logo_woz.png')}}"></div>
+							</div>  --}}
+							
+						</a>
+					</div>
+					<hr>
+				</li>
+				
 				<li>
-				<ul class="collapsible collapsible-accordion">
-					{{-- <li>
-						<a href="{{ route('pedidos.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/pedidos')) ? 'active' : '' }}"><i class="fas fa-box-open"></i>Pedidos</a>
-					</li> --}}
-					<li>
-						<a href="{{ route('productos.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/servicios')) ? 'active' : '' }}"><i class="fas fa-box-open"></i>Servicios</a>
-					</li>
-					{{-- <li>
-						<a href="{{ route('clientes.index') }}" class="collapsible-header waves-effect"><i class="fas fa-users"></i></i>Clientes</a>
-					</li> --}}
-					<li>
-						{{-- <a href="{{ url('admin/config/') }}" class="collapsible-header waves-effect {{ (request()->is('admin/config')) ? 'active' : '' }}"><i class="w-fa fas fa-cog"></i>Configuración</a> --}}
-						<a href="{{ route('vacante.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/vacantes')) ? 'active' : '' }}"><i class="w-fa fas fa-search"></i>Vacantes</a>
-					</li>
-					<li>
-						{{-- <a href="{{ url('admin/config/') }}" class="collapsible-header waves-effect {{ (request()->is('admin/config')) ? 'active' : '' }}"><i class="w-fa fas fa-cog"></i>Configuración</a> --}}
-						<a href="{{ route('config.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/config')) ? 'active' : '' }}"><i class="w-fa fas fa-cog"></i>Configuración</a>
-					</li>
+					<ul class="collapsible collapsible-accordion">
+						{{-- <li>
+							<a href="{{ route('pedidos.index') }}" class="collapsible-header waves-effect {{ (request()->is('admin/pedidos')) ? 'active' : '' }}"><i class="fas fa-box-open"></i>Pedidos</a>
+						</li> --}}
+						{{-- <li>
+							<a href="{{ route('productos.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/servicios')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-box-open"></i>Servicios</a>
+						</li> --}}
+						{{-- <li>
+							<a href="{{ route('clientes.index') }}" class="collapsible-header waves-effect"><i class="fas fa-users"></i></i>Clientes</a>
+						</li> --}}
+						{{-- <li>
+							// <a href="{{ url('admin/config/') }}" class="collapsible-header waves-effect {{ (request()->is('admin/config')) ? 'active' : '' }}"><i class="w-fa fas fa-cog"></i>Configuración</a>
+							<a href="{{ route('vacante.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/vacantes')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="w-fa fas fa-search"></i>Vacantes</a>
+						</li> --}}
+						<li>
+							<a href="{{ route('config.general') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/general')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-bookmark"></i> Nombre de la página </a>
+						</li>
+						<li>
+							<a href="{{ route('config.faq.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/faq')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-question"></i> FAQ </a>
+						</li>
+						<li>
+							<a href="{{ route('config.politica.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/politicas')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-shield-alt"></i> Políticas </a>
+						</li>
+						<li>
+							<a href="{{ route('config.seccion_home.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_home')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-home"></i> Home </a>
+						</li>
+						<li>
+							<a href="{{ route('config.seccion_losas.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_losas')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp; Losas D´Casster´s </a>
+						</li>
+						<li>
+							<a href="{{ route('config.seccion_perlita_mineral.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_perlita_mineral')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fab fa-servicestack"></i> Perlita Mineral </a>
+						</li>
+						<li>
+							<a href="{{ route('config.seccion_proyectos.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_proyectos')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-search-plus"></i> Proyectos </a>
+						</li>
+						<li>
+							<a href="{{ route('config.seccion_nosotros.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_nosotros')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-school"></i> Nosotros </a>
+						</li> 
+						<li>
+							<a href="{{ route('config.contact') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config*')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-paper-plane"></i> Contacto </a>
+						</li>
+						{{-- <li>
+							<a href="{{ route('config.contact') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/contacto')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-cogs"></i> Configuración </a>
+						</li> --}}
+						
+					</ul>
+				</li>
+			</ul>
+
+			<div class="sidenav-bg mask-strong"></div>
+		
+			<div class="fixed-action-btn clearfix d-none" style="bottom: 45px; right: 24px;">
+				<a class="btn-floating btn-lg red">
+					<i class="fas fa-pencil-alt"></i>
+				</a>
+				<ul class="list-unstyled">
+					<li><a class="btn-floating red"><i class="fas fa-star"></i></a></li>
+					<li><a class="btn-floating yellow darken-1"><i class="fas fa-user"></i></a></li>
+					<li><a class="btn-floating green"><i class="fas fa-envelope"></i></a></li>
+					<li><a class="btn-floating blue"><i class="fas fa-shopping-cart"></i></a></li>
 				</ul>
-			</li>
-			</li>
-		</ul>
-
-	<div class="sidenav-bg mask-strong"></div>
-
-	<div class="fixed-action-btn clearfix d-none" style="bottom: 45px; right: 24px;">
-		<a class="btn-floating btn-lg red">
-			<i class="fas fa-pencil-alt"></i>
-		</a>
-		<ul class="list-unstyled">
-			<li><a class="btn-floating red"><i class="fas fa-star"></i></a></li>
-			<li><a class="btn-floating yellow darken-1"><i class="fas fa-user"></i></a></li>
-			<li><a class="btn-floating green"><i class="fas fa-envelope"></i></a></li>
-			<li><a class="btn-floating blue"><i class="fas fa-shopping-cart"></i></a></li>
-		</ul>
-	</div>
-</div>
+			</div>
+		</div> 
+		

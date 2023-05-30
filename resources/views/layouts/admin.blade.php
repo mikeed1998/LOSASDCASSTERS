@@ -14,7 +14,36 @@
 	<link rel="stylesheet" href="{{asset('css/bootstrap-4.min.css')}}">
 	{{-- <link rel="stylesheet" href="{{asset('css/mdb.min.css')}}"> --}}
 	<link rel="stylesheet" href="{{asset('css/mdb-ad.css')}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	{{-- @notifyCss --}}
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+	<style>
+		
+		* {
+        font-family: 'Arimo', sans-serif; font-family: 'Quicksand', sans-serif;
+    }
+		/* mas estilisado */	
+	body{
+		background-color: #e5e8eb  !important;
+	}
+	.card-header {
+		background-color: #b0c1d1  !important;
+		border-radius: 25px;
+	}
+	.black-skin .btn-primary {
+		background-color: #b0c1d1  !important;
+	}
+	.btn, .card {
+		box-shadow: none;
+		border-radius: 15px;
+	}
+	/* mas estilisado */
+
+	</style>
 
 @yield('cssExtras')
 	@yield('jsLibExtras')
@@ -34,6 +63,7 @@
 	</main>
 
 	<script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/bootstrap-4.js')}}"></script>

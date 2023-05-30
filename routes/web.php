@@ -67,9 +67,28 @@ Route::namespace("Admin")->prefix('admin')->group(function(){
 // controllers dentro de Controllers/
 Route::prefix('admin')->group(function(){
 	
-	
 	Route::prefix('config')->name('config.')->group(function(){
 		
+		Route::prefix('seccion_home')->name('seccion_home.')->group(function(){
+			Route::get('/','SeccionHomeController@index')->name('index');
+		});
+
+		Route::prefix('seccion_losas')->name('seccion_losas.')->group(function(){
+			Route::get('/','SeccionLosasController@index')->name('index');
+		});
+
+		Route::prefix('seccion_perlita_mineral')->name('seccion_perlita_mineral.')->group(function(){
+			Route::get('/','SeccionPerlitaMineralController@index')->name('index');
+		});
+
+		Route::prefix('seccion_proyectos')->name('seccion_proyectos.')->group(function(){
+			Route::get('/','SeccionProyectosController@index')->name('index');
+		});
+
+		Route::prefix('seccion_nosotros')->name('seccion_nosotros.')->group(function(){
+			Route::get('/','SeccionNosotrosController@index')->name('index');
+		});
+
 		Route::prefix('colores')->name('color.')->group(function(){
 			Route::get('/','ColorController@index')->name('index');
 			Route::post('/','ColorController@store')->name('store');

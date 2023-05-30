@@ -1,8 +1,30 @@
 @extends('layouts.admin')
-
+@section('styleExtras')
+	
+@endsection
 @section('content')
+<style>
+	/* mas estilisado */	
+	body{
+		background-color: #e5e8eb  !important;
+	}
+	.card-header {
+		background-color: #b0c1d1  !important;
+		border-radius: 25px;
+	}
+	.black-skin .btn-primary {
+		background-color: #b0c1d1  !important;
+	}
+	.btn, .card {
+		box-shadow: none;
+		border-radius: 15px;
+	}
+	/* mas estilisado */
+	
+	
+	</style>
 	<div class="row mb-2 px-2">
-		<a href="{{ route('config.index') }}" class="col col-md-2 btn btn-sm grey darken-2 text-white mr-auto"><i class="fa fa-reply"></i> Regresar</a>
+		<a href="{{ route('admin.home') }}" class="col col-md-2 btn btn-sm grey darken-2 text-white mr-auto"><i class="fa fa-reply"></i> Regresar</a>
 	</div>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-4 p-2">

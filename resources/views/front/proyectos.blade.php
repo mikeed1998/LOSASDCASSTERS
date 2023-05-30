@@ -813,7 +813,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -847,7 +847,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -881,7 +881,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -915,7 +915,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -949,7 +949,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -983,7 +983,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1017,7 +1017,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1051,7 +1051,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1085,7 +1085,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1119,7 +1119,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1153,7 +1153,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
