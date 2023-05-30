@@ -120,6 +120,24 @@ class FrontController extends Controller
 		return view('front.contacto',compact('elements'));
 	}
 
+	public function losas() {
+		$config = Configuracion::first();
+
+		return view('front.losas');
+	}
+
+	public function perlita() {
+		$config = Configuracion::first();
+
+		return view('front.perlita');
+	}
+
+	public function proyectos() {
+		$config = Configuracion::first();
+
+		return view('front.proyectos');
+	}
+
 	public function details(Producto $product){
 		// $product = Producto::find($producto);
 
