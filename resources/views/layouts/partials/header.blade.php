@@ -90,16 +90,16 @@
                               <ul class="dropdown-menu bg-white text-center border-0">
                                   <li class="m-0">
                                       <a class="dropdown-item bg-white" href="{{ route('front.losas') }}" style="text-decoration: none;">
-                                          <h5 class="m-0 linea">
+                                          <h5 class="m-0 linea py-1">
                                               <strong>
-                                                  Losas D´CASSTER´S
+                                                    Losas D´CASSTER´S
                                               </strong>
                                           </h5>
                                       </a>
                                   </li>
                                   <li class="border-top border-dark mt-3">
                                       <a class="dropdown-item bg-white" href="{{ route('front.perlita') }}" style="text-decoration: none;">
-                                          <h5 class="m-0 linea">
+                                          <h5 class="m-0 linea py-2">
                                               <strong>
                                                   Perlita Mineral
                                               </strong>
@@ -136,17 +136,17 @@
                               </h4>
                           </li>
                       </div>
-                      <li class="nav-item col-12 py-2 mx-auto text-center navon" style="background-color: #3C3C3C;">
+                      <li class="nav-item col-12 py-2 mx-auto text-center navon rounded-0" style="background-color: #3C3C3C;">
                           <h4 class="m-0 text-white">
                              Tel. 33 33 33 33 33
                           </h4>
                       </li>
-                      <li class="nav-item col-12 py-2 mx-auto text-center navon" style="background-color: #3C3C3C;">
+                      <li class="nav-item col-12 py-2 mx-auto text-center navon rounded-0" style="background-color: #3C3C3C;">
                           <h4 class="m-0 text-white">
                               contacto@losasdcassters.mx
                           </h4>
                       </li>
-                      <li class="nav-item col-12 py-2 mx-auto text-center navon" style="background-color: #3C3C3C;">
+                      <li class="nav-item col-12 py-2 mx-auto text-center navon rounded-0" style="background-color: #3C3C3C;">
                           <h4 class="m-0">
                               <strong>
                                   <a href="https://wa.me/{{ $config->whatsapp }}" uk-icon="icon: whatsapp; ratio: 1.8;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>

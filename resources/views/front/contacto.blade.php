@@ -532,14 +532,14 @@
                 }
     
                 .col-amarilla2 {
-                    margin-top: 20px;
-                    height: 750px;
+                    margin-top: -50px;
+                    height: 730px;
                 }
     
                 .col-verde2 {
                     margin-top: 350px; 
                     margin-left: -20px;
-                    height: 750px;
+                    height: 730px;
                 }
     
                 .col-contacto {
@@ -1729,7 +1729,7 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5">
                     <div class="row text-white">
                         <div class="col-2 text-center py-4">
-                            <img src="img/contacto/telefono.png" alt="" class="img-fluid">
+                            <img src="{{ asset('img/design/contacto/telefono.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="col-10 fs-3 py-4">
                             Tel. 33 33 33 33 33
@@ -1737,7 +1737,7 @@
                     </div>
                     <div class="row text-white">
                         <div class="col-2 text-center py-4">
-                            <img src="img/contacto/mail.png" alt="" class="img-fluid">
+                            <img src="{{ asset('img/design/contacto/mail.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="col-10 fs-3 py-4">
                             contacto@losasdcassers.com
@@ -1745,7 +1745,7 @@
                     </div>
                     <div class="row text-white">
                         <div class="col-2 text-center py-4">
-                            <img src="img/contacto/gps.png" alt="" class="img-fluid">
+                            <img src="{{ asset('img/design/contacto/gps.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="col-10 fs-3 py-4">
                             C. Volcán Vesubio 6579, Colli Urbano 45070 Zapopan, Jal.
@@ -1766,11 +1766,11 @@
                                 <div class="col-11 position-absolute top-0 start-50 translate-middle col-formulario_contacto">
                                     <div class="row">
                                         <!-- <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12"></div> -->
-                                        <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto fw-bolder text-white mx-5">
+                                        <div class="col-xxl-12 col-xl-11 col-lg-11 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto fw-bolder text-white mx-5">
                                             <div class="row">
                                                 <div class="col-xxl-12 col-xl-11 col-lg-11 col-md-12 col-sm-10 col-xs-11 col-10 mx-auto position-relative shadow-sm col-amarilla2" style="background-color: #FFEC23;">
                                                     <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-50 translate-middle shadow-sm col-verde2" style="background-color: white;">
-                                                        <div class="row py-5">
+                                                        <div class="row py-3">
                                                             <div class="col-9 mx-auto position-relative">
                                                                 <form>
                                                                     <div class="row form-group">
@@ -1794,7 +1794,7 @@
                                                         </div>        
                                                     </div>
                                                     <a href="#/">
-                                                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 col-6 fs-4 fw-semibolder text-dark py-4 position-absolute top-100 start-50 translate-middle text-center btn-contact" style="background-color: #FFEC23;">
+                                                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-6 col-xs-6 col-7 fs-4 fw-semibolder text-dark py-4 position-absolute top-100 start-50 translate-middle text-center btn-contact" style="background-color: #FFEC23;">
                                                             Ver Más
                                                         </div>
                                                     </a>

@@ -286,6 +286,12 @@
     
                 .col-contacto_imagen {
                     margin-top: 0px;
+
+                }
+
+                .img-contaa {
+                    height: 900px;
+                    margin-top: -284px;
                 }
             }
     
@@ -399,6 +405,11 @@
                 .col-contacto_imagen {
                     margin-top: 0px;
                 }
+
+                .img-contaa {
+                    height: 900px;
+                    margin-top: -210px;
+                }
             }
     
             @media (min-width: 1361px) and (max-width: 1500px) {
@@ -476,18 +487,18 @@
                 }
     
                 .imagen-proyectos {
-                    height: 480px;
+                    height: 380px;
                 }
     
                 .col-amarilla {
                     margin-top: 20px;
-                    height: 770px;
+                    height: 660px;
                 }
     
                 .col-verde {
-                    margin-top: 360px; 
+                    margin-top: 200px; 
                     margin-left: 160px;
-                    height: 780px;
+                    height: 480px;
                 }
     
                 .circulo-caracteristicas {
@@ -528,6 +539,11 @@
     
                 .col-contacto_imagen {
                     margin-top: 0px;
+                }
+
+                .img-contaa {
+                    height: 900px;
+                    margin-top: -289px;
                 }
             }
     
@@ -641,6 +657,11 @@
                 .col-contacto_imagen {
                     margin-top: 0px;
                 }
+
+                .img-contaa {
+                    height: 900px;
+                    margin-top: -340px;
+                }
             }
     
             @media (min-width: 993px) and (max-width: 1200px) {
@@ -753,6 +774,11 @@
                 .col-contacto_imagen {
                     margin-top: 0px;
                 }
+
+                .img-contaa {
+                    height: 900px;
+                    margin-top: -339px;
+                }
             }
     
             @media (min-width: 901px) and (max-width: 992px) {
@@ -864,6 +890,11 @@
     
                 .col-contacto_imagen {
                     margin-top: 1000px !important;
+                }
+
+                .img-contaa {
+                    height: 700px;
+                    margin-top: -550px;
                 }
             }
     
@@ -995,6 +1026,11 @@
                 .col-contacto_imagen {
                     margin-top: 1000px !important;
                 }
+
+                .img-contaa {
+                    height: 700px;
+                    margin-top: -550px;
+                }
             }
             
             @media (min-width: 701px) and (max-width: 800px) {
@@ -1111,7 +1147,7 @@
     
                 .col-verde2 {
                     margin-top: 280px; 
-                    margin-left: 220px;
+                    margin-left: 280px;
                     height: 600px;
                 }
     
@@ -1125,6 +1161,11 @@
     
                 .col-contacto_imagen {
                     margin-top: 1000px !important;
+                }
+
+                .img-contaa {
+                    height: 700px;
+                    margin-top: -550px;
                 }
             }
     
@@ -1238,6 +1279,11 @@
                 .col-contacto_imagen {
                     margin-top: 1000px !important;
                 }
+
+                .img-contaa {
+                    height: 700px;
+                    margin-top: -550px;
+                }
             }
     
             @media (min-width: 481px) and (max-width: 600px) {
@@ -1335,7 +1381,7 @@
     
                 .col-verde2 {
                     margin-top: 280px; 
-                    margin-left: 215px;
+                    margin-left: 225px;
                     height: 600px;
                 }
     
@@ -1349,6 +1395,11 @@
     
                 .col-contacto_imagen {
                     margin-top: 1000px !important;
+                }
+
+                .img-contaa {
+                    height: 700px;
+                    margin-top: -550px;
                 }
             }
     
@@ -1446,7 +1497,7 @@
     
                 .col-verde2 {
                     margin-top: 280px; 
-                    margin-left: 140px;
+                    margin-left: 180px;
                     height: 600px;
                 }
     
@@ -1460,6 +1511,16 @@
     
                 .col-contacto_imagen {
                     margin-top: 800px !important;
+                }
+
+                .img-contaa {
+                    height: 700px;
+                    margin-top: -550px;
+                }
+
+                .img-contaa {
+                    height: 540px;
+                    margin-top: -390px;
                 }
             }
     
@@ -1560,7 +1621,7 @@
     
                 .col-verde2 {
                     margin-top: 280px; 
-                    margin-left: 125px;
+                    margin-left: 145px;
                     height: 600px;
                 }
     
@@ -1574,6 +1635,11 @@
     
                 .col-contacto_imagen {
                     margin-top: 700px !important;
+                }
+
+                .img-contaa {
+                    height: 540px;
+                    margin-top: -390px;
                 }
             }
     
@@ -1821,18 +1887,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-11 text-start py-5">
+                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11 text-start py-5">
                                     <div class="row">
-                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mt-2 text-xxl-start text-xl-start text-lg-start text-md-start text-sm-start text-xs-center text-center">
+                                        <div class="col-xxl-6 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 col-12 mt-2 text-xxl-start text-xl-start text-lg-start text-md-start text-sm-start text-xs-center text-center">
                                             <a href="#/" class="btn btn-block btn-outline rounded-0 
                                                 py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-1 
-                                                px-xxl-0 px-xl-2 px-lg-0 px-md-0 px-sm-2 px-xs-2 px-2  
-                                                btn-saber" style="background-color: #FFEC23; text-decoration: none;"><h4 class="m-0 px-xxl-5 px-xl-5 px-lg-0 px-md-5 px-sm-5 px-xs-5 px-5" style="color: #388050;"><strong>Saber Más</strong></h4></a>
+                                                px-xxl-0 px-xl-0 px-lg-0 px-md-0 px-sm-2 px-xs-2 px-2  
+                                                btn-saber" style="background-color: #FFEC23; text-decoration: none;"><h4 class="m-0 px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-xs-5 px-5" style="color: #388050;"><strong>Saber Más</strong></h4></a>
                                         </div>
-                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mt-2 text-xxl-start text-xl-start text-lg-start text-md-start text-sm-start text-xs-start text-start">
+                                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 col-12 mt-2 text-xxl-start text-xl-start text-lg-start text-md-start text-sm-start text-xs-start text-start raro">
                                             <a href="#/" class="btn btn-block btn-outline rounded-0 
                                                 py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-1 
-                                                px-xxl-0 px-xl-2 px-lg-2 px-md-2 px-sm-2 px-xs-2 px-2  
+                                                px-xxl-0 px-xl-0 px-lg-0 px-md-2 px-sm-2 px-xs-2 px-2  
                                                 btn-contacto" style="background-color: #388050; color: #FFEC23; text-decoration: none;"><h4 class="m-0 px-5" style="color: #FFEC23;"><strong>Contacto</strong></h4></a>
                                         </div>
                                     </div>
@@ -1896,7 +1962,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
+                                                        <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1930,7 +1996,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
+                                                        <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1964,7 +2030,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
+                                                        <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1998,7 +2064,7 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
+                                                        <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -2388,8 +2454,8 @@
 </div>
 
 <div class="container-fluid contenedor-contacto">
-    <div class="row" style="background-color: #3C3C3C;">
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto">
+    <div class="row" style="background-color: #3C3C3C; padding-bottom: 150px;">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto ">
             <div class="row">
                 <div class="col-9 mt-2 py-0 mx-auto display-3 fw-bolder text-white col-contacto">
                     Contacto
@@ -2437,18 +2503,16 @@
             </div>
         </div>
         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 position-relative col-contacto_imagen">
-            <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute bottom-0 start-0">
+            <div class="col-xxl-11 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute">
 
                     <!-- <img src="img/home/imagen_05.png" alt="" class="img-fluid">     -->
-                    <div class="" style="
+                    <div class="img-contaa" style="
                             background-color: none;
                             background-image: url('{{ asset('img/design/home/imagen_05.png') }}');
                             background-size: contain;
                             background-repeat: no-repeat;
                             background-position: bottom;
                             width: 100%;
-                            height: 600px;
-
                         "></div>
                
             </div>

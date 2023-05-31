@@ -163,7 +163,7 @@
         }
 
         .contenedor-texto_scroll {
-            max-height: 500px;
+            max-height: 300px;
             overflow: auto;
         }
 
