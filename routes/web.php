@@ -69,6 +69,8 @@ Route::prefix('admin')->group(function(){
 	
 	Route::prefix('config')->name('config.')->group(function(){
 		
+
+		
 		Route::prefix('seccion_home')->name('seccion_home.')->group(function(){
 			Route::get('/','SeccionHomeController@index')->name('index');
 		});
@@ -88,6 +90,9 @@ Route::prefix('admin')->group(function(){
 		Route::prefix('seccion_nosotros')->name('seccion_nosotros.')->group(function(){
 			Route::get('/','SeccionNosotrosController@index')->name('index');
 		});
+
+
+
 
 		Route::prefix('colores')->name('color.')->group(function(){
 			Route::get('/','ColorController@index')->name('index');
