@@ -1671,6 +1671,12 @@
     /* input con opacidad y sin boton de selecciond e archivo */
 </style>
 
+<style>
+    .video_s {
+        height: 600px; 
+    }
+</style>
+
 @endsection
 
 @section('content')
@@ -1717,11 +1723,11 @@
 
         <div class="col-12 d-flex justify-content-center align-items-center flex-column mt-2 text-center">
             <h3 style="color:black;">Agregar slider</h3>
-                <form id="form_image_slider" action="imgSider" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
-                    @csrf
-                    <input id="input_slider_img" class="m-0 p-0" type="file" name="archivo">
-                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_slider_img" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Seleccionar archivo</label>
-                </form>
+            <form id="form_image_slider" action="imgSider" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                @csrf
+                <input id="input_slider_img" class="m-0 p-0" type="file" name="archivo">
+                <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_slider_img" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Seleccionar archivo</label>
+            </form>
         </div>
         
         <div class="container-fluid px-0 mx-0 mt-5">
@@ -1967,21 +1973,94 @@
                     </div>
                 </div>
             </div>
-        
-            <div class="row mt-5 py-5">
-                <div class="col-10 mt-5 py-5 mx-auto">
-                    <div class="slider-videos">
-                        <div>
-                            <img src="{{ asset('img/design/home/video.jpg') }}" alt="" width="100%" class="img-fluid">
-                        </div>
-                        <div>
-                            <img src="{{ asset('img/design/home/video.jpg') }}" alt="" width="100%" class="img-fluid">
+
+            <div class="row mt-5">
+                <div class="col mt-5 text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar video a la lista
+                    </button>
+  
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo slider</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h3 style="color:black;">Agregar video</h3>
+                                    <button id="btnYoutube" class="btn btn-block btn-primary bg-white mb-3">Agregar video de youtube</button>
+                                    <button id="btnVideo" class="btn btn-block btn-primary bg-white">Agregar video desde mis archivos</button>
+
+                                    <div id="colYoutube">
+                                        <form id="form_video_slider" action="videoSider" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="col-12 mt-3 mb-3">
+                                                <input type="text" class="form-control" name="link" placeholder="Agrega el link de youtube">
+                                                <input type="hidden" name="tipo" value="0">
+                                            </div>
+                                            <input class="m-0 p-0" type="hidden" name="archivo" value="NO">
+                                            <button id="input_slider_video" class="btn btn-outline border border-dark text-dark">Agregar link</button>
+                                            {{-- <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_slider_video" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Seleccionar archivo</label> --}}
+                                        </form>
+                                    </div>
+                                    <div id="colVideo">
+                                        <form id="form_video_slider2" action="videoSider" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="col-12 mt-3 mb-3">
+                                                <input type="hidden" class="form-control" name="titulo" value="NO">
+                                                <input type="hidden" name="tipo" value="1">
+                                            </div>
+                                            <input id="input_slider_video2" class="m-0 p-0" type="file" name="archivo">
+                                            <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_slider_video2" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Seleccionar archivo</label>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+            <div class="row py-5">
+                <div class="col-10 py-5 mx-auto">
+                    <div class="slider-videos">
+                        @foreach ($slidervd as $sv)
+                            <div>
+                                @if ($sv->tipo == 1)
+                                    <div class="col position-relative z-1">
+                                        <div class="row mb-4">
+                                            <div class="col mb-3">
+                                                <video width="100%" class="video_s" id="vid" controls="controls" preload="metadata" autoplay>
+                                                    <source src="{{ asset('img2/photos/slider_videos/'.$sv->archivo) }}" type="video/mp4">
+                                                </video> 
+                                            </div>
+                                        </div>
+                                    </div>                         
+                                @elseif ($sv->tipo == 0)
+                                    <div class="col position-relative z-1">
+                                        <div class="row mb-4">
+                                            <div class="col mb-3">
+                                                <iframe width="100%" class="video_s" src="https://www.youtube.com/embed/{{ $sv->link }}?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @else
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
+
+        
+       
+        
         
         <div class="container-fluid mt-5" style="margin-top: 200px;">
             <div class="row mt-5" style="background-color: #F5F5F5;">
@@ -2793,9 +2872,37 @@
 
 <script>
     
-$('#input_slider_img').change(function(e) {
+    $('#input_slider_img').change(function(e) {
 		$('#form_image_slider').trigger('submit');
 	});
+
+    $('#input_slider_video').click(function(e) {
+		$('#form_video_slider').trigger('submit');
+	});
+
+    $('#input_slider_video2').change(function(e) {
+		$('#form_video_slider2').trigger('submit');
+	});
+
+    $('#btnYoutube').show();
+    $('#btnVideo').show();
+
+    $('#colYoutube').hide();
+    $('#colVideo').hide();
+
+    $('#btnYoutube').click(function(){
+        $('#colYoutube').show();
+        $('#btnYoutube').hide();
+        $('#colVideo').hide();
+        $('#btnVideo').show();
+    });
+
+    $('#btnVideo').click(function(){
+        $('#colYoutube').hide();
+        $('#btnVideo').hide();
+        $('#colVideo').show();
+        $('#btnYoutube').show();
+    });
 
 </script>
 

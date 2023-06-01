@@ -126,6 +126,7 @@ Route::prefix('admin')->group(function(){
 			
 			/////////////////////////////////////// seccion inicio cosas que voy hacer /////////////////////////////////////// 
 			Route::post('/imgSider','SeccionController@imgSider')->name('imgSider');
+			Route::post('/videoSider','SeccionController@videoSider')->name('videoSider');
 			/////////////////////////////////////// seccion inicio cosas que voy hacer ///////////////////////////////////////
 
 		});

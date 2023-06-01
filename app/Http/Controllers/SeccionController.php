@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Seccion;
 use App\Elemento;
 use App\SliderPrincipal;
+use App\SliderVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -56,29 +57,17 @@ class SeccionController extends Controller
      */
     public function show($seccion) {
         $slidersp = SliderPrincipal::all();
-        // $seccion_nom = $seccion;
-        // $seccion = Seccion::where('slug',$seccion)->first();
-        // $sucursales = services::all();
-        
-        // $elements = $seccion->elementos()->get();
-
+        $slidervd = SliderVideo::all();
+ 
         $ruta = 'configs.secciones.'.$seccion;
-        
-        // if($seccion_nom == 'products'){
-        //     $productos = Producto::all();
-           
-        //     foreach($productos as $p){
-        //         $prod_photos = ProductosPhoto::where('producto',$p->id)->get()->first();
-        //         if(!empty($prod_photos)){
-        //             $p->photo = $prod_photos->image;
-        //         }
-                
-        //     }
-        //     return view($ruta,compact('elements','seccion','productos'));
-        // }
-        
 
-        return view($ruta, compact('slidersp'));
+        foreach($slidervd as $s) {
+            if($s->tipo == 0) {
+		        $s->link = str_replace('https://www.youtube.com/watch?v=', '', $s->link);
+            }
+        }
+
+        return view($ruta, compact('slidersp', 'slidervd'));
 }
 
     /**
@@ -146,6 +135,36 @@ class SeccionController extends Controller
         \Toastr::success('Guardado');
         return redirect()->back();
     }
+
+
+    public function videoSider(Request $request) {
+        $slider = new SliderVideo;
+
+        if($request->tipo == 0) {
+            $slider->link = $request->link;
+            $slider->archivo = $request->archivo;
+            $slider->tipo = $request->tipo;
+        } 
+
+        if($request->tipo = 1) {
+            if ($request->hasFile('archivo')) {
+                $file = $request->file('archivo');
+                $extension = $file->getClientOriginalExtension();
+                $namefile = Str::random(30).'.'.$extension;
+    
+                \Storage::disk('local')->put("/img2/photos/slider_videos/".$namefile , \File::get($file));
+                
+                $slider->link = $request->link;
+                $slider->archivo = $namefile;
+                $slider->tipo = $request->tipo;
+            }
+        }
+
+        $slider->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
+    }
+
 
     /**
      * Remove the specified resource from storage.
