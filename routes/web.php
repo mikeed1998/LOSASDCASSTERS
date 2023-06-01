@@ -123,6 +123,11 @@ Route::prefix('admin')->group(function(){
 			Route::get('/{slug}','SeccionController@show')->name('show');
 			Route::put('/{id}','ElementoController@update')->name('update');
 			Route::put('/portada/{id}', 'SeccionController@update')->name('updatePortada');
+			
+			/////////////////////////////////////// seccion inicio cosas que voy hacer /////////////////////////////////////// 
+			Route::post('/imgSider','SeccionController@imgSider')->name('imgSider');
+			/////////////////////////////////////// seccion inicio cosas que voy hacer ///////////////////////////////////////
+
 		});
 
 		Route::prefix('faq')->name('faq.')->group(function(){

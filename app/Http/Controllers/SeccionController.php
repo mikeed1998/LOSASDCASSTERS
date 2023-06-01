@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Seccion;
 use App\Elemento;
+use App\SliderPrincipal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -54,13 +55,31 @@ class SeccionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($seccion) {
-			$seccion = Seccion::where('slug',$seccion)->first();
-			$elements = $seccion->elementos()->get();
+        $slidersp = SliderPrincipal::all();
+        // $seccion_nom = $seccion;
+        // $seccion = Seccion::where('slug',$seccion)->first();
+        // $sucursales = services::all();
+        
+        // $elements = $seccion->elementos()->get();
 
-            
+        $ruta = 'configs.secciones.'.$seccion;
+        
+        // if($seccion_nom == 'products'){
+        //     $productos = Producto::all();
+           
+        //     foreach($productos as $p){
+        //         $prod_photos = ProductosPhoto::where('producto',$p->id)->get()->first();
+        //         if(!empty($prod_photos)){
+        //             $p->photo = $prod_photos->image;
+        //         }
+                
+        //     }
+        //     return view($ruta,compact('elements','seccion','productos'));
+        // }
+        
 
-			return view('configs.secciones.show',compact('elements','seccion'));
-    }
+        return view($ruta, compact('slidersp'));
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -103,6 +122,29 @@ class SeccionController extends Controller
 		$seccion->save();
 		\Toastr::success('Guardado');
 		return redirect()->back();
+    }
+
+
+    public function imgSider(Request $request) {
+        $slider = new SliderPrincipal;
+        // dd($request->archivo);
+        if ($request->hasFile('archivo')) {
+            $file = $request->file('archivo');
+            $extension = $file->getClientOriginalExtension();
+            $namefile = Str::random(30).'.'.$extension;
+
+            \Storage::disk('local')->put("/img2/photos/slider_principal/".$namefile , \File::get($file));
+
+            $slider->imagen = $namefile;
+        }
+
+        if ($request->video) {
+            $slider->video = $request->video;
+        }
+
+        $slider->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
     }
 
     /**

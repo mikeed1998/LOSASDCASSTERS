@@ -1,0 +1,64 @@
+/* input con opacidad y sin boton de selecciond e archivo */
+		.file-upload input[type="file"] {
+                    position: absolute;
+                    left: -9999px;
+                    }
+
+                    .file-upload label {
+                    display: inline-block;
+                    background-color: #00000031;
+                    color: #fff;
+                    padding: 6px 12px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    font-weight: normal;
+                    opacity: 0%;
+                    }
+
+                    .file-upload input[type="file"] + label:before {
+                    content: "\f07b";
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 16px;
+                    margin-right: 5px;
+                    transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"] + label {
+                        transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"]:focus + label,
+                    .file-upload input[type="file"] + label:hover {
+                    backdrop-filter: blur(5px);
+                    background-color: #41464a37;
+                    opacity: 100%;
+                    transition: all 0.5s;
+                    }
+    /* input con opacidad y sin boton de selecciond e archivo */
+
+
+
+
+<div class="col-12 d-flex justify-content-center align-items-center flex-column mt-2 text-center">
+		<h3 style="color:black;">Agregar slider</h3>
+		{{-- html del input file estilizado --}}
+			<form id="form_image_slider" action="portadaseccion" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+				@csrf
+				<input id="input_slider_img" class="m-0 p-0" type="file" name="archivo">
+				<label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_slider_img" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Seleccionar archivo</label>
+			</form>
+		{{-- html del input file estilizado --}}
+	</div>
+
+
+
+$('#input_img_element').change(function(e) {
+		$('#form_image_element').trigger('submit');
+	});
+
+
+
+
+
+
+
