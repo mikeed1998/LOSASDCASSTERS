@@ -1765,13 +1765,13 @@
                             background-size: cover;
                             background-repeat: no-repeat;
                             width: 100%;
-                            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+                            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
                         ">
                         <div class="col-12 position-absolute top-50 start-50 translate-middle">
                             <div class="row py-5">
-                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
                                     {{-- <div class="titulo-slider_principal" style=""><strong>{{ $sl->titulo }}</strong></div> --}}
-                                    <input type="text" class="form-control titulo-slider_principal editarajax" id="titulo" name="titulo" data-id="{{$sl->id}}" data-table="SliderPrincipal" data-campo="titulo"  value="{{ $sl->titulo }}">
+                                    <textarea class="form-control bg-transparent titulo-slider_principal text-white fw-bold editarajax" rows="3" id="titulo" name="titulo" data-id="{{$sl->id}}" data-table="SliderPrincipal" data-campo="titulo">{{ $sl->titulo }}</textarea>
                                 </div>
                             </div>
                             {{-- <div class="row">
@@ -2151,7 +2151,7 @@
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center align-items-center flex-column position-absolute top-0 bottom-0 start-0 translate-middle-y cuadr" style="margin-top: 220px; height: 740px;">
-                        <a href="" class="btn btn-outline" style="font-size: 40px;">Editar desde la sección Nosotros</a>
+                        <a href="{{ route('config.seccion.show', ['slug' => 'about-us']) }}" class="btn btn-outline" style="font-size: 40px;">Editar desde la sección Nosotros</a>
                     </div>
                 </div>
             </div>
@@ -2227,7 +2227,7 @@
                     </div>
                     
                     <div class="col-12 d-flex justify-content-center align-items-center flex-column  position-absolute top-0 bottom-0 start-0 cuadr">
-                        <a href="" class="btn btn-outline" style="font-size: 40px;">Editar desde la sección Proyectos</a>
+                        <a href="{{ route('config.seccion.show', ['slug' => 'projects']) }}" class="btn btn-outline" style="font-size: 40px;">Editar desde la sección Proyectos</a>
                     </div>
                 </div>
 

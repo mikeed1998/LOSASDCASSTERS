@@ -68,18 +68,18 @@
         }
 
         .imagen-proyectos {
-            height: 460px;
+            height: 459px;
         }
 
         .col-amarilla {
             margin-top: 20px;
-            height: 670px;
+            height: 640px;
         }
 
         .col-verde {
             margin-top: 280px; 
-            margin-left: 240px;
-            height: 600px;
+            margin-left: 170px;
+            height: 670px;
         }
 
         .contenedor-imagen_externa {
@@ -1095,7 +1095,7 @@
                         <div class="row">
                             <div class="slider-proyectos">
                                 @foreach ($procesos_perlita as $pp)
-                                <div>
+                                <div class="mt-5">
                                     <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
                                         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
                                             <div class="row">

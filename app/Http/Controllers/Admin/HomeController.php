@@ -45,7 +45,7 @@ class HomeController extends Controller
 				// array('icon' => 'fa-solid fa-mound', 'route' => 'config.seccion_perlita_mineral.index', 'text' => 'Administrar la sección "Perlita Mineral"'),
 				// array('icon' => 'fa-solid fa-diagram-project', 'route' => 'config.seccion_proyectos.index', 'text' => 'Administrar la sección "Proyectos"'),
 				// array('icon' => 'fa-solid fa-address-card', 'route' => 'config.seccion_nosotros.index', 'text' => 'Administrar la sección "Nosotros"'),
-				array('icon' => 'fas fa-paper-plane', 'route' => 'config.contact', 'text' => 'Administrar la sección "Contacto"'),
+				array('icon' => 'fas fa-paper-plane', 'route' => 'config.contact', 'text' => 'Contacto'),
 				// array('icon' => 'fas fa-quote-right', 'route' => 'config.textos', 'text' => 'Textos'),
 				// array('icon' => 'fas fa-city', 'route' => 'config.sucursal.index', 'text' => 'Sucursal'),
 

@@ -1668,12 +1668,12 @@
                                         @csrf
                                         <div class="row">
                                             <div class="col">
-                                                <input type="text" name="nombre" placeholder="Nombre">
+                                                <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <input type="text" name="descripcion" placeholder="Descripcion">
+                                                <textarea type="text" class="form-control" name="descripcion" placeholder="Descripcion"></textarea>
                                             </div>
                                         </div>
                                         <div class="row">
