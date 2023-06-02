@@ -271,7 +271,7 @@
     
                 .col-verde2 {
                     margin-top: 280px; 
-                    margin-left: 340px;
+                    margin-left: 240px;
                     height: 600px;
                 }
     
@@ -1677,6 +1677,30 @@
     }
 </style>
 
+<style>
+    .cuadr:hover {
+        background-color: black; opacity: 80%;
+    }
+
+    .cuadr:hover > .btn {
+        display: block;
+        color: black;
+        background-color: white;
+        opacity: 100%;
+    }
+
+    .cuadr:hover > .btn:hover {
+        display: block;
+        color:white;
+        background-color: red;
+        opacity: 100%;
+    }
+
+    .cuadr > .btn {
+        display: none;
+    }
+</style>
+
 @endsection
 
 @section('content')
@@ -1746,7 +1770,8 @@
                         <div class="col-12 position-absolute top-50 start-50 translate-middle">
                             <div class="row py-5">
                                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                                    <div class="titulo-slider_principal" style=""><strong>{{ $sl->titulo }}</strong></div>
+                                    {{-- <div class="titulo-slider_principal" style=""><strong>{{ $sl->titulo }}</strong></div> --}}
+                                    <input type="text" class="form-control titulo-slider_principal editarajax" id="titulo" name="titulo" data-id="{{$sl->id}}" data-table="SliderPrincipal" data-campo="titulo"  value="{{ $sl->titulo }}">
                                 </div>
                             </div>
                             {{-- <div class="row">
@@ -2062,82 +2087,71 @@
        
         
         
-        <div class="container-fluid mt-5" style="margin-top: 200px;">
-            <div class="row mt-5" style="background-color: #F5F5F5;">
-                <div class="col-12 mx-auto position-relative py-5" style="background-color: #F5F5F5; margin-bottom: 100px;">
-                    <div class="row">
-                        <div class="col-11 mx-auto">
+        <div>
+            <div class="container-fluid mt-5" style="margin-top: 200px;">
+                <div class="col position-relative">
+                    <div class="row mt-5" style="background-color: #F5F5F5;">
+                        <div class="col-12 mx-auto position-relative py-5" style="background-color: #F5F5F5; margin-bottom: 100px;">
                             <div class="row">
-                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5 position-relative mx-auto">
-                                </div>
-                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5 mx-auto px-5">
+                                <div class="col-11 mx-auto">
                                     <div class="row">
-                                        <div class="col">
-                                            <h3 class="m-0" style="color: #388050;">Te contamos sobre</h3>
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5 position-relative mx-auto">
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <h1 class="display-2 fw-semibold">Nosotros</h1>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col m-0 nos-scroll">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit illum dolorum, aut odit sunt ipsam molestiae incidunt maiores temporibus doloribus ab officia placeat ratione veniam quidem molestias accusamus quo nam mollitia in dolor ipsum asperiores saepe beatae. Eveniet rerum incidunt corporis veritatis in, reiciendis, quod mollitia accusamus magnam architecto minima magni quidem. Eum explicabo aperiam corrupti doloribus quibusdam perspiciatis optio omnis sunt quam totam necessitatibus commodi quia, qui laboriosam alias mollitia est illum expedita consectetur dignissimos incidunt assumenda ducimus. Totam dolorem nemo officia eos quis omnis maiores voluptatibus, facere consequatur temporibus! Dolore debitis exercitationem illo quos qui ut distinctio suscipit.
-                                        </div>
-                                    </div>
-                                    {{-- <div class="row">
-                                        <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11 text-start py-5">
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5 mx-auto px-5">
                                             <div class="row">
-                                                <div class="col-xxl-6 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 col-12 mt-2 text-xxl-start text-xl-start text-lg-start text-md-start text-sm-start text-xs-center text-center">
-                                                    <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                                        py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-1 
-                                                        px-xxl-0 px-xl-0 px-lg-0 px-md-0 px-sm-2 px-xs-2 px-2  
-                                                        btn-saber" style="background-color: #FFEC23; text-decoration: none;"><h4 class="m-0 px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-xs-5 px-5" style="color: #388050;"><strong>Saber Más</strong></h4></a>
+                                                <div class="col">
+                                                    <h3 class="m-0" style="color: #388050;">Te contamos sobre</h3>
                                                 </div>
-                                                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 col-12 mt-2 text-xxl-start text-xl-start text-lg-start text-md-start text-sm-start text-xs-start text-start raro">
-                                                    <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                                        py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-1 
-                                                        px-xxl-0 px-xl-0 px-lg-0 px-md-2 px-sm-2 px-xs-2 px-2  
-                                                        btn-contacto" style="background-color: #388050; color: #FFEC23; text-decoration: none;"><h4 class="m-0 px-5" style="color: #FFEC23;"><strong>Contacto</strong></h4></a>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h1 class="display-2 fw-semibold">Nosotros</h1>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col m-0 nos-scroll">
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit illum dolorum, aut odit sunt ipsam molestiae incidunt maiores temporibus doloribus ab officia placeat ratione veniam quidem molestias accusamus quo nam mollitia in dolor ipsum asperiores saepe beatae. Eveniet rerum incidunt corporis veritatis in, reiciendis, quod mollitia accusamus magnam architecto minima magni quidem. Eum explicabo aperiam corrupti doloribus quibusdam perspiciatis optio omnis sunt quam totam necessitatibus commodi quia, qui laboriosam alias mollitia est illum expedita consectetur dignissimos incidunt assumenda ducimus. Totam dolorem nemo officia eos quis omnis maiores voluptatibus, facere consequatur temporibus! Dolore debitis exercitationem illo quos qui ut distinctio suscipit.
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="espacios-sm">
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </div>
-                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 py-5 position-absolute bottom-0 end-50 transalate-middle-x" style="margin-bottom: 180px;">
-                        <div class="row px-5" style="">
-                            <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto mt-2 px-0" style="background-color: #388050;">
-                                <!-- <img src="img/home/imagen_02.png" alt="" class="img-fluid"> -->
-                                <br>
-                                <div class="imagen-nosotros_big" style="
-                                    background-color: black;
-                                    background-image: url('{{ asset('img/design/home/imagen_01.png') }}');
-                                    background-position: center center;
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                "></div>
-                                <div class="col-6 mt-5 position-absolute top-50 start-50 ">
-                                    <div class="row">
-                                        <div class="col-12 px-0 mt-5" style="background-color: #FFEC23; height: 340px;">
-                                            <div class="imagen-nosotros_small" style="
-                                                background-color: black;
-                                                background-image: url('{{ asset('img/design/home/imagen_02.png') }}');
-                                                background-position: center center;
-                                                background-size: cover;
-                                                background-repeat: no-repeat;
-                                            "></div>
+                            <div class="espacios-sm">
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            </div>
+                            <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 py-5 position-absolute bottom-0 end-50 transalate-middle-x" style="margin-bottom: 180px;">
+                                <div class="row px-5" style="">
+                                    <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto mt-2 px-0" style="background-color: #388050;">
+                                        <!-- <img src="img/home/imagen_02.png" alt="" class="img-fluid"> -->
+                                        <br>
+                                        <div class="imagen-nosotros_big" style="
+                                            background-color: black;
+                                            background-image: url('{{ asset('img/design/home/imagen_01.png') }}');
+                                            background-position: center center;
+                                            background-size: cover;
+                                            background-repeat: no-repeat;
+                                        "></div>
+                                        <div class="col-6 mt-5 position-absolute top-50 start-50 ">
+                                            <div class="row">
+                                                <div class="col-12 px-0 mt-5" style="background-color: #FFEC23; height: 340px;">
+                                                    <div class="imagen-nosotros_small" style="
+                                                        background-color: black;
+                                                        background-image: url('{{ asset('img/design/home/imagen_02.png') }}');
+                                                        background-position: center center;
+                                                        background-size: cover;
+                                                        background-repeat: no-repeat;
+                                                    "></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center flex-column position-absolute top-0 bottom-0 start-0 translate-middle-y cuadr" style="margin-top: 220px; height: 740px;">
+                        <a href="" class="btn btn-outline" style="font-size: 40px;">Editar desde la sección Nosotros</a>
                     </div>
                 </div>
             </div>
@@ -2156,6 +2170,9 @@
                         <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-11 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #3C3C3C;">               
                             <div class="row">
                                 <div class="slider-proyectos">
+                                    @foreach ($proyectos as $py)
+                                        
+                                    
                                     <div>
                                         <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
                                             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
@@ -2163,12 +2180,12 @@
                                                     <div class="col position-relative">
                                                         <div class="row">
                                                             <div class="col mt-5 text-center">
-                                                                <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
+                                                                <p class="fs-4" style="color: #FFEC23;">{{ $py->nombre }}</p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
+                                                                {{ $py->descripcion }}
                                                             </div>
                                                         </div>
                                                         <div class="row py-5">
@@ -2178,7 +2195,7 @@
                                                             <div class="col">
                                                                 <div class="imagen-proyectos" style="
                                                                     background-color: black;
-                                                                    background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
+                                                                    background-image: url('{{ asset('img2/photos/proyectos/'.$py->foto) }}');
                                                                     background-size: cover;
                                                                     background-repeat: no-repeat;
                                                                     width: 100%;       
@@ -2190,108 +2207,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                                <div class="row">
-                                                    <div class="col position-relative">
-                                                        <div class="row">
-                                                            <div class="col mt-5 text-center">
-                                                                <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                            </div>
-                                                        </div>
-                                                        <div class="row py-5">
-                                                            <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                        </div>
-                                                        <div class="row py-0">
-                                                            <div class="col">
-                                                                <div class="imagen-proyectos" style="
-                                                                    background-color: black;
-                                                                    background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                                    background-size: cover;
-                                                                    background-repeat: no-repeat;
-                                                                    width: 100%;       
-                                                                "></div>
-                                                            </div>                
-                                                        </div>
-                                                    </div>
-                                                </div>        
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                                <div class="row">
-                                                    <div class="col position-relative">
-                                                        <div class="row">
-                                                            <div class="col mt-5 text-center">
-                                                                <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                            </div>
-                                                        </div>
-                                                        <div class="row py-5">
-                                                            <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                        </div>
-                                                        <div class="row py-0">
-                                                            <div class="col">
-                                                                <div class="imagen-proyectos" style="
-                                                                    background-color: black;
-                                                                    background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                                    background-size: cover;
-                                                                    background-repeat: no-repeat;
-                                                                    width: 100%;       
-                                                                "></div>
-                                                            </div>                
-                                                        </div>
-                                                    </div>
-                                                </div>        
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                                <div class="row">
-                                                    <div class="col position-relative">
-                                                        <div class="row">
-                                                            <div class="col mt-5 text-center">
-                                                                <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-11 mx-auto text-center text-white fs-5" style="overflow: auto; max-height: 90px;">
-                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                            </div>
-                                                        </div>
-                                                        <div class="row py-5">
-                                                            <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                        </div>
-                                                        <div class="row py-0">
-                                                            <div class="col">
-                                                                <div class="imagen-proyectos" style="
-                                                                    background-color: black;
-                                                                    background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                                    background-size: cover;
-                                                                    background-repeat: no-repeat;
-                                                                    width: 100%;       
-                                                                "></div>
-                                                            </div>                
-                                                        </div>
-                                                    </div>
-                                                </div>        
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                                 <div class="row mb-5 py-5">
                                     <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-2 col-sm-3 col-xs-3 col-3">
@@ -2309,29 +2225,7 @@
                             </div>    
                         </div>
                     </div>
-                    <style>
-                        .cuadr:hover {
-                            background-color: black; opacity: 80%;
-                        }
-
-                        .cuadr:hover > .btn {
-                            display: block;
-                            color: black;
-                            background-color: white;
-                            opacity: 100%;
-                        }
-
-                        .cuadr:hover > .btn:hover {
-                            display: block;
-                            color:white;
-                            background-color: red;
-                            opacity: 100%;
-                        }
-
-                        .cuadr > .btn {
-                            display: none;
-                        }
-                    </style>
+                    
                     <div class="col-12 d-flex justify-content-center align-items-center flex-column  position-absolute top-0 bottom-0 start-0 cuadr">
                         <a href="" class="btn btn-outline" style="font-size: 40px;">Editar desde la sección Proyectos</a>
                     </div>
@@ -2677,73 +2571,82 @@
             </div>
         </div>
         
-        <div class="container-fluid contenedor-contacto">
-            <div class="row" style="background-color: #3C3C3C; padding-bottom: 150px;">
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto ">
-                    <div class="row">
-                        <div class="col-9 mt-2 py-0 mx-auto display-3 fw-bolder text-white col-contacto">
-                            Contacto
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col position-relative py-5">
-                            <div class="col-12 position-absolute top-0 start-50 translate-middle col-formulario_contacto">
+        <div>
+            <div class="container-fluid contenedor-contacto">
+                <div class="col position-relative">
+                    <div class="row" style="background-color: #3C3C3C; padding-bottom: 150px;">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto ">
                             <div class="row">
-                        <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12"></div>
-                        <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto fw-bolder text-white mx-5">
+                                <div class="col-9 mt-2 py-0 mx-auto display-3 fw-bolder text-white col-contacto">
+                                    Contacto
+                                </div>
+                            </div>
                             <div class="row">
-                                <div class="col-xxl-12 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative shadow-sm col-amarilla2" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle shadow-sm col-verde2" style="background-color: white;">
-                                        <div class="row py-5">
-                                            <div class="col-9 mx-auto position-relative">
-                                                <form>
-                                                    <div class="row form-group">
-                                                        <label for="nombre" class="form-label text-dark fs-3">Nombre</label>
-                                                        <input type="text" class="form-control py-4 rounded-0 border border-2 border-dark">
+                                <div class="col position-relative py-5">
+                                    <div class="col-12 position-absolute top-0 start-50 translate-middle col-formulario_contacto">
+                                    <div class="row">
+                                <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12"></div>
+                                <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto fw-bolder text-white mx-5">
+                                    <div class="row">
+                                        <div class="col-xxl-12 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative shadow-sm col-amarilla2" style="background-color: #FFEC23;">
+                                            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle shadow-sm col-verde2" style="background-color: white;">
+                                                <div class="row py-5">
+                                                    <div class="col-9 mx-auto position-relative">
+                                                        <form>
+                                                            <div class="row form-group">
+                                                                <label for="nombre" class="form-label text-dark fs-3">Nombre</label>
+                                                                <input type="text" class="form-control py-4 rounded-0 border border-2 border-dark">
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <label for="email" class="form-label text-dark fs-3">Email</label>
+                                                                <input type="mail" class="form-control py-4 rounded-0 border border-2 border-dark">
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <label for="mensaje" class="form-label text-dark fs-3">Mensaje</label>
+                                                                <textarea class="form-control rounded-0 border border-2 border-dark" name="" id="" cols="20" rows="6" style="resize: none;"></textarea>
+                                                            </div>
+                                                        </form>
                                                     </div>
-                                                    <div class="row form-group">
-                                                        <label for="email" class="form-label text-dark fs-3">Email</label>
-                                                        <input type="mail" class="form-control py-4 rounded-0 border border-2 border-dark">
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <label for="mensaje" class="form-label text-dark fs-3">Mensaje</label>
-                                                        <textarea class="form-control rounded-0 border border-2 border-dark" name="" id="" cols="20" rows="6" style="resize: none;"></textarea>
-                                                    </div>
-                                                </form>
+                                                </div>        
                                             </div>
-                                        </div>        
-                                    </div>
-                                    <a href="#/">
-                                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 col-6 fs-4 fw-semibolder text-dark py-4 position-absolute top-100 start-50 translate-middle text-center" style="background-color: #FFEC23;">
-                                            Ver Más
+                                            <a href="#/">
+                                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 col-6 fs-4 fw-semibolder text-dark py-4 position-absolute top-100 start-50 translate-middle text-center" style="background-color: #FFEC23;">
+                                                    Ver Más
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
+                                    </div>
+                                </div>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                            </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 position-relative col-contacto_imagen">
+                            <div class="col-xxl-11 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute">
+                
+                                    <!-- <img src="img/home/imagen_05.png" alt="" class="img-fluid">     -->
+                                    <div class="img-contaa" style="
+                                            background-color: none;
+                                            background-image: url('{{ asset('img/design/home/imagen_05.png') }}');
+                                            background-size: contain;
+                                            background-repeat: no-repeat;
+                                            background-position: bottom;
+                                            width: 100%;
+                                        "></div>
+                               
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 position-relative col-contacto_imagen">
-                    <div class="col-xxl-11 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute">
-        
-                            <!-- <img src="img/home/imagen_05.png" alt="" class="img-fluid">     -->
-                            <div class="img-contaa" style="
-                                    background-color: none;
-                                    background-image: url('{{ asset('img/design/home/imagen_05.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: bottom;
-                                    width: 100%;
-                                "></div>
-                       
+                    <div class="col-12 d-flex justify-content-center align-items-center flex-column  position-absolute top-0 bottom-0 start-0 cuadr" style="height: 900px;">
+                        <a href="" class="btn btn-outline" style="font-size: 40px;">No es editable</a>
                     </div>
                 </div>
+                
             </div>
         </div>
-    </div>
+        </div>
+        
 
 @endsection
 

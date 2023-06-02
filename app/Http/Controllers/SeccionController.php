@@ -6,6 +6,10 @@ use App\Seccion;
 use App\Elemento;
 use App\SliderPrincipal;
 use App\SliderVideo;
+use App\Proyecto;
+use App\Cliente;
+use App\ProcesoPerlitaMineral;
+use App\Certificacion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -58,6 +62,10 @@ class SeccionController extends Controller
     public function show($seccion) {
         $slidersp = SliderPrincipal::all();
         $slidervd = SliderVideo::all();
+        $proyectos = Proyecto::all();
+        $clientes = Cliente::all();
+        $procesos_perlita = ProcesoPerlitaMineral::all();
+        $certificaciones = Certificacion::all();
  
         $ruta = 'configs.secciones.'.$seccion;
 
@@ -67,7 +75,7 @@ class SeccionController extends Controller
             }
         }
 
-        return view($ruta, compact('slidersp', 'slidervd'));
+        return view($ruta, compact('slidersp', 'slidervd', 'proyectos', 'clientes', 'procesos_perlita', 'certificaciones'));
 }
 
     /**
@@ -165,6 +173,80 @@ class SeccionController extends Controller
         return redirect()->back();
     }
 
+    public function proyectosSlider(Request $request) {
+        $slider = new Proyecto;
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $extension = $file->getClientOriginalExtension();
+            $namefile = Str::random(30).'.'.$extension;
+
+            \Storage::disk('local')->put("/img2/photos/proyectos/".$namefile , \File::get($file));
+
+            $slider->nombre = $request->nombre;
+            $slider->descripcion = $request->descripcion;
+            $slider->foto = $namefile;
+        }
+
+        $slider->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
+    }
+
+    public function clientesSlider(Request $request) {
+        $slider = new Cliente;
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $extension = $file->getClientOriginalExtension();
+            $namefile = Str::random(30).'.'.$extension;
+
+            \Storage::disk('local')->put("/img2/photos/clientes/".$namefile , \File::get($file));
+
+            $slider->logo = $namefile;
+        }
+
+        $slider->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
+    }
+
+    public function perlitaMineralSlider(Request $request) {
+        $slider = new ProcesoPerlitaMineral;
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $extension = $file->getClientOriginalExtension();
+            $namefile = Str::random(30).'.'.$extension;
+
+            \Storage::disk('local')->put("/img2/photos/perlita_mineral/".$namefile , \File::get($file));
+            
+            $slider->nombre = $request->nombre;
+            $slider->foto = $namefile;
+        }
+
+        $slider->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
+    }
+
+    public function certificacionesSlider(Request $request) {
+        $slider = new Certificacion;
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $extension = $file->getClientOriginalExtension();
+            $namefile = Str::random(30).'.'.$extension;
+
+            \Storage::disk('local')->put("/img2/photos/certificaciones/".$namefile , \File::get($file));
+            
+            $slider->logo = $namefile;
+        }
+
+        $slider->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
+    }
 
     /**
      * Remove the specified resource from storage.

@@ -233,7 +233,7 @@
                 }
     
                 .imagen-proyectos {
-                    height: 500px;
+                    height: 506px;
                 }
     
                 .col-amarilla {

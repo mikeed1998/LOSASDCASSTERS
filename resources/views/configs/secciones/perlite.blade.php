@@ -705,6 +705,46 @@
     }
 
 </style>
+
+<style>
+    /* input con opacidad y sin boton de selecciond e archivo */
+		.file-upload input[type="file"] {
+                    position: absolute;
+                    left: -9999px;
+                    }
+
+                    .file-upload label {
+                    display: inline-block;
+                    background-color: #00000031;
+                    color: #fff;
+                    padding: 6px 12px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    font-weight: normal;
+                    opacity: 0%;
+                    }
+
+                    .file-upload input[type="file"] + label:before {
+                    content: "\f07b";
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 16px;
+                    margin-right: 5px;
+                    transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"] + label {
+                        transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"]:focus + label,
+                    .file-upload input[type="file"] + label:hover {
+                    backdrop-filter: blur(5px);
+                    background-color: #41464a37;
+                    opacity: 100%;
+                    transition: all 0.5s;
+                    }
+    /* input con opacidad y sin boton de selecciond e archivo */
+</style>
 @endsection
 
 @section('content')
@@ -1005,6 +1045,50 @@
                         PROCESOS DE PERLITA MINERAL
                     </div>
                 </div>
+                <div class="row py-5">
+                    <div class="col">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Agregar proceso
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Proceso</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12 d-flex justify-content-center align-items-center flex-column mt-2 text-center">
+                    <form id="form_image_slider" action="perlitaMineralSlider" method="POST"  class="mt-2" style="" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="nombre" placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input class="cla m-0 p-0" type="file" name="foto"  style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">
+                                {{-- <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Agregar</label> --}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button id="input_slider_img">Agregar proceso</button>
+                            </div>
+                        </div>           
+                    </form>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
                 <div class="row" style="margin-bottom: 50px;">
                 
                     <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto">               
@@ -1280,6 +1364,11 @@
 @endsection
 
 @section('jsLibExtras2')
+<script>
+    $('#input_slider_img').click(function(e) {
+		$('#form_image_slider').trigger('submit');
+	});
+</script>
 <script>
     $('.slider-proyectos').slick({
             dots: true,

@@ -2105,6 +2105,45 @@
                 }
             }
 </style>
+<style>
+    /* input con opacidad y sin boton de selecciond e archivo */
+		.file-upload input[type="file"] {
+                    position: absolute;
+                    left: -9999px;
+                    }
+
+                    .file-upload label {
+                    display: inline-block;
+                    background-color: #00000031;
+                    color: #fff;
+                    padding: 6px 12px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    font-weight: normal;
+                    opacity: 0%;
+                    }
+
+                    .file-upload input[type="file"] + label:before {
+                    content: "\f07b";
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 16px;
+                    margin-right: 5px;
+                    transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"] + label {
+                        transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"]:focus + label,
+                    .file-upload input[type="file"] + label:hover {
+                    backdrop-filter: blur(5px);
+                    background-color: #41464a37;
+                    opacity: 100%;
+                    transition: all 0.5s;
+                    }
+    /* input con opacidad y sin boton de selecciond e archivo */
+</style>
 @endsection
 
 @section('content')
@@ -2421,6 +2460,15 @@
                         Certificaciones
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-6 mx-auto">
+                        <form id="form_certificaciones_slider" action="certificacionesSlider" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                            @csrf
+                            <input id="input_slider_certificaciones" class="m-0 p-0" type="file" name="logo">
+                            <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_slider_certificaciones" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Agregar nuevo</label>
+                        </form>
+                    </div>
+                </div>
                 <div class="row mt-5">
                     <div class="col-1">
                         <a href="" id="anteriorr" uk-icon="icon: chevron-double-left; ratio: 5;" style="color: #388050;"></a>
@@ -2428,61 +2476,19 @@
                     <div class="col-9 text-center mx-auto">
                         <div class="row">
                             <div class="certificaciones">
-                                <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                    <div class="" style="
-                                        background-color: ;
-                                        background-image: url('{{ asset('img/design/nosotros/certificacion_01.png') }}');
-                                        background-size: contain;
-                                        background-repeat: no-repeat;
-                                        background-position: center center;
-                                        width: 100%;  
-                                        height: 200px;     
-                                    "></div>
-                                </div>
-                                <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                    <div class="" style="
-                                        background-color: ;
-                                        background-image: url('{{ asset('img/design/nosotros/certificacion_02.png') }}');
-                                        background-size: contain;
-                                        background-repeat: no-repeat;
-                                        background-position: center center;
-                                        width: 100%;  
-                                        height: 200px;     
-                                    "></div>
-                                </div>
-                                <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                    <div class="" style="
-                                        background-color: ;
-                                        background-image: url('{{ asset('img/design/nosotros/certificacion_03.png') }}');
-                                        background-size: contain;
-                                        background-repeat: no-repeat;
-                                        background-position: center center;
-                                        width: 100%;  
-                                        height: 200px;     
-                                    "></div>
-                                </div>
-                                <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                    <div class="" style="
-                                        background-color: ;
-                                        background-image: url('{{ asset('img/design/nosotros/certificacion_04.png') }}');
-                                        background-size: contain;
-                                        background-repeat: no-repeat;
-                                        background-position: center center;
-                                        width: 100%;  
-                                        height: 200px;     
-                                    "></div>
-                                </div>
-                                <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                    <div class="" style="
-                                        background-color: ;
-                                        background-image: url('{{ asset('img/design/nosotros/certificacion_04.png') }}');
-                                        background-size: contain;
-                                        background-repeat: no-repeat;
-                                        background-position: center center;
-                                        width: 100%;  
-                                        height: 200px;     
-                                    "></div>
-                                </div>
+                                @foreach ($certificaciones as $ce)
+                                    <div class="col text-center d-flex align-items-center justify-content-center">
+                                        <div class="" style="
+                                            background-color: ;
+                                            background-image: url('{{ asset('img2/photos/certificaciones/'.$ce->logo) }}');
+                                            background-size: contain;
+                                            background-repeat: no-repeat;
+                                            background-position: center center;
+                                            width: 100%;  
+                                            height: 200px;     
+                                        "></div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -2497,6 +2503,11 @@
 @endsection
 
 @section('jsLibExtras2')
+<script>
+    $('#input_slider_certificaciones').change(function(e) {
+		$('#form_certificaciones_slider').trigger('submit');
+	});
+</script>
 <script>
     $('.certificaciones').slick({
             dots: true,

@@ -467,23 +467,6 @@
                             <div class="titulo-slider_principal" style=""><strong>Losas D´CASSTER´S </strong></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-11 
-                            mx-auto mt-2
-                            text-xxl-center text-xl-center text-lg-center text-md-center text-sm-center text-xs-center text-center
-                        ">
-                            <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
-                                px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
-                                btn-contacto" style="background-color: #388050; color: #FFEC23; text-decoration: none;">
-                                <h3 class="m-0 px-5" style="color: #FFEC23;">
-                                    <strong>
-                                        Contacto
-                                    </strong>
-                                </h3>
-                            </a>
-                        </div>  
-                    </div>
                 </div>
             </div>
         </div>
