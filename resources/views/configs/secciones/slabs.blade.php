@@ -443,7 +443,49 @@
     }
 
 </style>
+
+<style>
+    /* input con opacidad y sin boton de selecciond e archivo */
+		.file-upload input[type="file"] {
+                    position: absolute;
+                    left: -9999px;
+                    }
+
+                    .file-upload label {
+                    display: inline-block;
+                    background-color: #00000031;
+                    color: #fff;
+                    padding: 6px 12px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    font-weight: normal;
+                    opacity: 0%;
+                    }
+
+                    .file-upload input[type="file"] + label:before {
+                    content: "\f07b";
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 16px;
+                    margin-right: 5px;
+                    transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"] + label {
+                        transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"]:focus + label,
+                    .file-upload input[type="file"] + label:hover {
+                    backdrop-filter: blur(5px);
+                    background-color: #41464a37;
+                    opacity: 100%;
+                    transition: all 0.5s;
+                    }
+    /* input con opacidad y sin boton de selecciond e archivo */
+</style>
 @endsection
+
+{{-- ELEMENTOS 26 -> --}}
 
 @section('content')
 	<div class="row mb-4 px-2">
@@ -454,17 +496,23 @@
         <div class="row">
             <div class="col position-relative slider-principal" style="
                 background-color: black;
-                background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[25]->imagen) }}');
                 background-position: center center;
                 background-size: cover;
                 background-repeat: no-repeat;
                 width: 100%;
                 box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
             ">
+                <form id="form_logon-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="id_static" value="{{ $elements[25]->id }}">
+                    <input id="input_logon-static" class="m-0 p-0" type="file" name="archivo_s">
+                    <label class="col-12 m-0 p-2 d-flex display-5 justify-content-center align-items-center grande" for="input_logon-static" style="opacity: 100%; border-radius: 26px; height: 300px;">Cambiar imagen</label>
+                </form>
                 <div class="col-12 position-absolute top-50 start-50 translate-middle">
                     <div class="row py-5">
                         <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                            <div class="titulo-slider_principal" style=""><strong>Losas D´CASSTER´S </strong></div>
+                            <textarea class="form-control bg-transparent titulo-slider_principal text-white fw-bold editarajax" rows="1" name="texto" data-id="{{ $elements[26]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[26]->texto }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -480,16 +528,23 @@
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-12 col-xs-12 col-12" style="background-color: #F5F5F5; height: 200px; display: flex; align-items: center;" >
                         <div class="m-0 p-0" style="
                             background-color: #F5F5F5;
-                            background-image: url('{{ asset('img/design/home/icono_01.png') }}');
+                            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[27]->imagen) }}');
                             background-position: center center;
                             background-repeat: no-repeat;
                             width: 100%;
                             height: 100px;
                             margin: auto;
-                        "></div>
+                        ">
+                            <form id="form_logon2-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="id_static" value="{{ $elements[27]->id }}">
+                                <input id="input_logon2-static" class="m-0 p-0" type="file" name="archivo_s">
+                                <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_logon2-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                            </form>
+                        </div>
                     </div>
                     <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-12 col-xs-12 col-12 display-4 fw-bold py-0">
-                        Losas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D´CASSTER´S
+                        <textarea class="form-control bg-transparent editarajax" style="font-size: 50px; font-weight: bold;" id="" name="texto" data-id="{{ $elements[28]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[28]->texto }}</textarea>                                         
                     </div>
                 </div>
                 <div class="row contenedor-text_externo">
@@ -499,11 +554,7 @@
                                 <div class="card border-0 bg-transparent">
                                     <div class="card-body border-0 bg-transparent contenedor-texto_scroll">
                                         <p class="text-white">
-                                            Lorem ipsum dolor sit amet iusto? Exercitationem laudantium molestias minus nesciunt nostrum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
-                                        </p>
-                                        <p class="text-white">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque consequuntur dolor iusto? Exercitationem laudantium molestias minus nesciunt nostrum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
-                                            Lorem ipsuem strum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
+                                            <textarea class="form-control bg-transparent text-white editarajax" rows="16" name="texto" data-id="{{ $elements[29]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[29]->texto }}</textarea>
                                         </p>
                                     </div>
                                 </div>    
@@ -513,7 +564,15 @@
                             <div class="row">
                                 <div class="col position-relative">
                                     <div class="col-10 position-absolute top-50 start-50 translate-middle contenedor-imagen_interna">
-                                        <img src="{{ asset('img/design/soluciones/losas/losas_imagen.png') }}" alt="" class="img-fluid contenedor-imagen_interna--imagen">
+                                        <div class="col position-relative">
+                                            <img src="{{ asset('img/design/soluciones/losas/losas_imagen.png') }}" alt="" class="img-fluid contenedor-imagen_interna--imagen">
+
+                                            <div class="col position-absolute py-5 bg-dark top-50">
+
+                                            </div>
+                                        </div>
+                                        
+                                           
                                     </div>
                                 </div>
                             </div>
@@ -759,7 +818,15 @@
 @endsection
 
 @section('jsLibExtras2')
+<script>
+    $('#input_logon-static').change(function(e) {
+		$('#form_logon-static').trigger('submit');
+	});
 
+    $('#input_logon2-static').change(function(e) {
+		$('#form_logon2-static').trigger('submit');
+	});
+</script>
 @endsection
 
 @section('jqueryExtra')

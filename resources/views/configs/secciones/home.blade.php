@@ -1935,21 +1935,25 @@
                                 <div class="col-4 text-center columna-soluciones" style="border-top: 4px solid #388050; background-color: #F5F5F5;">
                                     <!-- <img src="img/home/icono_01.png" alt="" class="img-fluid"> -->
                                     <div class="imagen-soluciones" style="
-                                        background-image: url('{{ asset('img/design/home/icono_01.png') }}');
+                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[0]->imagen) }}');
                                         background-position: center center;
                                         background-size: contain;
                                         background-repeat: no-repeat;
                                         width: 100%;
-                                    "></div>
+                                    ">
+                                        <form id="form_imagen-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" name="id_static" value="{{ $elements[0]->id }}">
+                                            <input id="input_imagen-static" class="m-0 p-0" type="file" name="archivo_s">
+                                            <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_imagen-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                        </form>
+                                    </div>
                                 </div>
                                 <div class="col-8" style="border-top: 4px solid #FFEC23;">
                                     <div class="row">
                                         <div class="col-11 mx-auto text-start" style="font-size:20px;">
-                                            <div class="texto-soluciones m-0 fw-bolder">
-                                                Losas                                  
-                                            </div>
-                                            <div class="texto-soluciones m-0 fw-bolder">
-                                                D´CASSTER´S                                    
+                                            <div class="texto-soluciones m-0 fw-bolder"> 
+                                                <textarea class="form-control texto-soluciones bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[1]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[1]->texto }}</textarea>                    
                                             </div>                                    
                                         </div>
                                     </div>
@@ -1969,21 +1973,25 @@
                             <div class="row">
                                 <div class="col-4 text-center columna-soluciones" style="border-top: 4px solid #388050; background-color: #F5F5F5;">
                                     <div class="imagen-soluciones" style="
-                                        background-image: url('{{ asset('img/design/home/icono_02.png') }}');
+                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[2]->imagen) }}');
                                         background-position: center center;
                                         background-size: contain;
                                         background-repeat: no-repeat;
                                         width: 100%;
-                                    "></div>
+                                    ">
+                                        <form id="form_imagen-static2" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" name="id_static" value="{{ $elements[2]->id }}">
+                                            <input id="input_imagen-static2" class="m-0 p-0" type="file" name="archivo_s">
+                                            <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_imagen-static2" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                        </form>
+                                    </div>
                                 </div>
                                 <div class="col-8" style="border-top: 4px solid #FFEC23;">
                                     <div class="row">
                                         <div class="col-11 mx-auto text-start">
                                             <div class="texto-soluciones m-0 fw-bolder">
-                                                Perlita                                  
-                                            </div>
-                                            <div class="texto-soluciones m-0 fw-bolder">
-                                                Mineral                                    
+                                                <textarea class="form-control texto-soluciones bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[3]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[3]->texto }}</textarea>                                         
                                             </div>                                    
                                         </div>
                                     </div>
@@ -2262,18 +2270,27 @@
                                                     <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-5 col-sm-6 col-xs-6 col-6 mx-auto py-0 position-relative">
                                                         <div class="col-12 py-0 position-absolute top-100 start-0 translate-middle-x">
                                                             <div class="row">
-                                                                <div class="col text-center">
+                                                                <div class="col position-relative text-center">
                                                                     <div class="circulo-caracteristicas" style="
                                                                         background-color: black;
-                                                                        background-image: url('{{ asset('img/design/home/imagen_04.png') }}');
+                                                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[4]->imagen) }}');
                                                                         background-position: center center;
                                                                         background-size: cover;
                                                                         background-repeat: no-repeat;
-                                                                        border-radius: 100%; 
-                                                                    "></div>
+                                                                        border-radius: 100%;
+                                                                    ">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <form id="form_caracteristicas-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                            @csrf
+                                                            <input type="hidden" name="id_static" value="{{ $elements[4]->id }}">
+                                                            <input id="input_caracteristicas-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                            <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_caracteristicas-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2285,19 +2302,26 @@
                                                         <div class="col-8 mx-auto">
                                                             <div style="
                                                                 background-color: none;
-                                                                background-image: url('{{ asset('img/design/home/ahorro.png') }}');
+                                                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[5]->imagen) }}');
                                                                 background-repeat: no-repeat;
                                                                 background-position: center center;
                                                                 background-size: contain;
                                                                 width: 100%;
                                                                 height: 80px;
-                                                            "></div>
+                                                            ">
+                                                                <form id="form_icono1-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id_static" value="{{ $elements[5]->id }}">
+                                                                    <input id="input_icono1-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono1-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                         <div class="col-9 py-2 mx-auto">
                                                             <div style="border: 2px solid white;"></div>
                                                         </div>
                                                         <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                            Ahorro al edificar
+                                                            <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[6]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[6]->texto }}  ">                  
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2308,19 +2332,26 @@
                                                         <div class="col-8 mx-auto">
                                                             <div style="
                                                                 background-color: none;
-                                                                background-image: url('{{ asset('img/design/home/economia.png') }}');
+                                                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[7]->imagen) }}');
                                                                 background-repeat: no-repeat;
                                                                 background-position: center center;
                                                                 background-size: contain;
                                                                 width: 100%;
                                                                 height: 80px;
-                                                            "></div>
+                                                            ">
+                                                                <form id="form_icono2-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id_static" value="{{ $elements[7]->id }}">
+                                                                    <input id="input_icono2-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono2-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                         <div class="col-9 py-2 mx-auto">
                                                             <div style="border: 2px solid white;"></div>
                                                         </div>
                                                         <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                            Economía
+                                                            <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[8]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[8]->texto }}  ">  
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2331,19 +2362,26 @@
                                                         <div class="col-8 mx-auto">
                                                             <div style="
                                                                 background-color: none;
-                                                                background-image: url('{{ asset('img/design/home/perlita.png') }}');
+                                                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[9]->imagen) }}');
                                                                 background-repeat: no-repeat;
                                                                 background-position: center center;
                                                                 background-size: contain;
                                                                 width: 100%;
                                                                 height: 80px;
-                                                            "></div>
+                                                            ">
+                                                                <form id="form_icono3-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id_static" value="{{ $elements[9]->id }}">
+                                                                    <input id="input_icono3-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono3-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                         <div class="col-9 py-2 mx-auto">
                                                             <div style="border: 2px solid white;"></div>
                                                         </div>
                                                         <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                            Mineral Perlita
+                                                            <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[10]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[10]->texto }}  ">  
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2359,19 +2397,26 @@
                                                         <div class="col-8 mx-auto">
                                                             <div style="
                                                                 background-color: none;
-                                                                background-image: url('{{ asset('img/design/home/aislamiento.png') }}');
+                                                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[23]->imagen) }}');
                                                                 background-repeat: no-repeat;
                                                                 background-position: center center;
                                                                 background-size: contain;
                                                                 width: 100%;
                                                                 height: 80px;
-                                                            "></div>
+                                                            ">
+                                                                <form id="form_icono10-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id_static" value="{{ $elements[23]->id }}">
+                                                                    <input id="input_icono10-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono10-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                         <div class="col-9 py-3 mx-auto">
                                                             <div style="border: 2px solid white;"></div>
                                                         </div>
                                                         <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                            Aislamiento Térmico y Acústico
+                                                            <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[24]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[24]->texto }}  ">  
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2382,19 +2427,26 @@
                                                         <div class="col-8 mx-auto">
                                                             <div style="
                                                                 background-color: none;
-                                                                background-image: url('{{ asset('img/design/home/facil.png') }}');
+                                                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[21]->imagen) }}');
                                                                 background-repeat: no-repeat;
                                                                 background-position: center center;
                                                                 background-size: contain;
                                                                 width: 100%;
                                                                 height: 80px;
-                                                            "></div>
+                                                            ">
+                                                                <form id="form_icono9-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id_static" value="{{ $elements[21]->id }}">
+                                                                    <input id="input_icono9-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono9-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                         <div class="col-9 py-2 mx-auto">
                                                             <div style="border: 2px solid white;"></div>
                                                         </div>
                                                         <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                            Fácil de instalar
+                                                            <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[22]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[22]->texto }}  ">  
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2405,19 +2457,26 @@
                                                         <div class="col-8 mx-auto">
                                                             <div style="
                                                                 background-color: none;
-                                                                background-image: url('{{ asset('img/design/home/garantia.png') }}');
+                                                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[19]->imagen) }}');
                                                                 background-repeat: no-repeat;
                                                                 background-position: center center;
                                                                 background-size: contain;
                                                                 width: 100%;
                                                                 height: 80px;
-                                                            "></div>
+                                                            ">
+                                                                <form id="form_icono8-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id_static" value="{{ $elements[19]->id }}">
+                                                                    <input id="input_icono8-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono8-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                         <div class="col-9 py-2 mx-auto">
                                                             <div style="border: 2px solid white;"></div>
                                                         </div>
                                                         <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                            Garantía de por vida
+                                                            <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[20]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[20]->texto }}  ">  
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2431,19 +2490,26 @@
                                                     <div class="col-8 mx-auto">
                                                         <div style="
                                                             background-color: none;
-                                                            background-image: url('{{ asset('img/design/home/instalacion.png') }}');
+                                                            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[11]->imagen) }}');
                                                             background-repeat: no-repeat;
                                                             background-position: center center;
                                                             background-size: contain;
                                                             width: 100%;
                                                             height: 80px;
-                                                        "></div>
+                                                        ">
+                                                            <form id="form_icono4-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                @csrf
+                                                                <input type="hidden" name="id_static" value="{{ $elements[11]->id }}">
+                                                                <input id="input_icono4-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono4-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                     <div class="col-9 py-3 mx-auto">
                                                         <div style="border: 2px solid white;"></div>
                                                     </div>
                                                     <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                        Instalación Rápida
+                                                        <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[12]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[12]->texto }}  ">  
                                                     </div>
                                                 </div>
                                             </div>
@@ -2454,19 +2520,26 @@
                                                     <div class="col-8 mx-auto">
                                                         <div style="
                                                             background-color: none;
-                                                            background-image: url('{{ asset('img/design/home/limpieza.png') }}');
+                                                            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[13]->imagen) }}');
                                                             background-repeat: no-repeat;
                                                             background-position: center center;
                                                             background-size: contain;
                                                             width: 100%;
                                                             height: 80px;
-                                                        "></div>
+                                                        ">
+                                                            <form id="form_icono5-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                @csrf
+                                                                <input type="hidden" name="id_static" value="{{ $elements[13]->id }}">
+                                                                <input id="input_icono5-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono5-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                     <div class="col-9 py-3 mx-auto">
                                                         <div style="border: 2px solid white;"></div>
                                                     </div>
                                                     <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                        Limpieza en Obra
+                                                        <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[14]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[14]->texto }}  ">  
                                                     </div>
                                                 </div>
                                             </div>
@@ -2477,19 +2550,26 @@
                                                     <div class="col-8 mx-auto">
                                                         <div style="
                                                             background-color: none;
-                                                            background-image: url('{{ asset('img/design/home/tonelada.png') }}');
+                                                            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[15]->imagen) }}');
                                                             background-repeat: no-repeat;
                                                             background-position: center center;
                                                             background-size: contain;
                                                             width: 100%;
                                                             height: 80px;
-                                                        "></div>
+                                                        ">
+                                                            <form id="form_icono6-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                @csrf
+                                                                <input type="hidden" name="id_static" value="{{ $elements[15]->id }}">
+                                                                <input id="input_icono6-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono6-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                     <div class="col-9 py-3 mx-auto">
                                                         <div style="border: 2px solid white;"></div>
                                                     </div>
                                                     <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                        Resiste más de una tonelada
+                                                        <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[16]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[16]->texto }}  ">  
                                                     </div>
                                                 </div>
                                             </div> 
@@ -2500,19 +2580,26 @@
                                                     <div class="col-8 mx-auto">
                                                         <div style="
                                                             background-color: none;
-                                                            background-image: url('{{ asset('img/design/home/aligerado.png') }}');
+                                                            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[17]->imagen) }}');
                                                             background-repeat: no-repeat;
                                                             background-position: center center;
                                                             background-size: contain;
                                                             width: 100%;
                                                             height: 80px;
-                                                        "></div>
+                                                        ">
+                                                            <form id="form_icono7-static" action="imgStatic" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                                                @csrf
+                                                                <input type="hidden" name="id_static" value="{{ $elements[17]->id }}">
+                                                                <input id="input_icono7-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_icono7-static" style="opacity: 100%; border-radius: 26px;">Seleccionar archivo</label>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                     <div class="col-9 py-3 mx-auto">
                                                         <div style="border: 2px solid white;"></div>
                                                     </div>
                                                     <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                        Techos aligerados
+                                                        <input type="text" class="form-control text-center fs-5 fw-bolder bg-transparent editarajax" id="" name="texto" data-id="{{ $elements[18]->id }}" data-table="Elemento" data-campo="texto" style="color: #FFEC23;" value="{{ $elements[18]->texto }}  ">  
                                                     </div>
                                                 </div>
                                             </div>
@@ -2536,6 +2623,11 @@
                     <div class="row">
                         <div class="col text-center">
                             <div class="display-2 fw-bold">Respaldos</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+
                         </div>
                     </div>
                     <div class="row mt-5 py-5">
@@ -2775,6 +2867,58 @@
 
 <script>
     
+    $('#input_imagen-static').change(function(e) {
+		$('#form_imagen-static').trigger('submit');
+	});
+
+    $('#input_imagen-static2').change(function(e) {
+		$('#form_imagen-static2').trigger('submit');
+	});
+
+    $('#input_caracteristicas-static').change(function(e) {
+		$('#form_caracteristicas-static').trigger('submit');
+	});
+
+    $('#input_icono1-static').change(function(e) {
+		$('#form_icono1-static').trigger('submit');
+	});
+
+    $('#input_icono2-static').change(function(e) {
+		$('#form_icono2-static').trigger('submit');
+	});
+
+    $('#input_icono3-static').change(function(e) {
+		$('#form_icono3-static').trigger('submit');
+	});
+
+    $('#input_icono4-static').change(function(e) {
+		$('#form_icono4-static').trigger('submit');
+	});
+
+    $('#input_icono5-static').change(function(e) {
+		$('#form_icono5-static').trigger('submit');
+	});
+
+    $('#input_icono6-static').change(function(e) {
+		$('#form_icono6-static').trigger('submit');
+	});
+
+    $('#input_icono7-static').change(function(e) {
+		$('#form_icono7-static').trigger('submit');
+	});
+
+    $('#input_icono8-static').change(function(e) {
+		$('#form_icono8-static').trigger('submit');
+	});
+
+    $('#input_icono9-static').change(function(e) {
+		$('#form_icono9-static').trigger('submit');
+	});
+
+    $('#input_icono10-static').change(function(e) {
+		$('#form_icono10-static').trigger('submit');
+	});
+
     $('#input_slider_img').change(function(e) {
 		$('#form_image_slider').trigger('submit');
 	});

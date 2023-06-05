@@ -124,6 +124,8 @@ Route::prefix('admin')->group(function(){
 			Route::put('/{id}','ElementoController@update')->name('update');
 			Route::put('/portada/{id}', 'SeccionController@update')->name('updatePortada');
 			
+			
+			Route::post('/imgStatic','SeccionController@imgStatic')->name('imgStatic');
 			/////////////////////////////////////// INICIO /////////////////////////////////////// 
 			Route::post('/imgSider','SeccionController@imgSider')->name('imgSider');
 			Route::post('/videoSider','SeccionController@videoSider')->name('videoSider');

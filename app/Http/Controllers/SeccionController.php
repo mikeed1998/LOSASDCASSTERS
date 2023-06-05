@@ -60,6 +60,7 @@ class SeccionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($seccion) {
+        $elements = Elemento::all();
         $slidersp = SliderPrincipal::all();
         $slidervd = SliderVideo::all();
         $proyectos = Proyecto::all();
@@ -75,7 +76,7 @@ class SeccionController extends Controller
             }
         }
 
-        return view($ruta, compact('slidersp', 'slidervd', 'proyectos', 'clientes', 'procesos_perlita', 'certificaciones'));
+        return view($ruta, compact('slidersp', 'slidervd', 'proyectos', 'clientes', 'procesos_perlita', 'certificaciones', 'elements'));
 }
 
     /**
@@ -119,6 +120,27 @@ class SeccionController extends Controller
 		$seccion->save();
 		\Toastr::success('Guardado');
 		return redirect()->back();
+    }
+
+
+    public function imgStatic(Request $request) {
+        $elem = Elemento::find($request->id_static);
+        // dd($elem->imagen);
+        if ($request->hasFile('archivo_s')) {
+            $oldFile = $elem->imagen;
+            $file = $request->file('archivo_s');
+            $extension = $file->getClientOriginalExtension();
+            $namefile = Str::random(30).'.'.$extension;
+
+            \Storage::disk('local')->put("/img2/photos/imagenes_estaticas/".$namefile , \File::get($file));
+            \Storage::disk('local')->delete("/img2/photos/imagenes_estaticas/".$oldFile);
+
+            $elem->imagen = $namefile;
+        }
+
+        $elem->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
     }
 
 
