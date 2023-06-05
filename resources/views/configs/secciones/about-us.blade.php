@@ -2147,6 +2147,7 @@
 @endsection
 
 @section('content')
+{{-- 64 -> --}}
 	<div class="row mb-4 px-2">
 		<a href="{{ route('config.seccion.index') }}" class="col col-md-2 btn btn-sm grey darken-2 text-white mr-auto"><i class="fa fa-reply"></i> Regresar</a>
 	</div>
@@ -2155,19 +2156,25 @@
         <div class="row">
             <div class="col position-relative slider-principal" style="
                 background-color: black;
-                background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[65]->imagen) }}');
                 background-position: center center;
                 background-size: cover;
                 background-repeat: no-repeat;
                 width: 100%;
                 box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
             ">
+                <form id="form_abouts-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="id_static" value="{{ $elements[65]->id }}">
+                    <input id="input_abouts-static" class="m-0 p-0" type="file" name="archivo_s">
+                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_abouts-static" style="opacity: 100%; border-radius: 26px; height: 300px;">Cambiar imagen</label>
+                </form>
                 <div class="col-12 position-absolute top-50 start-50 translate-middle">
                     <div class="row py-5">
                         <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                            <div class="titulo-slider_principal" style=""><strong>Empresas que llevan nuestro producto</strong></div>
+                            <textarea class="form-control text-center bg-transparent titulo-slider_principal text-white fw-bold editarajax" rows="2" name="texto" data-id="{{ $elements[66]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[66]->texto }}</textarea>
                         </div>
-                    </div>
+                    </div>-
                 </div>
             </div>
         </div>
@@ -2184,17 +2191,21 @@
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5 mx-auto px-5">
                                 <div class="row">
                                     <div class="col">
-                                        <h3 class="m-0" style="color: #388050;">Te contamos sobre</h3>
+                                        <h3 class="m-0" style="color: #388050;">
+                                            <input style="color: #388050;" class="form-control text-start bg-transparent fs-4 editarajax" name="texto" data-id="{{ $elements[69]->id }}" data-table="Elemento" data-campo="texto" value="{{ $elements[69]->texto }}">
+                                        </h3>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h1 class="display-2 fw-semibold">Nosotros</h1>
+                                        <h1 class="display-2 fw-semibold">
+                                            <input class="form-control text-start bg-transparent editarajax" style="font-size: 60px;" name="texto" data-id="{{ $elements[70]->id }}" data-table="Elemento" data-campo="texto" value="{{ $elements[70]->texto }}">
+                                        </h1>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col m-0 nos-scroll">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit illum dolorum, aut odit sunt ipsam molestiae incidunt maiores temporibus doloribus ab officia placeat ratione veniam quidem molestias accusamus quo nam mollitia in dolor ipsum asperiores saepe beatae. Eveniet rerum incidunt corporis veritatis in, reiciendis, quod mollitia accusamus magnam architecto minima magni quidem. Eum explicabo aperiam corrupti doloribus quibusdam perspiciatis optio omnis sunt quam totam necessitatibus commodi quia, qui laboriosam alias mollitia est illum expedita consectetur dignissimos incidunt assumenda ducimus. Totam dolorem nemo officia eos quis omnis maiores voluptatibus, facere consequatur temporibus! Dolore debitis exercitationem illo quos qui ut distinctio suscipit.
+                                        <textarea class="form-control text-start bg-transparent editarajax" rows="16" name="texto" data-id="{{ $elements[71]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[71]->texto }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -2211,21 +2222,35 @@
                             <br>
                             <div class="imagen-nosotros_big" style="
                                 background-color: black;
-                                background-image: url('{{ asset('img/design/home/imagen_01.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[67]->imagen) }}');
                                 background-position: center center;
                                 background-size: cover;
                                 background-repeat: no-repeat;
-                            "></div>
+                            ">
+                                <form id="form_imgverde-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="id_static" value="{{ $elements[67]->id }}">
+                                    <input id="input_imgverde-static" class="m-0 p-0" type="file" name="archivo_s">
+                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_imgverde-static" style="opacity: 100%; border-radius: 26px; height: 200px;">Cambiar imagen</label>
+                                </form>
+                            </div>
                             <div class="col-6 mt-5 position-absolute top-50 start-50 ">
                                 <div class="row">
                                     <div class="col-12 px-0 mt-5" style="background-color: #FFEC23; height: 340px;">
                                         <div class="imagen-nosotros_small" style="
                                             background-color: black;
-                                            background-image: url('{{ asset('img/design/home/imagen_02.png') }}');
+                                            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[68]->imagen) }}');
                                             background-position: center center;
                                             background-size: cover;
                                             background-repeat: no-repeat;
-                                        "></div>
+                                        ">
+                                            <form id="form_imgamarillo-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                                @csrf
+                                                <input type="hidden" name="id_static" value="{{ $elements[68]->id }}">
+                                                <input id="input_imgamarillo-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_imgamarillo-static" style="opacity: 100%; border-radius: 26px; height: 200px;">Cambiar imagen</label>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2263,17 +2288,28 @@
                                 width: 150px; 
                                 background-color: #FFEC23;
                                 ">
-                                <img src="{{ asset('img/design/nosotros/vision.png') }}" alt="" class="img-fluid" style="">
+
+                                <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[72]->imagen) }}" alt="" class="img-fluid" style="">
+
+                                <div class="col position-absolute">
+                                    <form id="form_vision-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="id_static" value="{{ $elements[72]->id }}">
+                                        <input id="input_vision-static" class="m-0 p-0" type="file" name="archivo_s">
+                                        <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_vision-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                    </form>
+                                </div>
+                                
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-9 mx-auto text-white display-4 fw-bolder py-0">
-                                Visión
+                                <input style="font-size: 50px; font-weight: bold;" class="form-control text-white text-center bg-transparent display-4 editarajax" name="texto" data-id="{{ $elements[73]->id }}" data-table="Elemento" data-campo="texto" value="{{ $elements[73]->texto }}">
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-9 text-white fs-5 mx-auto py-1 scroll-tan">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                                <textarea class="form-control fs-5 text-white text-start bg-transparent editarajax" rows="10" name="texto" data-id="{{ $elements[74]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[74]->texto }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -2294,17 +2330,29 @@
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-m-6 col-sm-11 col-xs-11 col-11 py-5" style="background-color: #388050;">
                         <div class="row">
                             <div class="col-4 mx-auto d-flex align-items-center justify-content-center"" style="border-radius: 100%; height: 150px; width: 150px; background-color: #FFEC23;">
-                                <img src="{{ asset('img/design/nosotros/mision.png') }}" alt="" class="img-fluid" style="">
+                                <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[75]->imagen) }}" alt="" class="img-fluid" style="">
+
+                                <div class="col position-absolute">
+                                    <form id="form_mision-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="id_static" value="{{ $elements[75]->id }}">
+                                        <input id="input_mision-static" class="m-0 p-0" type="file" name="archivo_s">
+                                        <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_mision-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-9 mx-auto text-white display-4 fw-bolder">
-                                Misión
+                                
+                                <input style="font-size: 50px; font-weight: bold;" class="form-control text-white text-center bg-transparent display-4 editarajax" name="texto" data-id="{{ $elements[76]->id }}" data-table="Elemento" data-campo="texto" value="{{ $elements[76]->texto }}">
+
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-9 mx-auto text-white fs-5 scroll-tan">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                                <textarea class="form-control fs-5 text-white text-start bg-transparent editarajax" rows="10" name="texto" data-id="{{ $elements[77]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[77]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -2325,17 +2373,29 @@
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-m-6 col-sm-11 col-xs-11 col-11 py-5" style="background-color: #388050;">
                         <div class="row">
                             <div class="col-4 mx-auto d-flex align-items-center justify-content-center"" style="border-radius: 100%; height: 150px; width: 150px; background-color: #FFEC23;">
-                                <img src="{{ asset('img/design/nosotros/valores.png') }}" alt="" class="img-fluid" style="">
+                                <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[78]->imagen) }}" alt="" class="img-fluid" style="">
+
+                                <div class="col position-absolute">
+                                    <form id="form_valores-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="id_static" value="{{ $elements[78]->id }}">
+                                        <input id="input_valores-static" class="m-0 p-0" type="file" name="archivo_s">
+                                        <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_valores-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-9 mx-auto text-white display-4 fw-bolder">
-                                Valores
+                                
+                                <input style="font-size: 50px; font-weight: bold;" class="form-control text-white text-center bg-transparent display-4 editarajax" name="texto" data-id="{{ $elements[79]->id }}" data-table="Elemento" data-campo="texto" value="{{ $elements[79]->texto }}">
+
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-9 mx-auto text-white fs-5 scroll-tan">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                                <textarea class="form-control fs-5 text-white text-start bg-transparent editarajax" rows="10" name="texto" data-id="{{ $elements[80]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[80]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -2506,6 +2566,30 @@
 <script>
     $('#input_slider_certificaciones').change(function(e) {
 		$('#form_certificaciones_slider').trigger('submit');
+	});
+
+    $('#input_abouts-static').change(function(e) {
+		$('#form_abouts-static').trigger('submit');
+	});
+
+    $('#input_imgverde-static').change(function(e) {
+		$('#form_imgverde-static').trigger('submit');
+	});
+
+    $('#input_imgamarillo-static').change(function(e) {
+		$('#form_imgamarillo-static').trigger('submit');
+	});
+
+    $('#input_vision-static').change(function(e) {
+		$('#form_vision-static').trigger('submit');
+	});
+
+    $('#input_mision-static').change(function(e) {
+		$('#form_mision-static').trigger('submit');
+	});
+
+    $('#input_valores-static').change(function(e) {
+		$('#form_valores-static').trigger('submit');
 	});
 </script>
 <script>
