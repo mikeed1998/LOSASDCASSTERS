@@ -750,7 +750,8 @@
                                 </div>
                             </div>
                             <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
-                                Subir y nivelar las vigas
+                                <textarea style="color: #388050;" class="form-control fs-3 fw-bolder bg-transparent editarajax" rows="3" name="texto" data-id="{{ $elements[44]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[44]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -776,7 +777,8 @@
                                 </div>
                             </div>
                             <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
-                                Colocación de las Losas D´Casster´s
+                                <textarea style="color: #388050;" class="form-control fs-3 fw-bolder bg-transparent editarajax" rows="3" name="texto" data-id="{{ $elements[46]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[46]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -802,7 +804,8 @@
                                 </div>
                             </div>
                             <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
-                                Aplicación de lechada
+                                <textarea style="color: #388050;" class="form-control fs-3 fw-bolder bg-transparent editarajax" rows="3" name="texto" data-id="{{ $elements[48]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[48]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -828,7 +831,8 @@
                                 </div>
                             </div>
                             <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
-                                Aplicación de hormigón de terminados y nivelaciones
+                                <textarea style="color: #388050;" class="form-control fs-3 fw-bolder bg-transparent editarajax" rows="3" name="texto" data-id="{{ $elements[50]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[50]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
