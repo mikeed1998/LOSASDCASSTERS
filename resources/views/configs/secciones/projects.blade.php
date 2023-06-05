@@ -1628,17 +1628,23 @@
         <div class="row">
             <div class="col position-relative slider-principal" style="
                 background-color: black;
-                background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[62]->imagen) }}');
                 background-position: center center;
                 background-size: cover;
                 background-repeat: no-repeat;
                 width: 100%;
                 box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
             ">
+                <form id="form_proye-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="id_static" value="{{ $elements[62]->id }}">
+                    <input id="input_proye-static" class="m-0 p-0" type="file" name="archivo_s">
+                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_proye-static" style="opacity: 100%; border-radius: 26px; height: 300px;">Cambiar imagen</label>
+                </form>
                 <div class="col-12 position-absolute top-50 start-50 translate-middle">
                     <div class="row py-5">
                         <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                            <div class="titulo-slider_principal" style=""><strong>Empresas que llevan nuestro producto</strong></div>
+                            <textarea class="form-control text-center bg-transparent titulo-slider_principal text-white fw-bold editarajax" rows="2" name="texto" data-id="{{ $elements[63]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[63]->texto }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -1813,6 +1819,10 @@
 
     $('#input_slider_clientes').change(function(e) {
 		$('#form_clientes_slider').trigger('submit');
+	});
+
+    $('#input_proye-static').change(function(e) {
+		$('#form_proye-static').trigger('submit');
 	});
 </script>
 <script>
