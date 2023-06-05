@@ -1703,6 +1703,74 @@
             }
     
 </style>
+
+<style>
+    /* input con opacidad y sin boton de selecciond e archivo */
+		.file-upload input[type="file"] {
+                    position: absolute;
+                    left: -9999px;
+                    }
+
+                    .file-upload label {
+                    display: inline-block;
+                    background-color: #00000031;
+                    color: #fff;
+                    padding: 6px 12px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    font-weight: normal;
+                    opacity: 0%;
+                    }
+
+                    .file-upload input[type="file"] + label:before {
+                    content: "\f07b";
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 16px;
+                    margin-right: 5px;
+                    transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"] + label {
+                        transition: all 0.5s;
+                    }
+
+                    .file-upload input[type="file"]:focus + label,
+                    .file-upload input[type="file"] + label:hover {
+                    backdrop-filter: blur(5px);
+                    background-color: #41464a37;
+                    opacity: 100%;
+                    transition: all 0.5s;
+                    }
+    /* input con opacidad y sin boton de selecciond e archivo */
+
+    
+</style>
+
+
+<style>
+    .cuadr:hover {
+        background-color: black; opacity: 80%;
+    }
+
+    .cuadr:hover > .btn {
+        display: block;
+        color: black;
+        background-color: white;
+        opacity: 100%;
+    }
+
+    .cuadr:hover > .btn:hover {
+        display: block;
+        color:white;
+        background-color: red;
+        opacity: 100%;
+    }
+
+    .cuadr > .btn {
+        display: none;
+    }
+</style>
+
 @endsection
 
 @section('content')
@@ -1715,130 +1783,148 @@
             <div class="row">
                 <div class="col position-relative slider-principal" style="
                     background-color: black;
-                    background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[81]->imagen) }}');
                     background-position: center center;
                     background-size: cover;
                     background-repeat: no-repeat;
                     width: 100%;
                     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
                 ">
+                    <form id="form_contacto-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="id_static" value="{{ $elements[81]->id }}">
+                        <input id="input_contacto-static" class="m-0 p-0" type="file" name="archivo_s">
+                        <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_contacto-static" style="opacity: 100%; border-radius: 26px; height: 300px;">Cambiar imagen</label>
+                    </form>
                     <div class="col-12 position-absolute top-50 start-50 translate-middle">
                         <div class="row py-5">
                             <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                                <div class="titulo-slider_principal" style=""><strong>Ponte en contacto</strong></div>
+                                <textarea class="form-control text-center bg-transparent titulo-slider_principal text-white fw-bold editarajax" rows="2" name="texto" data-id="{{ $elements[82]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[82]->texto }}</textarea>
                             </div>
-                        </div>
+                        </div>-
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="container-fluid">
-            <div class="row columna-cont" style="background-color: #388050;">
-                <div class="col-9 mx-auto mt-5">
-                    <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5">
-                            <div class="row text-white">
-                                <div class="col-2 text-center py-4">
-                                    <img src="{{ asset('img/design/contacto/telefono.png') }}" alt="" class="img-fluid">
+        <div class="col position-relative subdiv">
+            <div class="container-fluid">
+                <div class="row columna-cont" style="background-color: #388050;">
+                    <div class="col-9 mx-auto mt-5">
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5">
+                                <div class="row text-white">
+                                    <div class="col-2 text-center py-4">
+                                        <img src="{{ asset('img/design/contacto/telefono.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col-10 fs-3 py-4">
+                                        Tel. 33 33 33 33 33
+                                    </div>
                                 </div>
-                                <div class="col-10 fs-3 py-4">
-                                    Tel. 33 33 33 33 33
+                                <div class="row text-white">
+                                    <div class="col-2 text-center py-4">
+                                        <img src="{{ asset('img/design/contacto/mail.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col-10 fs-3 py-4">
+                                        contacto@losasdcassers.com
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row text-white">
-                                <div class="col-2 text-center py-4">
-                                    <img src="{{ asset('img/design/contacto/mail.png') }}" alt="" class="img-fluid">
+                                <div class="row text-white">
+                                    <div class="col-2 text-center py-4">
+                                        <img src="{{ asset('img/design/contacto/gps.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col-10 fs-3 py-4">
+                                        C. Volcán Vesubio 6579, Colli Urbano 45070 Zapopan, Jal.
+                                    </div>
                                 </div>
-                                <div class="col-10 fs-3 py-4">
-                                    contacto@losasdcassers.com
-                                </div>
-                            </div>
-                            <div class="row text-white">
-                                <div class="col-2 text-center py-4">
-                                    <img src="{{ asset('img/design/contacto/gps.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-3 py-4">
-                                    C. Volcán Vesubio 6579, Colli Urbano 45070 Zapopan, Jal.
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-11 mx-auto py-5 text-start">
-                                    <a href="" uk-icon="icon: whatsapp; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
-                                    <a href="" uk-icon="icon: facebook; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
-                                    <a href="" uk-icon="icon: instagram; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 position-relative py-5">
-                            {{-- <div class="col-12 py-5 position-absolute top-0 start-50 translate-middle-x">
                                 <div class="row">
-                                    <div class="col position-relative py-5">
-                                        <div class="col-11 position-absolute top-0 start-50 translate-middle col-formulario_contacto">
-                                            <div class="row">
-                                                <!-- <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12"></div> -->
-                                                <div class="col-xxl-12 col-xl-11 col-lg-11 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto fw-bolder text-white mx-5">
-                                                    <div class="row">
-                                                        <div class="col-xxl-12 col-xl-11 col-lg-11 col-md-12 col-sm-10 col-xs-11 col-10 mx-auto position-relative shadow-sm col-amarilla2" style="background-color: #FFEC23;">
-                                                            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-50 translate-middle shadow-sm col-verde2" style="background-color: white;">
-                                                                <div class="row py-3">
-                                                                    <div class="col-9 mx-auto position-relative">
-                                                                        <form>
-                                                                            <div class="row form-group">
-                                                                                <label for="nombre" class="form-label text-dark fs-3">Nombre</label>
-                                                                                <input type="text" class="form-control py-4 rounded-0 border border-2 border-dark">
-                                                                            </div>
-                                                                            <div class="row mt-3 form-group">
-                                                                                <label for="email" class="form-label text-dark fs-3">Email</label>
-                                                                                <input type="mail" class="form-control py-4 rounded-0 border border-2 border-dark">
-                                                                            </div>
-                                                                            <div class="row mt-3 form-group">
-                                                                                <label for="telefono" class="form-label text-dark fs-3">Email</label>
-                                                                                <input type="number" class="form-control py-4 rounded-0 border border-2 border-dark">
-                                                                            </div>
-                                                                            <div class="row mt-3 form-group">
-                                                                                <label for="mensaje" class="form-label text-dark fs-3">Mensaje</label>
-                                                                                <textarea class="form-control rounded-0 border border-2 border-dark" name="" id="" cols="20" rows="6" style="resize: none;"></textarea>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>        
-                                                            </div>
-                                                            <a href="#/">
-                                                                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-6 col-xs-6 col-7 fs-4 fw-semibolder text-dark py-4 position-absolute top-100 start-50 translate-middle text-center btn-contact" style="background-color: #FFEC23;">
-                                                                    Ver Más
+                                    <div class="col-11 mx-auto py-5 text-start">
+                                        <a href="" uk-icon="icon: whatsapp; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                                        <a href="" uk-icon="icon: facebook; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                                        <a href="" uk-icon="icon: instagram; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 position-relative py-5">
+                                <div class="col-12 py-5 position-absolute top-0 start-50 translate-middle-x">
+                                    <div class="row">
+                                        <div class="col position-relative py-5">
+                                            <div class="col-11 position-absolute top-0 start-50 translate-middle col-formulario_contacto">
+                                                <div class="row">
+                                                    <!-- <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12"></div> -->
+                                                    <div class="col-xxl-12 col-xl-11 col-lg-11 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto fw-bolder text-white mx-5">
+                                                        <div class="row">
+                                                            <div class="col-xxl-12 col-xl-11 col-lg-11 col-md-12 col-sm-10 col-xs-11 col-10 mx-auto position-relative shadow-sm col-amarilla2" style="background-color: #FFEC23;">
+                                                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-50 translate-middle shadow-sm col-verde2" style="background-color: white;">
+                                                                    <div class="row py-3">
+                                                                        <div class="col-9 mx-auto position-relative">
+                                                                            <form>
+                                                                                <div class="row form-group">
+                                                                                    <label for="nombre" class="form-label text-dark fs-3">Nombre</label>
+                                                                                    <input type="text" class="form-control py-4 rounded-0 border border-2 border-dark">
+                                                                                </div>
+                                                                                <div class="row mt-3 form-group">
+                                                                                    <label for="email" class="form-label text-dark fs-3">Email</label>
+                                                                                    <input type="mail" class="form-control py-4 rounded-0 border border-2 border-dark">
+                                                                                </div>
+                                                                                <div class="row mt-3 form-group">
+                                                                                    <label for="telefono" class="form-label text-dark fs-3">Email</label>
+                                                                                    <input type="number" class="form-control py-4 rounded-0 border border-2 border-dark">
+                                                                                </div>
+                                                                                <div class="row mt-3 form-group">
+                                                                                    <label for="mensaje" class="form-label text-dark fs-3">Mensaje</label>
+                                                                                    <textarea class="form-control rounded-0 border border-2 border-dark" name="" id="" cols="20" rows="6" style="resize: none;"></textarea>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>        
                                                                 </div>
-                                                            </a>
+                                                                <a href="#/">
+                                                                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-6 col-xs-6 col-7 fs-4 fw-semibolder text-dark py-4 position-absolute top-100 start-50 translate-middle text-center btn-contact" style="background-color: #FFEC23;">
+                                                                        Ver Más
+                                                                    </div>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <!--Google map  map-container-->
-                    <div id="map-container-google-1" class="z-depth-1-half" style="">
-                       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14934.698168984944!2d-103.3966255!3d20.6421186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae0ed241a9bb%3A0xbb4c3906c38265fd!2sWozial%20Marketing%20Lovers!5e0!3m2!1ses-419!2smx!4v1685136732153!5m2!1ses-419!2smx" width="100%" height="1000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <!--Google map  map-container-->
+                        <div id="" class="" style="">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14934.698168984944!2d-103.3966255!3d20.6421186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae0ed241a9bb%3A0xbb4c3906c38265fd!2sWozial%20Marketing%20Lovers!5e0!3m2!1ses-419!2smx!4v1685136732153!5m2!1ses-419!2smx" width="100%" height="1000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <!--Google Maps-->
                     </div>
-                    <!--Google Maps-->
                 </div>
             </div>
-        </div>
+
+            <div class="col-12 d-flex justify-content-center align-items-center flex-column  position-absolute top-0 bottom-0 start-0 cuadr">
+                <a href="{{ route('config.contact') }}" class="btn btn-outline" style="font-size: 60px; font-weight: bold;">Click en este boton para poder editar</a>
+            </div>
+        </div>    
     </div>
 
 @endsection
 
 @section('jsLibExtras2')
+
+<script>
+    $('#input_contacto-static').change(function(e) {
+		$('#form_contacto-static').trigger('submit');
+	});
+</script>
 
 @endsection
 
