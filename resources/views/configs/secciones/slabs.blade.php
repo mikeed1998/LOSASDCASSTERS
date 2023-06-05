@@ -507,7 +507,7 @@
                     @csrf
                     <input type="hidden" name="id_static" value="{{ $elements[25]->id }}">
                     <input id="input_logon-static" class="m-0 p-0" type="file" name="archivo_s">
-                    <label class="col-12 m-0 p-2 d-flex display-5 justify-content-center align-items-center grande" for="input_logon-static" style="opacity: 100%; border-radius: 26px; height: 300px;">Cambiar imagen</label>
+                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_logon-static" style="opacity: 100%; border-radius: 26px; height: 300px;">Cambiar imagen</label>
                 </form>
                 <div class="col-12 position-absolute top-50 start-50 translate-middle">
                     <div class="row py-5">
@@ -565,14 +565,17 @@
                                 <div class="col position-relative">
                                     <div class="col-10 position-absolute top-50 start-50 translate-middle contenedor-imagen_interna">
                                         <div class="col position-relative">
-                                            <img src="{{ asset('img/design/soluciones/losas/losas_imagen.png') }}" alt="" class="img-fluid contenedor-imagen_interna--imagen">
+                                            <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[30]->imagen) }}" alt="" class="img-fluid contenedor-imagen_interna--imagen">
 
-                                            <div class="col position-absolute py-5 bg-dark top-50">
-
+                                            <div class="col position-absolute py-5 top-50">
+                                                <form id="form_imgn-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <input type="hidden" name="id_static" value="{{ $elements[30]->id }}">
+                                                    <input id="input_imgn-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                    <label class="col-6 mx-auto m-0 p-2 d-flex justify-content-center align-items-center" for="input_imgn-static" style="opacity: 100%; color: white; border-radius: 26px; height: 100px;">Cambiar imagen</label>
+                                                </form>
                                             </div>
                                         </div>
-                                        
-                                           
                                     </div>
                                 </div>
                             </div>
@@ -598,12 +601,12 @@
                         </div>
                         <div class="row">
                             <div class="col py-3 fs-2 fw-bolder">
-                                LIGERAS
+                                <textarea class="form-control bg-transparent fs-2 fw-bolder text-center text-white editarajax" rows="1" name="texto" data-id="{{ $elements[31]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[31]->texto }}</textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col fs-5 px-5 fw-normal">
-                                Gracias al mineralizado microcelular, su peso es muy bajo. (peso aproximado de 43 kg c/u)
+                                <textarea class="form-control fs-5 fw-normal bg-transparent text-center text-white editarajax" rows="16" name="texto" data-id="{{ $elements[32]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[32]->texto }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -615,12 +618,15 @@
                         </div>
                         <div class="row">
                             <div class="col py-3 fs-2 fw-bolder">
-                                RESISTENTES
+                                
+                                <textarea style="color: #388050;" class="form-control bg-transparent fs-2 fw-bolder text-center editarajax" rows="1" name="texto" data-id="{{ $elements[33]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[33]->texto }}</textarea>
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col fs-5 px-5 fw-normal">
-                                Su capacidad de carga es de una tonelada por m2, debido al armazón de acero con el cual están armadas en su interio, de esta manera se evita el uso de malla y capa de comprensión
+                                <textarea style="color: #388050;" class="form-control fs-5 fw-normal bg-transparent text-center editarajax" rows="16" name="texto" data-id="{{ $elements[34]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[34]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -632,12 +638,15 @@
                         </div>
                         <div class="row">
                             <div class="col py-3 fs-2 fw-bolder">
-                                TÉRMICAS
+                                
+                                <textarea class="form-control bg-transparent fs-2 fw-bolder text-center text-white editarajax" rows="1" name="texto" data-id="{{ $elements[35]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[35]->texto }}</textarea>
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col fs-5 px-5 fw-normal">
-                                Por las cualidades físicas del jal y del mineral perlita, le permite actuar como un aislante térmico y acústico
+                                <textarea class="form-control fs-5 fw-normal bg-transparent text-center text-white editarajax" rows="16" name="texto" data-id="{{ $elements[36]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[36]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -653,12 +662,15 @@
                         </div>
                         <div class="row">
                             <div class="col py-3 fs-2 fw-bolder">
-                                ADAPTABLE
+                                
+                                <textarea style="color: #388050;" class="form-control bg-transparent fs-2 fw-bolder text-center editarajax" rows="1" name="texto" data-id="{{ $elements[37]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[37]->texto }}</textarea>
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col fs-5 px-5 fw-normal">
-                                No requieren de cimbra porque se adapta a cualquier elemento de soporte. Puede ser utilizada en viga, viguería de acero, clavarse, perforarse y cortarse en cualquier sentido que se le requiera evitando desperdicio y dándole limpieza a su obra
+                                <textarea style="color: #388050;" class="form-control fs-5 fw-normal bg-transparent text-center editarajax" rows="16" name="texto" data-id="{{ $elements[38]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[38]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -670,12 +682,14 @@
                         </div>
                         <div class="row">
                             <div class="col py-3 fs-2 fw-bolder">
-                                VELOCIDAD DE OBRA
+                                <textarea class="form-control bg-transparent fs-2 fw-bolder text-center text-white editarajax" rows="1" name="texto" data-id="{{ $elements[39]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[39]->texto }}</textarea>
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col fs-5 px-5 fw-normal">
-                                Su rápida y fácil instalación reduce en gran medida los costos, al aumnetar la velocidad de obra incrementando el ahorro. Hasta 300 m2 por día con 4 personas lo que reduce el costo total de la obra y el tiempo de su realización ya que no requiere de mano de obra calificada
+                                <textarea class="form-control fs-5 fw-normal bg-transparent text-center text-white editarajax" rows="16" name="texto" data-id="{{ $elements[40]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[40]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -687,12 +701,14 @@
                         </div>
                         <div class="row">
                             <div class="col py-3 fs-2 fw-bolder">
-                                NORMATIVIDAD Y SOPORTE TÉCNICO
+                                <textarea style="color: #388050;" class="form-control bg-transparent fs-2 fw-bolder text-center editarajax" rows="1" name="texto" data-id="{{ $elements[41]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[41]->texto }}</textarea>
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col fs-5 px-5 fw-normal">
-                                Cumple con los reglamentos de construcción del D.F. y Jalisco, ha sido respaldado por diversos organismos de prestigio en su base e control de calidad, prueba de laboratorio IMC y C (instituto mexicano del cemento y del concreto A.C.)
+                                <textarea style="color: #388050;" class="form-control fs-5 fw-normal bg-transparent text-center editarajax" rows="16" name="texto" data-id="{{ $elements[42]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[42]->texto }}</textarea>
+
                             </div>
                         </div>
                     </div>
@@ -717,14 +733,21 @@
                             <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #388050; width: 150px; height: 150px; display: flex; align-items: center;" >
                                 <div class="m-0 p-0" style="
                                     background-color: #388050;
-                                    background-image: url('{{ asset('img/design/soluciones/losas/colocacion_01.png') }}');
+                                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[43]->imagen) }}');
                                     background-position: center center;
                                     background-repeat: no-repeat;
                                     background-size: contain;
                                     width: 100%;
                                     height: 100px;
                                     margin: auto;
-                                "></div>
+                                ">
+                                    <form id="form_colocacion1-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="id_static" value="{{ $elements[43]->id }}">
+                                        <input id="input_colocacion1-static" class="m-0 p-0" type="file" name="archivo_s">
+                                        <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_colocacion1-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                    </form>
+                                </div>
                             </div>
                             <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
                                 Subir y nivelar las vigas
@@ -736,14 +759,21 @@
                             <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #388050; width: 150px; height: 150px; display: flex; align-items: center;" >
                                 <div class="m-0 p-0" style="
                                     background-color: #388050;
-                                    background-image: url('{{ asset('img/design/soluciones/losas/colocacion_02.png') }}');
+                                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[45]->imagen) }}');
                                     background-position: center center;
                                     background-repeat: no-repeat;
                                     background-size: contain;
                                     width: 100%;
                                     height: 100px;
                                     margin: auto;
-                                "></div>
+                                ">
+                                    <form id="form_colocacion2-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="id_static" value="{{ $elements[45]->id }}">
+                                        <input id="input_colocacion2-static" class="m-0 p-0" type="file" name="archivo_s">
+                                        <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_colocacion2-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                    </form>
+                                </div>
                             </div>
                             <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
                                 Colocación de las Losas D´Casster´s
@@ -755,14 +785,21 @@
                             <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #388050; width: 150px; height: 150px; display: flex; align-items: center;" >
                                 <div class="m-0 p-0" style="
                                     background-color: #388050;
-                                    background-image: url('{{ asset('img/design/soluciones/losas/colocacion_03.png') }}');
+                                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[47]->imagen) }}');
                                     background-position: center center;
                                     background-repeat: no-repeat;
                                     background-size: contain;
                                     width: 100%;
                                     height: 100px;
                                     margin: auto;
-                                "></div>
+                                ">
+                                    <form id="form_colocacion3-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="id_static" value="{{ $elements[47]->id }}">
+                                        <input id="input_colocacion3-static" class="m-0 p-0" type="file" name="archivo_s">
+                                        <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_colocacion3-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                    </form>
+                                </div>
                             </div>
                             <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
                                 Aplicación de lechada
@@ -774,14 +811,21 @@
                             <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #388050; width: 150px; height: 150px; display: flex; align-items: center;" >
                                 <div class="m-0 p-0" style="
                                     background-color: #388050;
-                                    background-image: url('{{ asset('img/design/soluciones/losas/colocacion_04.png') }}');
+                                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[49]->imagen) }}');
                                     background-position: center center;
                                     background-repeat: no-repeat;
                                     background-size: contain;
                                     width: 100%;
                                     height: 100px;
                                     margin: auto;
-                                "></div>
+                                ">
+                                    <form id="form_colocacion4-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="id_static" value="{{ $elements[49]->id }}">
+                                        <input id="input_colocacion4-static" class="m-0 p-0" type="file" name="archivo_s">
+                                        <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_colocacion4-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                    </form>
+                                </div>
                             </div>
                             <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
                                 Aplicación de hormigón de terminados y nivelaciones
@@ -825,6 +869,26 @@
 
     $('#input_logon2-static').change(function(e) {
 		$('#form_logon2-static').trigger('submit');
+	});
+
+    $('#input_imgn-static').change(function(e) {
+		$('#form_imgn-static').trigger('submit');
+	});
+
+    $('#input_colocacion1-static').change(function(e) {
+		$('#form_colocacion1-static').trigger('submit');
+	});
+
+    $('#input_colocacion2-static').change(function(e) {
+		$('#form_colocacion2-static').trigger('submit');
+	});
+
+    $('#input_colocacion3-static').change(function(e) {
+		$('#form_colocacion3-static').trigger('submit');
+	});
+
+    $('#input_colocacion4-static').change(function(e) {
+		$('#form_colocacion4-static').trigger('submit');
 	});
 </script>
 @endsection
