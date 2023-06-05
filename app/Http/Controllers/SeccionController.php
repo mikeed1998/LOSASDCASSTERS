@@ -270,6 +270,37 @@ class SeccionController extends Controller
         return redirect()->back();
     }
 
+    public function delSide(SliderPrincipal $side) {
+        $imgDel = 'img2/photos/slider_principal/'.$side->imagen;
+        unlink($imgDel);
+
+        $side->delete();
+
+        return redirect()->back();
+    }
+
+    
+    public function delVideoSide(SliderVideo $videoside) {
+
+        if($videoside->tipo == 1) {
+            $ividDel = 'img2/photos/slider_videos/'.$videoside->archivo;
+            unlink($ividDel);
+        }
+
+        $videoside->delete();
+
+        return redirect()->back();
+    }
+
+    public function delProceso(ProcesoPerlitaMineral $proceso) {
+        $imgDel = 'img2/photos/perlita_mineral/'.$proceso->foto;
+        unlink($imgDel);
+
+        $proceso->delete();
+
+        return redirect()->back();
+    }
+
     /**
      * Remove the specified resource from storage.
      *

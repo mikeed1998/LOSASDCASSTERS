@@ -1150,6 +1150,14 @@
                                                             "></div>
                                                         </div>                
                                                     </div>
+                                                    <div class="col-3 py-2 position-absolute top-0 end-0 bg-danger">
+                                                        <form action="{{ route('config.seccion.delProceso', [$pp->id]) }}" method="POST" style="display: inline;">						
+                                                            @csrf
+                                                            @method('DELETE') 
+                                                            <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash-alt"></i></button>
+                                                        </form>
+                                                        
+                                                    </div>
                                                 </div>
                                             </div>        
                                         </div>

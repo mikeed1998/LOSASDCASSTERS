@@ -143,6 +143,10 @@ Route::prefix('admin')->group(function(){
 			/////////////////////////////////////// NOSOTROS /////////////////////////////////////// 
 			Route::post('/certificacionesSlider','SeccionController@certificacionesSlider')->name('certificacionesSlider');
 			/////////////////////////////////////// NOSOTROS /////////////////////////////////////// 
+
+			Route::delete('/delSide/{side}', 'SeccionController@delSide')->name('delSide');
+			Route::delete('/delVideoSide/{videoside}', 'SeccionController@delVideoSide')->name('delVideoSide');
+			Route::delete('/delProceso/{proceso}', 'SeccionController@delProceso')->name('delProceso');
 			
 			
 			

@@ -1794,6 +1794,15 @@
                                 </div>  
                             </div> --}}
                         </div>
+
+                        <div class="col-1 py-3 bg-danger position-absolute top-0 end-0">
+                            <form action="{{ route('config.seccion.delSide', [$sl->id]) }}" method="POST" style="display: inline;">						
+                                @csrf
+                                @method('DELETE') 
+                                <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash"></i></button>
+                            </form>
+                        </div>
+
                             <!-- <img src="https://picsum.photos/200" alt="" style="width: 100%; height: 1000px;"> -->
                         </div>
                     @endforeach
@@ -2073,6 +2082,13 @@
                                                 </video> 
                                             </div>
                                         </div>
+                                        <div class="col-1 py-3 bg-danger position-absolute top-0 end-0">
+                                            <form action="{{ route('config.seccion.delVideoSide', [$sv->id]) }}" method="POST" style="display: inline;">						
+                                                @csrf
+                                                @method('DELETE') 
+                                                <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash"></i></button>
+                                            </form>
+                                        </div>
                                     </div>                         
                                 @elseif ($sv->tipo == 0)
                                     <div class="col position-relative z-1">
@@ -2080,6 +2096,14 @@
                                             <div class="col mb-3">
                                                 <iframe width="100%" class="video_s" src="https://www.youtube.com/embed/{{ $sv->link }}?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                             </div>
+                                        </div>
+
+                                        <div class="col-1 py-3 bg-danger position-absolute top-0 end-0">
+                                            <form action="{{ route('config.seccion.delVideoSide', [$sv->id]) }}" method="POST" style="display: inline;">						
+                                                @csrf
+                                                @method('DELETE') 
+                                                <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash"></i></button>
+                                            </form>
                                         </div>
                                     </div>
                                 @else

@@ -605,7 +605,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fs-5 px-5 fw-normal">
+                            <div class="col fs-5 fw-normal">
                                 <textarea class="form-control fs-5 fw-normal bg-transparent text-center text-white editarajax" rows="16" name="texto" data-id="{{ $elements[32]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[32]->texto }}</textarea>
                             </div>
                         </div>
@@ -624,7 +624,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fs-5 px-5 fw-normal">
+                            <div class="col fs-5 fw-normal">
                                 <textarea style="color: #388050;" class="form-control fs-5 fw-normal bg-transparent text-center editarajax" rows="16" name="texto" data-id="{{ $elements[34]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[34]->texto }}</textarea>
 
                             </div>
@@ -644,7 +644,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fs-5 px-5 fw-normal">
+                            <div class="col fs-5 fw-normal">
                                 <textarea class="form-control fs-5 fw-normal bg-transparent text-center text-white editarajax" rows="16" name="texto" data-id="{{ $elements[36]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[36]->texto }}</textarea>
 
                             </div>
@@ -668,7 +668,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fs-5 px-5 fw-normal">
+                            <div class="col fs-5 fw-normal">
                                 <textarea style="color: #388050;" class="form-control fs-5 fw-normal bg-transparent text-center editarajax" rows="16" name="texto" data-id="{{ $elements[38]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[38]->texto }}</textarea>
 
                             </div>
@@ -687,7 +687,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fs-5 px-5 fw-normal">
+                            <div class="col fs-5 fw-normal">
                                 <textarea class="form-control fs-5 fw-normal bg-transparent text-center text-white editarajax" rows="16" name="texto" data-id="{{ $elements[40]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[40]->texto }}</textarea>
 
                             </div>
@@ -706,7 +706,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fs-5 px-5 fw-normal">
+                            <div class="col fs-5 fw-normal">
                                 <textarea style="color: #388050;" class="form-control fs-5 fw-normal bg-transparent text-center editarajax" rows="16" name="texto" data-id="{{ $elements[42]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[42]->texto }}</textarea>
 
                             </div>

@@ -63,19 +63,19 @@
 							<a href="{{ route('config.politica.index') }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/politicas')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-shield-alt"></i> Políticas </a>
 						</li>
 						<li>
-							<a href="{{ route('config.seccion.show', ['slug' => 'home']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_home')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-home"></i> Home </a>
+							<a href="{{ route('config.seccion.show', ['slug' => 'home']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/secciones/home')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-home"></i> Home </a>
 						</li>
 						<li>
-							<a href="{{ route('config.seccion.show', ['slug' => 'slabs']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_losas')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fa fa-info-circle"></i> Losas D´Casster´s </a>
+							<a href="{{ route('config.seccion.show', ['slug' => 'slabs']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/secciones/slabs')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fa fa-info-circle"></i> Losas D´Casster´s </a>
 						</li>
 						<li>
-							<a href="{{ route('config.seccion.show', ['slug' => 'perlite']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_perlita_mineral')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fab fa-servicestack"></i> Perlita Mineral </a>
+							<a href="{{ route('config.seccion.show', ['slug' => 'perlite']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/secciones/perlite')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fab fa-servicestack"></i> Perlita Mineral </a>
 						</li>
 						<li>
-							<a href="{{ route('config.seccion.show', ['slug' => 'projects']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_proyectos')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-search-plus"></i> Proyectos </a>
+							<a href="{{ route('config.seccion.show', ['slug' => 'projects']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/secciones/projects')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-search-plus"></i> Proyectos </a>
 						</li>
 						<li>
-							<a href="{{ route('config.seccion.show', ['slug' => 'about-us']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/seccion_nosotros')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-school"></i> Nosotros </a>
+							<a href="{{ route('config.seccion.show', ['slug' => 'about-us']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config/secciones/about-us')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-school"></i> Nosotros </a>
 						</li> 
 						<li>
 							<a href="{{ route('config.seccion.show', ['slug' => 'contact']) }}" class="mx-3 my-1 collapsible-header waves-effect {{ (request()->is('admin/config*')) ? 'active' : '' }}" style="border-radius: 16px;"><i class="fas fa-paper-plane"></i> Contacto </a>
