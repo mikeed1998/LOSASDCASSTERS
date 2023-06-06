@@ -708,7 +708,7 @@
     <div class="row">
         <div class="col position-relative slider-principal" style="
             background-color: black;
-            background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[51]->imagen) }}');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -718,7 +718,7 @@
             <div class="col-12 position-absolute top-50 start-50 translate-middle">
                 <div class="row py-5">
                     <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                        <div class="titulo-slider_principal" style=""><strong>Perlita Mineral </strong></div>
+                        <div class="titulo-slider_principal" style=""><strong>{{ $elements[52]->texto }}</strong></div>
                     </div>
                 </div>
                 <div class="row">
@@ -730,7 +730,7 @@
                             py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
                             px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
                             btn-contacto" style="background-color: #3867AD; color: #FFEC23; text-decoration: none;">
-                            <h3 class="m-0 px-5" style="color: #FFEC23;">
+                            <h3 href="{{ route('front.contacto') }}" class="m-0 px-5" style="color: #FFEC23;">
                                 <strong>
                                     Contacto
                                 </strong>
@@ -749,12 +749,12 @@
             <div class="row mb-5">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-2 col-sm-12 col-xs-12 col-12"></div>
                 <div class="col-xxl-4 col-xl-7 col-lg-7 col-md-6 col-sm-12 col-xs-12 col-12  display-2 fw-bold text-end px-5 py-0">
-                    Perlita Mineral
+                    {{ $elements[53]->texto }}
                 </div>
                 <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12" style="background-color: #F5F5F5; height: 200px; display: flex; align-items: center;" >
                     <div class="m-0 p-0" style="
                         background-color: #F5F5F5;
-                        background-image: url('{{ asset('img/design/home/icono_02.png') }}');
+                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[54]->imagen) }}');
                         background-position: center center;
                         background-repeat: no-repeat;
                         width: 100%;
@@ -772,11 +772,7 @@
                             <div class="card border-0 bg-transparent">
                                 <div class="card-body border-0 bg-transparent contenedor-texto_scroll">
                                     <p class="text-white">
-                                        Lorem ipsum dolor sit amet iusto? Exercitationem laudantium molestias minus nesciunt nostrum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
-                                    </p>
-                                    <p class="text-white">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque consequuntur dolor iusto? Exercitationem laudantium molestias minus nesciunt nostrum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
-                                        Lorem ipsuem strum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
+                                        {{ $elements[56]->texto }}
                                     </p>
                                 </div>
                             </div>    
@@ -786,7 +782,7 @@
                         <div class="row">
                             <div class="col position-relative">
                                 <div class="col-12 position-absolute top-50 start-0 translate-middle contenedor-imagen_interna">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/imagen_perlita.png') }}" alt="" class="img-fluid contenedor-imagen_interna--imagen">
+                                    <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[55]->imagen) }}" alt="" class="img-fluid contenedor-imagen_interna--imagen">
                                 </div>
                             </div>
                         </div>
@@ -806,106 +802,20 @@
             <div class="row py-5">
                 <div class="col mx-auto">
                     <div class="row">
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
+
+                        @foreach ($ventajas as $ve)
+                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
+                                        {{ $ve->texto }}
+                                    </div>
                                 </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    AISLAMIENTO TÉRMICO
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    INCOMBUSTIBLE
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    AISLAMIENTO ACÚSTICO
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    RECIBE CUALQUIER TIPO DE IMPERMEABILIZANTE
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    ULTRA LIGERO
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    PROPORCIONA PENDIENTES Y RELLENA HUECOS
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    FÁCIL DE APICAR
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    NO SE PUDRE NI SE DEGRADA
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                    SU TIEMPO DE VIDA ES ILIMITADO
-                                </div>
-                            </div>
-                        </div>
+                            </div>    
+                        @endforeach
+                        
                     </div>
                 </div>
             </div>
@@ -929,7 +839,7 @@
                         <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #3867AD; width: 150px; height: 150px; display: flex; align-items: center;" >
                             <div class="m-0 p-0" style="
                                 background-color: #3867AD;
-                                background-image: url('{{ asset('img/design/soluciones/perlita_mineral/mezclado_01.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[56]->imagen) }}');
                                 background-position: center center;
                                 background-repeat: no-repeat;
                                 background-size: contain;
@@ -939,7 +849,7 @@
                             "></div>
                         </div>
                         <div class="col-7 mx-auto py-2 fs-3 fw-bolder" style="color: #3867AD;">
-                            Agregar el cemento y mezclar hasta formar una lechada uniforme
+                            {{ $elements[57]->texto }}
                         </div>
                     </div>
                 </div>
@@ -948,7 +858,7 @@
                         <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #3867AD; width: 150px; height: 150px; display: flex; align-items: center;" >
                             <div class="m-0 p-0" style="
                                 background-color: #3867AD;
-                                background-image: url('{{ asset('img/design/soluciones/perlita_mineral/mezclado_02.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[58]->imagen) }}');
                                 background-position: center center;
                                 background-repeat: no-repeat;
                                 background-size: contain;
@@ -959,7 +869,7 @@
                         </div>
                         
                         <div class="col-xxl-4 col-md-6 col-12 text-xxl-start text-md-start text-center mx-auto py-2 fs-1 fw-bolder" style="color: #3867AD;">
-                            Vaciar el agua
+                            {{ $elements[59]->texto }}
                         </div>
                         <div class="col-xxl-3 col-md-1 col-12"></div>
                     </div>
@@ -969,7 +879,7 @@
                         <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #3867AD; width: 150px; height: 150px; display: flex; align-items: center;" >
                             <div class="m-0 p-0" style="
                                 background-color: #3867AD;
-                                background-image: url('{{ asset('img/design/soluciones/perlita_mineral/mezclado_03.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[60]->imagen) }}');
                                 background-position: center center;
                                 background-repeat: no-repeat;
                                 background-size: contain;
@@ -979,7 +889,7 @@
                             "></div>
                         </div>
                         <div class="col-7 mx-auto py-0 fs-4 fw-bolder" style="color: #3867AD;">
-                            Agregar y revolver hasta que el mortero presente la plasticidad y homogeneidad adecuada para su aplicación
+                            {{ $elements[61]->texto }}
                         </div>
                     </div>
                 </div>
@@ -1001,6 +911,8 @@
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto">               
                     <div class="row">
                         <div class="slider-proyectos">
+
+                            @foreach ($perlita as $pe)
                             <div>
                                 <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
                                     <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
@@ -1008,14 +920,9 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">{{ $pe->nombre }}</p>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div> -->
                                                 <div class="row py-5">
                                                     <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
                                                 </div>
@@ -1023,7 +930,7 @@
                                                     <div class="col">
                                                         <div class="imagen-proyectos" style="
                                                             background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
+                                                            background-image: url('{{ asset('img2/photos/perlita_mineral/'.$pe->foto) }}');
                                                             background-size: cover;
                                                             background-repeat: no-repeat;
                                                             width: 100%;       
@@ -1034,211 +941,9 @@
                                         </div>        
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div> -->
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div> -->
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div> -->
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div> -->
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div> -->
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre de Proceso</p>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div> -->
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
+                            </div>    
+                            @endforeach
+                            
                         </div>
                     </div>    
                 </div>

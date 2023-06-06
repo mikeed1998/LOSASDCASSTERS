@@ -779,7 +779,7 @@
     <div class="row">
         <div class="col position-relative slider-principal" style="
             background-color: black;
-            background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[62]->imagen) }}');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -789,7 +789,7 @@
             <div class="col-12 position-absolute top-50 start-50 translate-middle">
                 <div class="row py-5">
                     <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                        <div class="titulo-slider_principal" style=""><strong>Empresas que llevan nuestro producto</strong></div>
+                        <div class="titulo-slider_principal" style=""><strong>{{ $elements[63]->texto }}</strong></div>
                     </div>
                 </div>
             </div>
@@ -806,6 +806,8 @@
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto">               
                     <div class="row">
                         <div class="slider-proyectos">
+                        
+                            @foreach ($proyectos as $pro)
                             <div>
                                 <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
                                     <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
@@ -813,12 +815,12 @@
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
+                                                        <p class="fs-3" style="color: #FFEC23;">{{ $pro->nombre }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
+                                                    <div class="col-11 mx-auto text-center text-white fs-5 px-5 con-scroll">
+                                                        {{ $pro->descripcion }}
                                                     </div>
                                                 </div>
                                                 <div class="row py-5">
@@ -828,7 +830,7 @@
                                                     <div class="col">
                                                         <div class="imagen-proyectos" style="
                                                             background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
+                                                            background-image: url('{{ asset('img2/photos/proyectos/'.$pro->foto) }}');
                                                             background-size: cover;
                                                             background-repeat: no-repeat;
                                                             width: 100%;       
@@ -839,347 +841,9 @@
                                         </div>        
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mt-5 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-3" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
+                            </div>        
+                            @endforeach
+                        
                         </div>
                     </div>    
                 </div>
@@ -1205,61 +869,21 @@
                 <div class="col-9 text-center mx-auto">
                     <div class="row">
                         <div class="clientes">
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/home/cliente_01.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/home/cliente_02.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/home/cliente_03.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/home/cliente_04.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/home/cliente_04.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
+
+                            @foreach ($clientes as $cl)
+                                <div class="col-3 text-center d-flex align-items-center justify-content-center">
+                                    <div class="" style="
+                                        background-color: ;
+                                        background-image: url('{{ asset('img2/photos/clientes/'.$cl->logo) }}');
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                        background-position: center center;
+                                        width: 100%;  
+                                        height: 200px;     
+                                    "></div>
+                                </div>
+                            @endforeach
+                            
                         </div>
                     </div>
                 </div>

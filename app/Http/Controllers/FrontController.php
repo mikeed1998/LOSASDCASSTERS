@@ -143,21 +143,28 @@ class FrontController extends Controller
 	}
 
 	public function losas() {
+		$elements = Elemento::all();
 		$config = Configuracion::first();
 
-		return view('front.losas');
+		return view('front.losas', compact('elements'));
 	}
 
 	public function perlita() {
+		$elements = Elemento::all();
 		$config = Configuracion::first();
+		$perlita = ProcesoPerlitaMineral::all();
+		$ventajas = VentajasUso::all();
 
-		return view('front.perlita');
+		return view('front.perlita', compact('elements', 'perlita', 'ventajas'));
 	}
 
 	public function proyectos() {
 		$config = Configuracion::first();
+		$proyectos = Proyecto::all();
+        $clientes = Cliente::all();
+		$elements = Elemento::all();
 
-		return view('front.proyectos');
+		return view('front.proyectos', compact('proyectos', 'clientes', 'elements'));
 	}
 
 	public function details(Producto $product){

@@ -449,7 +449,7 @@
     <div class="row">
         <div class="col position-relative slider-principal" style="
             background-color: black;
-            background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[25]->imagen) }}');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -459,7 +459,7 @@
             <div class="col-12 position-absolute top-50 start-50 translate-middle">
                 <div class="row py-5">
                     <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                        <div class="titulo-slider_principal" style=""><strong>Losas D´CASSTER´S </strong></div>
+                        <div class="titulo-slider_principal" style=""><strong>{{ $elements[26]->texto }} </strong></div>
                     </div>
                 </div>
                 <div class="row">
@@ -471,7 +471,7 @@
                             py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
                             px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
                             btn-contacto" style="background-color: #388050; color: #FFEC23; text-decoration: none;">
-                            <h3 class="m-0 px-5" style="color: #FFEC23;">
+                            <h3 href="{{ route('front.contacto') }}" class="m-0 px-5" style="color: #FFEC23;">
                                 <strong>
                                     Contacto
                                 </strong>
@@ -492,7 +492,7 @@
                 <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12" style="background-color: #F5F5F5; height: 200px; display: flex; align-items: center;" >
                     <div class="m-0 p-0" style="
                         background-color: #F5F5F5;
-                        background-image: url('{{ asset('img/design/home/icono_01.png') }}');
+                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[27]->imagen) }}');
                         background-position: center center;
                         background-repeat: no-repeat;
                         width: 100%;
@@ -501,7 +501,7 @@
                     "></div>
                 </div>
                 <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-12 col-xs-12 col-12 display-2 fw-bold py-0">
-                    Losas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D´CASSTER´S
+                    {{ $elements[28]->texto }}
                 </div>
             </div>
             <div class="row contenedor-text_externo">
@@ -511,11 +511,7 @@
                             <div class="card border-0 bg-transparent">
                                 <div class="card-body border-0 bg-transparent contenedor-texto_scroll">
                                     <p class="text-white">
-                                        Lorem ipsum dolor sit amet iusto? Exercitationem laudantium molestias minus nesciunt nostrum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
-                                    </p>
-                                    <p class="text-white">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque consequuntur dolor iusto? Exercitationem laudantium molestias minus nesciunt nostrum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
-                                        Lorem ipsuem strum in! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum saepe quae voluptatum asperiores ipsam consequatur sint natus perspiciatis, pariatur excepturi quam, ad doloremque laudantium. Aut praesentium odit laudantium dolores?
+                                        {{ $elements[29]->texto }}
                                     </p>
                                 </div>
                             </div>    
@@ -525,8 +521,7 @@
                         <div class="row">
                             <div class="col position-relative">
                                 <div class="col-12 position-absolute top-50 start-50 translate-middle contenedor-imagen_interna">
-                                    <img src="{{ asset('img/design/soluciones/losas/losas_imagen.png') }}" alt="" class="img-fluid contenedor-imagen_interna--imagen">
-                                </div>
+                                    <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[30]->imagen) }}" alt="" class="img-fluid contenedor-imagen_interna--imagen">                                </div>
                             </div>
                         </div>
                     </div>
@@ -551,12 +546,12 @@
                     </div>
                     <div class="row">
                         <div class="col py-3 fs-2 fw-bolder">
-                            LIGERAS
+                            {{ $elements[31]->texto }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col fs-5 px-5 fw-normal">
-                            Gracias al mineralizado microcelular, su peso es muy bajo. (peso aproximado de 43 kg c/u)
+                            {{ $elements[32]->texto }}
                         </div>
                     </div>
                 </div>
@@ -568,12 +563,12 @@
                     </div>
                     <div class="row">
                         <div class="col py-3 fs-2 fw-bolder">
-                            RESISTENTES
+                            {{ $elements[33]->texto }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col fs-5 px-5 fw-normal">
-                            Su capacidad de carga es de una tonelada por m2, debido al armazón de acero con el cual están armadas en su interio, de esta manera se evita el uso de malla y capa de comprensión
+                            {{ $elements[34]->texto }}
                         </div>
                     </div>
                 </div>
@@ -585,12 +580,12 @@
                     </div>
                     <div class="row">
                         <div class="col py-3 fs-2 fw-bolder">
-                            TÉRMICAS
+                            {{ $elements[35]->texto }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col fs-5 px-5 fw-normal">
-                            Por las cualidades físicas del jal y del mineral perlita, le permite actuar como un aislante térmico y acústico
+                            {{ $elements[36]->texto }}
                         </div>
                     </div>
                 </div>
@@ -606,12 +601,12 @@
                     </div>
                     <div class="row">
                         <div class="col py-3 fs-2 fw-bolder">
-                            ADAPTABLE
+                            {{ $elements[37]->texto }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col fs-5 px-5 fw-normal">
-                            No requieren de cimbra porque se adapta a cualquier elemento de soporte. Puede ser utilizada en viga, viguería de acero, clavarse, perforarse y cortarse en cualquier sentido que se le requiera evitando desperdicio y dándole limpieza a su obra
+                            {{ $elements[38]->texto }}
                         </div>
                     </div>
                 </div>
@@ -623,12 +618,12 @@
                     </div>
                     <div class="row">
                         <div class="col py-3 fs-2 fw-bolder">
-                            VELOCIDAD DE OBRA
+                            {{ $elements[39]->texto }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col fs-5 px-5 fw-normal">
-                            Su rápida y fácil instalación reduce en gran medida los costos, al aumnetar la velocidad de obra incrementando el ahorro. Hasta 300 m2 por día con 4 personas lo que reduce el costo total de la obra y el tiempo de su realización ya que no requiere de mano de obra calificada
+                            {{ $elements[40]->texto }}
                         </div>
                     </div>
                 </div>
@@ -640,12 +635,12 @@
                     </div>
                     <div class="row">
                         <div class="col py-3 fs-2 fw-bolder">
-                            NORMATIVIDAD Y SOPORTE TÉCNICO
+                            {{ $elements[41]->texto }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col fs-5 px-5 fw-normal">
-                            Cumple con los reglamentos de construcción del D.F. y Jalisco, ha sido respaldado por diversos organismos de prestigio en su base e control de calidad, prueba de laboratorio IMC y C (instituto mexicano del cemento y del concreto A.C.)
+                            {{ $elements[42]->texto }}
                         </div>
                     </div>
                 </div>
@@ -670,7 +665,7 @@
                         <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #388050; width: 150px; height: 150px; display: flex; align-items: center;" >
                             <div class="m-0 p-0" style="
                                 background-color: #388050;
-                                background-image: url('{{ asset('img/design/soluciones/losas/colocacion_01.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[43]->imagen) }}');
                                 background-position: center center;
                                 background-repeat: no-repeat;
                                 background-size: contain;
@@ -680,7 +675,7 @@
                             "></div>
                         </div>
                         <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
-                            Subir y nivelar las vigas
+                            {{ $elements[44]->texto }}
                         </div>
                     </div>
                 </div>
@@ -689,7 +684,7 @@
                         <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #388050; width: 150px; height: 150px; display: flex; align-items: center;" >
                             <div class="m-0 p-0" style="
                                 background-color: #388050;
-                                background-image: url('{{ asset('img/design/soluciones/losas/colocacion_02.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[45]->imagen) }}');
                                 background-position: center center;
                                 background-repeat: no-repeat;
                                 background-size: contain;
@@ -699,7 +694,7 @@
                             "></div>
                         </div>
                         <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
-                            Colocación de las Losas D´Casster´s
+                            {{ $elements[46]->texto }}
                         </div>
                     </div>
                 </div>
@@ -708,7 +703,7 @@
                         <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #388050; width: 150px; height: 150px; display: flex; align-items: center;" >
                             <div class="m-0 p-0" style="
                                 background-color: #388050;
-                                background-image: url('{{ asset('img/design/soluciones/losas/colocacion_03.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[47]->imagen) }}');
                                 background-position: center center;
                                 background-repeat: no-repeat;
                                 background-size: contain;
@@ -718,7 +713,7 @@
                             "></div>
                         </div>
                         <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
-                            Aplicación de lechada
+                            {{ $elements[48]->texto }}
                         </div>
                     </div>
                 </div>
@@ -727,7 +722,7 @@
                         <div class="col-xxl-5 col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #388050; width: 150px; height: 150px; display: flex; align-items: center;" >
                             <div class="m-0 p-0" style="
                                 background-color: #388050;
-                                background-image: url('{{ asset('img/design/soluciones/losas/colocacion_04.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[49]->imagen) }}');
                                 background-position: center center;
                                 background-repeat: no-repeat;
                                 background-size: contain;
@@ -737,7 +732,7 @@
                             "></div>
                         </div>
                         <div class="col-7 mx-auto py-4 fs-3 fw-bolder" style="color: #388050;">
-                            Aplicación de hormigón de terminados y nivelaciones
+                            {{ $elements[50]->texto }}
                         </div>
                     </div>
                 </div>
