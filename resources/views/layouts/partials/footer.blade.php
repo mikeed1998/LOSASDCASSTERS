@@ -153,7 +153,7 @@
         <div class="row" style="background-color: #3C3C3C;">
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto text-center py-3">
                 <h3 class="m-0" style="color: #388050;">
-                    LOSAS D´CASTER´S 2023 TODOS LOS DERECHOS RESERVADOS DISEÑO POR WOZIAL
+                    LOSAS D´CASSTER´S 2023 TODOS LOS DERECHOS RESERVADOS DISEÑO POR WOZIAL
                 </h3>
             </div>
         </div>
