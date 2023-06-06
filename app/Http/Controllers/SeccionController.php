@@ -124,27 +124,82 @@ class SeccionController extends Controller
 
 
     public function imgStatic(Request $request) {
-        $elem = Elemento::find($request->id_static);
-        // dd($elem->imagen);
-        if ($request->hasFile('archivo_s')) {
-            $oldFile = $elem->imagen;
-            $file = $request->file('archivo_s');
-            $extension = $file->getClientOriginalExtension();
-            $namefile = Str::random(30).'.'.$extension;
 
-            \Storage::disk('local')->put("/img2/photos/imagenes_estaticas/".$namefile , \File::get($file));
-            \Storage::disk('local')->delete("/img2/photos/imagenes_estaticas/".$oldFile);
+        if($request->tipe == "perlita") {
+            $perlita = ProcesoPerlitaMineral::find($request->id_static);
+            
+            if ($request->hasFile('archivo_s')) {
+                $oldFile = $perlita->foto;
+                $file = $request->file('archivo_s');
+                $extension = $file->getClientOriginalExtension();
+                $namefile = Str::random(30).'.'.$extension;
+    
+                \Storage::disk('local')->put("/img2/photos/perlita_mineral/".$namefile , \File::get($file));
+                \Storage::disk('local')->delete("/img2/photos/perlita_mineral/".$oldFile);
+    
+                $perlita->foto = $namefile;
 
-            $elem->imagen = $namefile;
-        }
+                $perlita->update();
+                \Toastr::success('Guardado');
+                return redirect()->back();
+            }
+        } elseif($request->tipe == "proyecto"){
+            $proyecto = Proyecto::find($request->id_static);
+            
+            if ($request->hasFile('archivo_s')) {
+                $oldFile = $proyecto->foto;
+                $file = $request->file('archivo_s');
+                $extension = $file->getClientOriginalExtension();
+                $namefile = Str::random(30).'.'.$extension;
+    
+                \Storage::disk('local')->put("/img2/photos/proyectos/".$namefile , \File::get($file));
+                \Storage::disk('local')->delete("/img2/photos/proyectos/".$oldFile);
+    
+                $proyecto->foto = $namefile;
 
-        $elem->save();
-        \Toastr::success('Guardado');
-        return redirect()->back();
-    }
+                $proyecto->update();
+                \Toastr::success('Guardado');
+                return redirect()->back();
+        } else {
+            $elem = Elemento::find($request->id_static);
+            // dd($elem->imagen);
 
+            if ($request->hasFile('archivo_s')) {
+                $oldFile = $elem->imagen;
+                $file = $request->file('archivo_s');
+                $extension = $file->getClientOriginalExtension();
+                $namefile = Str::random(30).'.'.$extension;
 
+                \Storage::disk('local')->put("/img2/photos/imagenes_estaticas/".$namefile , \File::get($file));
+                \Storage::disk('local')->delete("/img2/photos/imagenes_estaticas/".$oldFile);
+
+                $elem->imagen = $namefile;
+            }
+
+            $elem->save();
+            \Toastr::success('Guardado');
+            return redirect()->back();
+        }        
+    }}
+
+    
     public function imgSider(Request $request) {
+        $perlita = ProcesoPerlitaMineral::find($request->id_static);
+            
+            if ($request->hasFile('archivo_s')) {
+                $oldFile = $perlita->foto;
+                $file = $request->file('archivo_s');
+                $extension = $file->getClientOriginalExtension();
+                $namefile = Str::random(30).'.'.$extension;
+    
+                \Storage::disk('local')->put("/img2/photos/perlita_mineral/".$namefile , \File::get($file));
+                \Storage::disk('local')->delete("/img2/photos/perlita_mineral/".$oldFile);
+    
+                $perlita->foto = $namefile;
+
+                $perlita->update();
+                \Toastr::success('Guardado');
+                return redirect()->back();
         $slider = new SliderPrincipal;
         // dd($request->archivo);
         if ($request->hasFile('archivo')) {
@@ -157,14 +212,15 @@ class SeccionController extends Controller
             $slider->imagen = $namefile;
         }
 
-        if ($request->video) {
-            $slider->video = $request->video;
-        }
+        // if ($request->video) {
+        //     $slider->video = $request->video;
+        // }
 
         $slider->save();
         \Toastr::success('Guardado');
         return redirect()->back();
     }
+}
 
 
     public function videoSider(Request $request) {
@@ -297,6 +353,15 @@ class SeccionController extends Controller
         unlink($imgDel);
 
         $proceso->delete();
+
+        return redirect()->back();
+    }
+
+    public function delProyecto(Proyecto $proyecto) {
+        $imgDel = 'img2/photos/proyectos/'.$proyecto->foto;
+        unlink($imgDel);
+
+        $proyecto->delete();
 
         return redirect()->back();
     }

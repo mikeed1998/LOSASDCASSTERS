@@ -1134,6 +1134,7 @@
                                                     <div class="row">
                                                         <div class="col mt-5 text-center">
                                                             <p class="fs-3" style="color: #FFEC23;">{{ $pp->nombre }}</p>
+                                                            <input class="form-control text-center bg-transparent editarajax" name="nombre" data-id="{{ $pp->id }}" data-table="ProcesoPerlitaMineral" data-campo="nombre" value="{{ $pp->nombre }}">
                                                         </div>
                                                     </div>
                                                     <div class="row py-5">
@@ -1147,7 +1148,15 @@
                                                                 background-size: cover;
                                                                 background-repeat: no-repeat;
                                                                 width: 100%;       
-                                                            "></div>
+                                                            ">
+                                                                <form id="form_perlimg-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <input type="hidden" name="tipe" value="perlita">
+                                                                    <input type="hidden" name="id_static" value="{{ $pp->id }}">
+                                                                    <input id="input_perlimg-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_perlimg-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                                                </form>
+                                                            </div>
                                                         </div>                
                                                     </div>
                                                     <div class="col-3 py-2 position-absolute top-0 end-0 bg-danger">
@@ -1223,6 +1232,10 @@
 
     $('#input_mezclado3-static').change(function(e) {
 		$('#form_mezclado3-static').trigger('submit');
+	});
+
+    $('#input_perlimg-static').change(function(e) {
+		$('#form_perlimg-static').trigger('submit');
 	});
 </script>
 <script>

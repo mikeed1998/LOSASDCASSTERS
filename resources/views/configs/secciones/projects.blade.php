@@ -1721,14 +1721,16 @@
                                         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
                                             <div class="row">
                                                 <div class="col position-relative">
-                                                    <div class="row">
+                                                    <div class="row mt-5">
                                                         <div class="col mt-5 text-center">
-                                                            <p class="fs-4" style="color: #FFEC23;">{{ $py->nombre }}</p>
+                                                            {{-- <p class="fs-4" style="color: #FFEC23;">{{ $py->nombre }}</p> --}}
+                                                            <input style="color: #FFEC23;" class="form-control fs-4 text-center bg-transparent editarajax" name="nombre" data-id="{{ $py->id }}" data-table="Proyecto" data-campo="nombre" value="{{ $py->nombre }}">
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row mb-2">
                                                         <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                            {{ $py->descripcion }}
+                                                            {{-- {{ $py->descripcion }} --}}
+                                                            <textarea class="form-control text-center bg-transparent fs-5 con-scroll text-white fw-bold editarajax" rows="3" name="descripcion" data-id="{{ $py->id }}" data-table="Proyecto" data-campo="descripcion">{{ $py->descripcion }}</textarea>
                                                         </div>
                                                     </div>
                                                     <div class="row py-5">
@@ -1742,8 +1744,23 @@
                                                                 background-size: cover;
                                                                 background-repeat: no-repeat;
                                                                 width: 100%;       
-                                                            "></div>
+                                                            ">
+                                                                <form id="form_proyect-static" action="imgStatic" method="POST"  class="file-upload mt-2 " style="" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <input type="hidden" name="tipe" value="proyecto">
+                                                                    <input type="hidden" name="id_static" value="{{ $py->id }}">
+                                                                    <input id="input_proyect-static" class="m-0 p-0" type="file" name="archivo_s">
+                                                                    <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center grande" for="input_proyect-static" style="opacity: 100%; border-radius: 26px;">Cambiar imagen</label>
+                                                                </form>
+                                                            </div>
                                                         </div>                
+                                                    </div>
+                                                    <div class="col-3 py-3 bg-danger position-absolute top-0 end-0">
+                                                        <form action="{{ route('config.seccion.delProyecto', [$py->id]) }}" method="POST" style="display: inline;">						
+                                                            @csrf
+                                                            @method('DELETE') 
+                                                            <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash"></i></button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>        
@@ -1823,6 +1840,10 @@
 
     $('#input_proye-static').change(function(e) {
 		$('#form_proye-static').trigger('submit');
+	});
+
+    $('#input_proyect-static').change(function(e) {
+		$('#form_proyect-static').trigger('submit');
 	});
 </script>
 <script>

@@ -147,6 +147,8 @@ Route::prefix('admin')->group(function(){
 			Route::delete('/delSide/{side}', 'SeccionController@delSide')->name('delSide');
 			Route::delete('/delVideoSide/{videoside}', 'SeccionController@delVideoSide')->name('delVideoSide');
 			Route::delete('/delProceso/{proceso}', 'SeccionController@delProceso')->name('delProceso');
+			Route::delete('/delProyecto/{proyecto}', 'SeccionController@delProyecto')->name('delProyecto');
+			
 			
 			
 			

@@ -2650,8 +2650,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-
+                        <div class="col text-center">
+                            <a href="#/" class="btn btn-outline border">Agregar nuevo respaldo</a>
                         </div>
                     </div>
                     <div class="row mt-5 py-5">
