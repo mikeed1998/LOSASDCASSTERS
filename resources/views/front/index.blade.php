@@ -1645,6 +1645,13 @@
     
         </style>
 
+
+<style>
+    .video_s {
+        height: 800px; 
+    }
+</style>
+
 @endsection
 
 @section('content')
@@ -1653,120 +1660,33 @@
 <div class="container-fluid px-0 mx-0">
     <div class="row">
         <div class="slider">
-            <div class="col position-relative slider-principal" style="
+            @foreach ($slider_principal as $sl)
+                <div class="col position-relative slider-principal" style="
                     background-color: black;
-                    background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+                    background-image: url('{{ asset('img2/photos/slider_principal/'.$sl->imagen) }}');
                     background-position: center center;
                     background-size: cover;
                     background-repeat: no-repeat;
                     width: 100%;
-                    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+                    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
                 ">
                 <div class="col-12 position-absolute top-50 start-50 translate-middle">
                     <div class="row py-5">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                            <div class="titulo-slider_principal" style=""><strong>Losas Ideales para Techo y Entrepiso</strong></div>
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
+                            <div class="titulo-slider_principal" style=""><strong>{{ $sl->titulo }}</strong></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-11 
-                                    mx-auto mt-2
-                                    text-xxl-end text-xl-end text-lg-end text-md-end text-sm-center text-xs-center text-center">
-                            <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                                py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
-                                                px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
-                                                btn-saber" style="background-color: #FFEC23; text-decoration: none;"><h3 class="m-0 px-5" style="color: #388050;"><strong>Saber Más</strong></h3></a>
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-11 
-                                    mx-auto mt-2
-                                    text-xxl-start text-xl-start text-lg-start text-md-start text-sm-center text-xs-center text-center
-                        ">
-                            <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                                py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
-                                                px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
-                                                btn-contacto" style="background-color: #388050; color: #FFEC23; text-decoration: none;"><h3 class="m-0 px-5" style="color: #FFEC23;"><strong>Contacto</strong></h3></a>
-                        </div>  
-                    </div>
+
                 </div>
-                <!-- <img src="https://picsum.photos/200" alt="" style="width: 100%; height: 1000px;"> -->
-            </div>
-            <div class="col position-relative slider-principal" style="
-                    background-color: black;
-                    background-image: url('{{ asset('img/design/home/slider.jpg') }}');
-                    background-position: center center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    width: 100%;
-                    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
-                ">
-                <div class="col-12 position-absolute top-50 start-50 translate-middle">
-                    <div class="row py-5">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                            <div class="titulo-slider_principal" style=""><strong>Losas Ideales para Techo y Entrepiso</strong></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-11 
-                                    mx-auto mt-2
-                                    text-xxl-end text-xl-end text-lg-end text-md-end text-sm-center text-xs-center text-center">
-                            <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                                py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
-                                                px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
-                                                btn-saber" style="background-color: #FFEC23; text-decoration: none;"><h3 class="m-0 px-5" style="color: #388050;"><strong>Saber Más</strong></h3></a>
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-11 
-                                    mx-auto mt-2
-                                    text-xxl-start text-xl-start text-lg-start text-md-start text-sm-center text-xs-center text-center
-                        ">
-                            <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                                py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
-                                                px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
-                                                btn-contacto" style="background-color: #388050; color: #FFEC23; text-decoration: none;"><h3 class="m-0 px-5" style="color: #FFEC23;"><strong>Contacto</strong></h3></a>
-                        </div>  
-                    </div>
+
                 </div>
-                <!-- <img src="https://picsum.photos/200" alt="" style="width: 100%; height: 1000px;"> -->
-            </div>
-            <div class="col position-relative slider-principal" style="
-                    background-color: black;
-                    background-image: url('{{ asset('img/design/home/slider.jpg') }}');
-                    background-position: center center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    width: 100%;
-                    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
-                ">
-                <div class="col-12 position-absolute top-50 start-50 translate-middle">
-                    <div class="row py-5">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                            <div class="titulo-slider_principal" style=""><strong>Losas Ideales para Techo y Entrepiso</strong></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-11 
-                                    mx-auto mt-2
-                                    text-xxl-end text-xl-end text-lg-end text-md-end text-sm-center text-xs-center text-center">
-                            <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                                py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
-                                                px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
-                                                btn-saber" style="background-color: #FFEC23; text-decoration: none;"><h3 class="m-0 px-5" style="color: #388050;"><strong>Saber Más</strong></h3></a>
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-11 
-                                    mx-auto mt-2
-                                    text-xxl-start text-xl-start text-lg-start text-md-start text-sm-center text-xs-center text-center
-                        ">
-                            <a href="#/" class="btn btn-block btn-outline rounded-0 
-                                                py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-2 
-                                                px-xxl-5 px-xl-5 px-lg-5 px-md-3 px-sm-2 px-xs-2 px-2  
-                                                btn-contacto" style="background-color: #388050; color: #FFEC23; text-decoration: none;"><h3 class="m-0 px-5" style="color: #FFEC23;"><strong>Contacto</strong></h3></a>
-                        </div>  
-                    </div>
-                </div>
-                <!-- <img src="https://picsum.photos/200" alt="" style="width: 100%; height: 1000px;"> -->
-            </div>
+            @endforeach
+            
         </div>
     </div>
+</div>
 
+<div class="container-fluid px-0 mx-0 mt-2">
     <div class="row">
         <div class="col-10 mx-auto py-5 
                     text-xxl-start text-xl-start text-lg-start text-md-start text-sm-center text-xs-center text-center">
@@ -1783,7 +1703,7 @@
                         <div class="col-4 text-center columna-soluciones" style="border-top: 4px solid #388050; background-color: #F5F5F5;">
                             <!-- <img src="img/home/icono_01.png" alt="" class="img-fluid"> -->
                             <div class="imagen-soluciones" style="
-                                background-image: url('{{ asset('img/design/home/icono_01.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[0]->imagen) }}');
                                 background-position: center center;
                                 background-size: contain;
                                 background-repeat: no-repeat;
@@ -1794,16 +1714,13 @@
                             <div class="row">
                                 <div class="col-11 mx-auto text-start">
                                     <div class="texto-soluciones m-0 fw-bolder">
-                                        Losas                                  
-                                    </div>
-                                    <div class="texto-soluciones m-0 fw-bolder">
-                                        D´CASSTER´S                                    
+                                        {{ $elements[1]->texto }}   
                                     </div>                                    
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-11 mx-auto text-start">
-                                    <a href=""><h3 class="fw-semibold" style="color: #388050;">Ver producto</h3></a>
+                                    <a href="{{ route('front.losas') }}"><h3 class="fw-semibold" style="color: #388050;">Ver producto</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -1817,7 +1734,7 @@
                     <div class="row">
                         <div class="col-4 text-center columna-soluciones" style="border-top: 4px solid #388050; background-color: #F5F5F5;">
                             <div class="imagen-soluciones" style="
-                                background-image: url('{{ asset('img/design/home/icono_02.png') }}');
+                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[2]->imagen) }}');
                                 background-position: center center;
                                 background-size: contain;
                                 background-repeat: no-repeat;
@@ -1828,16 +1745,13 @@
                             <div class="row">
                                 <div class="col-11 mx-auto text-start">
                                     <div class="texto-soluciones m-0 fw-bolder">
-                                        Perlita                                  
-                                    </div>
-                                    <div class="texto-soluciones m-0 fw-bolder">
-                                        Mineral                                    
+                                        {{ $elements[3]->texto }}                                 
                                     </div>                                    
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-11 mx-auto text-start">
-                                    <a href=""><h3 class="fw-semibold" style="color: #388050;">Ver producto</h3></a>
+                                    <a href="{{ route('front.perlita') }}"><h3 class="fw-semibold" style="color: #388050;">Ver producto</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -1850,12 +1764,30 @@
     <div class="row mt-5 py-5">
         <div class="col-10 mt-5 py-5 mx-auto">
             <div class="slider-videos">
-                <div>
-                    <img src="{{ asset('img/design/home/video.jpg') }}" alt="" width="100%" class="img-fluid">
-                </div>
-                <div>
-                    <img src="{{ asset('img/design/home/video.jpg') }}" alt="" width="100%" class="img-fluid">
-                </div>
+                @foreach ($slidervd as $sv)
+                    <div>
+                        @if ($sv->tipo == 1)
+                            <div class="col position-relative z-1">
+                                <div class="row mb-4">
+                                    <div class="col mb-3">
+                                        <video width="100%" class="video_s" id="vid" controls="controls" preload="metadata" autoplay>
+                                            <source src="{{ asset('img2/photos/slider_videos/'.$sv->archivo) }}" type="video/mp4">
+                                        </video> 
+                                    </div>
+                                </div>
+                            </div>                         
+                        @elseif ($sv->tipo == 0)
+                            <div class="col position-relative z-1">
+                                <div class="row mb-4">
+                                    <div class="col mb-3">
+                                        <iframe width="100%" class="video_s" src="https://www.youtube.com/embed/{{ $sv->link }}?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                        @endif
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -1873,30 +1805,30 @@
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5 mx-auto px-5">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="m-0" style="color: #388050;">Te contamos sobre</h3>
+                                    <h3 class="m-0" style="color: #388050;">{{ $elements[69]->texto }}</h3>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <h1 class="display-2 fw-semibold">Nosotros</h1>
+                                    <h1 class="display-2 fw-semibold">{{ $elements[70]->texto }}</h1>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col m-0 nos-scroll">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit illum dolorum, aut odit sunt ipsam molestiae incidunt maiores temporibus doloribus ab officia placeat ratione veniam quidem molestias accusamus quo nam mollitia in dolor ipsum asperiores saepe beatae. Eveniet rerum incidunt corporis veritatis in, reiciendis, quod mollitia accusamus magnam architecto minima magni quidem. Eum explicabo aperiam corrupti doloribus quibusdam perspiciatis optio omnis sunt quam totam necessitatibus commodi quia, qui laboriosam alias mollitia est illum expedita consectetur dignissimos incidunt assumenda ducimus. Totam dolorem nemo officia eos quis omnis maiores voluptatibus, facere consequatur temporibus! Dolore debitis exercitationem illo quos qui ut distinctio suscipit.
+                                    {{ $elements[71]->texto }}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11 text-start py-5">
                                     <div class="row">
                                         <div class="col-xxl-6 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 col-12 mt-2 text-xxl-start text-xl-start text-lg-start text-md-start text-sm-start text-xs-center text-center">
-                                            <a href="#/" class="btn btn-block btn-outline rounded-0 
+                                            <a href="{{ route('front.aboutus') }}" class="btn btn-block btn-outline rounded-0 
                                                 py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-1 
                                                 px-xxl-0 px-xl-0 px-lg-0 px-md-0 px-sm-2 px-xs-2 px-2  
                                                 btn-saber" style="background-color: #FFEC23; text-decoration: none;"><h4 class="m-0 px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-xs-5 px-5" style="color: #388050;"><strong>Saber Más</strong></h4></a>
                                         </div>
                                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 col-12 mt-2 text-xxl-start text-xl-start text-lg-start text-md-start text-sm-start text-xs-start text-start raro">
-                                            <a href="#/" class="btn btn-block btn-outline rounded-0 
+                                            <a href="{{ route('front.contacto') }}" class="btn btn-block btn-outline rounded-0 
                                                 py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-2 py-xs-2 py-1 
                                                 px-xxl-0 px-xl-0 px-lg-0 px-md-2 px-sm-2 px-xs-2 px-2  
                                                 btn-contacto" style="background-color: #388050; color: #FFEC23; text-decoration: none;"><h4 class="m-0 px-5" style="color: #FFEC23;"><strong>Contacto</strong></h4></a>
@@ -1918,7 +1850,7 @@
                         <br>
                         <div class="imagen-nosotros_big" style="
                             background-color: black;
-                            background-image: url('{{ asset('img/design/home/imagen_01.png') }}');
+                            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[67]->imagen) }}');
                             background-position: center center;
                             background-size: cover;
                             background-repeat: no-repeat;
@@ -1928,7 +1860,7 @@
                                 <div class="col-12 px-0 mt-5" style="background-color: #FFEC23; height: 340px;">
                                     <div class="imagen-nosotros_small" style="
                                         background-color: black;
-                                        background-image: url('{{ asset('img/design/home/imagen_02.png') }}');
+                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[68]->imagen) }}');
                                         background-position: center center;
                                         background-size: cover;
                                         background-repeat: no-repeat;
@@ -1955,19 +1887,21 @@
                 <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-11 col-sm-12 col-xs-12 col-12 mx-auto" style="background-color: #3C3C3C;">               
                     <div class="row">
                         <div class="slider-proyectos">
-                            <div>
+
+                            @foreach ($proyectos as $py)
+                                <div>
                                 <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
                                     <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
                                         <div class="row">
                                             <div class="col position-relative">
                                                 <div class="row">
                                                     <div class="col mt-5 text-center">
-                                                        <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
+                                                        <p class="fs-4" style="color: #FFEC23;">{{ $py->nombre }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
+                                                        {{ $py->descripcion }}
                                                     </div>
                                                 </div>
                                                 <div class="row py-5">
@@ -1977,7 +1911,7 @@
                                                     <div class="col">
                                                         <div class="imagen-proyectos" style="
                                                             background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
+                                                            background-image: url('{{ asset('img2/photos/proyectos/'.$py->foto) }}');
                                                             background-size: cover;
                                                             background-repeat: no-repeat;
                                                             width: 100%;       
@@ -1989,108 +1923,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5 con-scroll">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
-                                        <div class="row">
-                                            <div class="col position-relative">
-                                                <div class="row">
-                                                    <div class="col mt-5 text-center">
-                                                        <p class="fs-4" style="color: #FFEC23;">Nombre del Proyecto</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-11 mx-auto text-center text-white fs-5" style="overflow: auto; max-height: 90px;">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione, ad ipsa labore quia maiores blanditiis itaque totam dicta nesciunt vitae dolorum sequi delectus quo commodi aut et? Sapiente, itaque.
-                                                    </div>
-                                                </div>
-                                                <div class="row py-5">
-                                                    <div class="col-3 mx-auto" style="border-bottom: 5px solid #FFEC23;"></div>
-                                                </div>
-                                                <div class="row py-0">
-                                                    <div class="col">
-                                                        <div class="imagen-proyectos" style="
-                                                            background-color: black;
-                                                            background-image: url('{{ asset('img/design/home/imagen_03.png') }}');
-                                                            background-size: cover;
-                                                            background-repeat: no-repeat;
-                                                            width: 100%;       
-                                                        "></div>
-                                                    </div>                
-                                                </div>
-                                            </div>
-                                        </div>        
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            
                         </div>
                         <div class="row mb-5 py-5">
                             <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-2 col-sm-3 col-xs-3 col-3">
@@ -2113,7 +1947,7 @@
                     <div class="col-6 position-absolute top-0 start-50 translate-middle py-5">
                         <div class="row">
                             <div class="col text-center">
-                                <a href="#/" class="btn btn-block rounded-0 px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-0 px-xs-0 px-0 py-3" style="background-color: #FFEC23;"><strong class="fs-4 px-3">Ver Más</strong></a>
+                                <a href="{{ route('front.proyectos') }}" class="btn btn-block rounded-0 px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-0 px-xs-0 px-0 py-3" style="background-color: #FFEC23;"><strong class="fs-4 px-3">Ver Más</strong></a>
                             </div>
                         </div>
                     </div>
@@ -2147,7 +1981,7 @@
                                                         <div class="col text-center">
                                                             <div class="circulo-caracteristicas" style="
                                                                 background-color: black;
-                                                                background-image: url('{{ asset('img/design/home/imagen_04.png') }}');
+                                                                background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[4]->imagen) }}');
                                                                 background-position: center center;
                                                                 background-size: cover;
                                                                 background-repeat: no-repeat;
@@ -2167,7 +2001,7 @@
                                                 <div class="col-8 mx-auto">
                                                     <div style="
                                                         background-color: none;
-                                                        background-image: url('{{ asset('img/design/home/ahorro.png') }}');
+                                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[5]->imagen) }}');
                                                         background-repeat: no-repeat;
                                                         background-position: center center;
                                                         background-size: contain;
@@ -2179,7 +2013,7 @@
                                                     <div style="border: 2px solid white;"></div>
                                                 </div>
                                                 <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                    Ahorro al edificar
+                                                    {{ $elements[6]->texto }}
                                                 </div>
                                             </div>
                                         </div>
@@ -2190,7 +2024,7 @@
                                                 <div class="col-8 mx-auto">
                                                     <div style="
                                                         background-color: none;
-                                                        background-image: url('{{ asset('img/design/home/economia.png') }}');
+                                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[7]->imagen) }}');
                                                         background-repeat: no-repeat;
                                                         background-position: center center;
                                                         background-size: contain;
@@ -2202,7 +2036,7 @@
                                                     <div style="border: 2px solid white;"></div>
                                                 </div>
                                                 <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                    Economía
+                                                    {{ $elements[8]->texto }}
                                                 </div>
                                             </div>
                                         </div>
@@ -2213,7 +2047,7 @@
                                                 <div class="col-8 mx-auto">
                                                     <div style="
                                                         background-color: none;
-                                                        background-image: url('{{ asset('img/design/home/perlita.png') }}');
+                                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[9]->imagen) }}');
                                                         background-repeat: no-repeat;
                                                         background-position: center center;
                                                         background-size: contain;
@@ -2225,7 +2059,7 @@
                                                     <div style="border: 2px solid white;"></div>
                                                 </div>
                                                 <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                    Mineral Perlita
+                                                    {{ $elements[10]->texto }}
                                                 </div>
                                             </div>
                                         </div>
@@ -2241,7 +2075,7 @@
                                                 <div class="col-8 mx-auto">
                                                     <div style="
                                                         background-color: none;
-                                                        background-image: url('{{ asset('img/design/home/aislamiento.png') }}');
+                                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[11]->imagen) }}');
                                                         background-repeat: no-repeat;
                                                         background-position: center center;
                                                         background-size: contain;
@@ -2253,7 +2087,7 @@
                                                     <div style="border: 2px solid white;"></div>
                                                 </div>
                                                 <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                    Aislamiento Térmico y Acústico
+                                                    {{ $elements[12]->texto }}
                                                 </div>
                                             </div>
                                         </div>
@@ -2264,7 +2098,7 @@
                                                 <div class="col-8 mx-auto">
                                                     <div style="
                                                         background-color: none;
-                                                        background-image: url('{{ asset('img/design/home/facil.png') }}');
+                                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[13]->imagen) }}');
                                                         background-repeat: no-repeat;
                                                         background-position: center center;
                                                         background-size: contain;
@@ -2276,7 +2110,7 @@
                                                     <div style="border: 2px solid white;"></div>
                                                 </div>
                                                 <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                    Fácil de instalar
+                                                    {{ $elements[14]->texto }}
                                                 </div>
                                             </div>
                                         </div>
@@ -2287,7 +2121,7 @@
                                                 <div class="col-8 mx-auto">
                                                     <div style="
                                                         background-color: none;
-                                                        background-image: url('{{ asset('img/design/home/garantia.png') }}');
+                                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[15]->imagen) }}');
                                                         background-repeat: no-repeat;
                                                         background-position: center center;
                                                         background-size: contain;
@@ -2299,7 +2133,7 @@
                                                     <div style="border: 2px solid white;"></div>
                                                 </div>
                                                 <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                    Garantía de por vida
+                                                    {{ $elements[16]->texto }}
                                                 </div>
                                             </div>
                                         </div>
@@ -2313,7 +2147,7 @@
                                             <div class="col-8 mx-auto">
                                                 <div style="
                                                     background-color: none;
-                                                    background-image: url('{{ asset('img/design/home/instalacion.png') }}');
+                                                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[17]->imagen) }}');
                                                     background-repeat: no-repeat;
                                                     background-position: center center;
                                                     background-size: contain;
@@ -2325,7 +2159,7 @@
                                                 <div style="border: 2px solid white;"></div>
                                             </div>
                                             <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                Instalación Rápida
+                                                {{ $elements[18]->texto }}
                                             </div>
                                         </div>
                                     </div>
@@ -2336,7 +2170,7 @@
                                             <div class="col-8 mx-auto">
                                                 <div style="
                                                     background-color: none;
-                                                    background-image: url('{{ asset('img/design/home/limpieza.png') }}');
+                                                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[19]->imagen) }}');
                                                     background-repeat: no-repeat;
                                                     background-position: center center;
                                                     background-size: contain;
@@ -2348,7 +2182,7 @@
                                                 <div style="border: 2px solid white;"></div>
                                             </div>
                                             <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                Limpieza en Obra
+                                                {{ $elements[20]->texto }}
                                             </div>
                                         </div>
                                     </div>
@@ -2359,7 +2193,7 @@
                                             <div class="col-8 mx-auto">
                                                 <div style="
                                                     background-color: none;
-                                                    background-image: url('{{ asset('img/design/home/tonelada.png') }}');
+                                                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[21]->imagen) }}');
                                                     background-repeat: no-repeat;
                                                     background-position: center center;
                                                     background-size: contain;
@@ -2371,7 +2205,7 @@
                                                 <div style="border: 2px solid white;"></div>
                                             </div>
                                             <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                Resiste más de una tonelada
+                                                {{ $elements[22]->texto }}
                                             </div>
                                         </div>
                                     </div>
@@ -2382,7 +2216,7 @@
                                             <div class="col-8 mx-auto">
                                                 <div style="
                                                     background-color: none;
-                                                    background-image: url('{{ asset('img/design/home/aligerado.png') }}');
+                                                    background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[23]->imagen) }}');
                                                     background-repeat: no-repeat;
                                                     background-position: center center;
                                                     background-size: contain;
@@ -2394,7 +2228,7 @@
                                                 <div style="border: 2px solid white;"></div>
                                             </div>
                                             <div class="col-12 text-center fs-5 fw-bolder" style="color: #FFEC23;">
-                                                Techos aligerados
+                                                {{ $elements[24]->texto }}
                                             </div>
                                         </div>
                                     </div>
@@ -2427,21 +2261,18 @@
                 <div class="col-9 mx-auto">
                     <div class="row">
                         <div class="respaldos">
-                            <div>
-                                <img src="{{ asset('img/design/home/cliente_01.png') }}" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="{{ asset('img/design/home/cliente_02.png') }}" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="{{ asset('img/design/home/cliente_03.png') }}" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="{{ asset('img/design/home/cliente_04.png') }}" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="{{ asset('img/design/home/cliente_04.png') }}" alt="" class="img-fluid">
-                            </div>
+                            @foreach ($respaldos as $res)
+                                <div style="
+                                    background-color: white;
+                                    background-image: url('{{ asset('img2/photos/respaldos/'.$res->foto) }}');
+                                    background-size: contain;
+                                    background-position: center center;
+                                    background-repeat: no-repeat;
+                                    margin-left: 10px;
+                                    height: 160px;
+                                    width: 100%;
+                                "></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

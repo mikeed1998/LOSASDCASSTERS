@@ -5,6 +5,14 @@ namespace App\Http\Controllers;
 use App\Seccion;
 use App\ProductosPhoto;
 use App\Elemento;
+use App\SliderPrincipal;
+use App\SliderVideo;
+use App\Proyecto;
+use App\Cliente;
+use App\ProcesoPerlitaMineral;
+use App\Certificacion;
+use App\Respaldo;
+use App\VentajasUso;
 use App\Carrusel;
 use App\Politica;
 use App\Vacante;
@@ -50,7 +58,7 @@ class FrontController extends Controller
 				}
 			}
 
-			$elements = Elemento::where('seccion',1)->get();
+			// $elements = Elemento::where('seccion',1)->get();
 			
 			// $elements = Elemento::where('seccion',1)->get();
 			// return view('front.index',compact('elements'));
@@ -65,7 +73,21 @@ class FrontController extends Controller
 			}
 			// dd($desta);
 
-			return view('front.index',compact('carrusel','elements','desta'));
+			$elements = Elemento::all();
+
+			$slider_principal = SliderPrincipal::all();
+			$slidervd = SliderVideo::all();
+			$proyectos = Proyecto::all();
+			$respaldos = Respaldo::all();
+
+			foreach($slidervd as $s) {
+				if($s->tipo == 0) {
+					$s->link = str_replace('https://www.youtube.com/watch?v=', '', $s->link);
+				}
+			}
+
+
+			return view('front.index',compact('carrusel','elements', 'desta', 'slider_principal', 'slidervd', 'proyectos', 'respaldos'));
 	}
 
 	public function servicios(Producto $serv){
