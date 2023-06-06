@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class VentajasUso extends Model
 {
     protected $fillable = [
-        'text',
+        'texto',
         'aux',
     ];
 }

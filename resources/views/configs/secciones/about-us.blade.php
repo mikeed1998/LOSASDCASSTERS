@@ -2546,7 +2546,17 @@
                                             background-position: center center;
                                             width: 100%;  
                                             height: 200px;     
-                                        "></div>
+                                        ">
+                                            <div class="col position-relative">
+                                                <div class="col-4 py-3 bg-danger position-absolute top-0 end-0">
+                                                    <form action="{{ route('config.seccion.delCertificaciones', [$ce->id]) }}" method="POST" style="display: inline;">						
+                                                        @csrf
+                                                        @method('DELETE') 
+                                                        <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash"></i></button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>

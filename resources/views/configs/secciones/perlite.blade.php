@@ -857,109 +857,69 @@
                 <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-11 col-sm-12 col-xs-12 col-12 text-xxl-end text-xl-end text-lg-end text-md-end text-sm-center text-xs-center text-center display-3 fw-bold position-absolute start-0" style="margin-top: -160px; color: #3867AD;">
                     VENTAJAS DE USO
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            Agregar ventaja
+                        </button>
+  
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-12 d-flex justify-content-center align-items-center flex-column mt-2 text-center">
+                                            <form id="form_ventaja" action="perlitaMineralVentaja" method="POST"  class="mt-2" style="" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="row mt-1 mb-1">
+                                                    <div class="col">
+                                                        <input type="text" name="texto" placeholder="Ventaja" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <button id="input_ventaja" class="btn btn-block btn-outline border border-dark">Agregar</button>
+                                                    </div>
+                                                </div>           
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row py-5">
                     <div class="col mx-auto">
                         <div class="row">
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        AISLAMIENTO TÉRMICO
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        INCOMBUSTIBLE
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        AISLAMIENTO ACÚSTICO
+
+                            @foreach ($ventajas as $ve)
+                                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="col-10 position-relative fs-2 fw-bolder text-white text-start">
+                                            <input class="form-control fs-2 text-white fw-bolder text-start bg-transparent editarajax" name="texto" data-id="{{ $ve->id }}" data-table="VentajasUso" data-campo="texto" value="{{ $ve->texto }}">
+                                            <div class="col-2 py-1 position-absolute end-0 top-0">
+                                                <form action="{{ route('config.seccion.delValores', [$ve->id]) }}" method="POST" style="display: inline;">						
+                                                    @csrf
+                                                    @method('DELETE') 
+                                                    <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash-alt"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        RECIBE CUALQUIER TIPO DE IMPERMEABILIZANTE
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        ULTRA LIGERO
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        PROPORCIONA PENDIENTES Y RELLENA HUECOS
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        FÁCIL DE APICAR
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        NO SE PUDRE NI SE DEGRADA
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-9 col-sm-12 col-xs-12 col-12 mt-4 mx-1 mx-auto">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="{{ asset('img/design/soluciones/perlita_mineral/palomita.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-10 fs-2 fw-bolder text-white text-start">
-                                        SU TIEMPO DE VIDA ES ILIMITADO
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -1208,6 +1168,10 @@
 <script>
     $('#input_slider_img').click(function(e) {
 		$('#form_image_slider').trigger('submit');
+	});
+
+    $('#input_ventaja').click(function(e) {
+		$('#form_ventaja').trigger('submit');
 	});
 
     $('#input_perlitap-static').change(function(e) {

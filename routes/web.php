@@ -123,12 +123,14 @@ Route::prefix('admin')->group(function(){
 			Route::get('/{slug}','SeccionController@show')->name('show');
 			Route::put('/{id}','ElementoController@update')->name('update');
 			Route::put('/portada/{id}', 'SeccionController@update')->name('updatePortada');
-			
-			
+
+
 			Route::post('/imgStatic','SeccionController@imgStatic')->name('imgStatic');
+
 			/////////////////////////////////////// INICIO /////////////////////////////////////// 
 			Route::post('/imgSider','SeccionController@imgSider')->name('imgSider');
 			Route::post('/videoSider','SeccionController@videoSider')->name('videoSider');
+			Route::post('/respaldosSlider', 'SeccionController@respaldosSlider')->name('respaldosSlider');
 			/////////////////////////////////////// INICIO ///////////////////////////////////////
 
 			/////////////////////////////////////// PROYECTOS /////////////////////////////////////// 
@@ -138,6 +140,8 @@ Route::prefix('admin')->group(function(){
 
 			/////////////////////////////////////// PERLITA MINERAL /////////////////////////////////////// 
 			Route::post('/perlitaMineralSlider','SeccionController@perlitaMineralSlider')->name('perlitaMineralSlider');
+			Route::post('/perlitaMineralVentaja','SeccionController@perlitaMineralVentaja')->name('perlitaMineralVentaja');
+			
 			/////////////////////////////////////// PERLITA MINERAL /////////////////////////////////////// 
 
 			/////////////////////////////////////// NOSOTROS /////////////////////////////////////// 
@@ -146,12 +150,12 @@ Route::prefix('admin')->group(function(){
 
 			Route::delete('/delSide/{side}', 'SeccionController@delSide')->name('delSide');
 			Route::delete('/delVideoSide/{videoside}', 'SeccionController@delVideoSide')->name('delVideoSide');
+			Route::delete('/delRespaldos/{respaldo}', 'SeccionController@delRespaldos')->name('delRespaldos');
 			Route::delete('/delProceso/{proceso}', 'SeccionController@delProceso')->name('delProceso');
 			Route::delete('/delProyecto/{proyecto}', 'SeccionController@delProyecto')->name('delProyecto');
-			
-			
-			
-			
+			Route::delete('/delClientes/{cliente}', 'SeccionController@delClientes')->name('delClientes');
+			Route::delete('/delCertificaciones/{certificacion}', 'SeccionController@delCertificaciones')->name('delCertificaciones');
+			Route::delete('/delValores/{ventaja}', 'SeccionController@delValores')->name('delValores');
 		});
 
 		Route::prefix('faq')->name('faq.')->group(function(){

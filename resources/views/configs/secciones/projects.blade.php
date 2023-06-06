@@ -1646,7 +1646,7 @@
                         <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
                             <textarea class="form-control text-center bg-transparent titulo-slider_principal text-white fw-bold editarajax" rows="2" name="texto" data-id="{{ $elements[63]->id }}" data-table="Elemento" data-campo="texto">{{ $elements[63]->texto }}</textarea>
                         </div>
-                    </div>
+                    </div>-
                 </div>
             </div>
         </div>
@@ -1812,7 +1812,17 @@
                                             background-position: center center;
                                             width: 100%;  
                                                 height: 200px; 
-                                        "></div>
+                                        ">
+                                            <div class="col position-relative">
+                                                <div class="col-4 py-3 bg-danger position-absolute top-0 end-0">
+                                                    <form action="{{ route('config.seccion.delClientes', [$cl->id]) }}" method="POST" style="display: inline;">						
+                                                        @csrf
+                                                        @method('DELETE') 
+                                                        <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash"></i></button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -1840,10 +1850,6 @@
 
     $('#input_proye-static').change(function(e) {
 		$('#form_proye-static').trigger('submit');
-	});
-
-    $('#input_proyect-static').change(function(e) {
-		$('#form_proyect-static').trigger('submit');
 	});
 </script>
 <script>

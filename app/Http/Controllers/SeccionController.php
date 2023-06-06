@@ -10,6 +10,8 @@ use App\Proyecto;
 use App\Cliente;
 use App\ProcesoPerlitaMineral;
 use App\Certificacion;
+use App\Respaldo;
+use App\VentajasUso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -67,6 +69,8 @@ class SeccionController extends Controller
         $clientes = Cliente::all();
         $procesos_perlita = ProcesoPerlitaMineral::all();
         $certificaciones = Certificacion::all();
+        $respaldos = Respaldo::all();
+        $ventajas = VentajasUso::all();
  
         $ruta = 'configs.secciones.'.$seccion;
 
@@ -76,7 +80,7 @@ class SeccionController extends Controller
             }
         }
 
-        return view($ruta, compact('slidersp', 'slidervd', 'proyectos', 'clientes', 'procesos_perlita', 'certificaciones', 'elements'));
+        return view($ruta, compact('slidersp', 'slidervd', 'proyectos', 'clientes', 'procesos_perlita', 'certificaciones', 'elements', 'respaldos', 'ventajas'));
 }
 
     /**
@@ -251,6 +255,24 @@ class SeccionController extends Controller
         return redirect()->back();
     }
 
+    public function respaldosSlider(Request $request) {
+        $slider = new Respaldo;
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $extension = $file->getClientOriginalExtension();
+            $namefile = Str::random(30).'.'.$extension;
+
+            \Storage::disk('local')->put("/img2/photos/respaldos/".$namefile , \File::get($file));
+
+            $slider->foto = $namefile;
+        }
+
+        $slider->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
+    }
+
     public function proyectosSlider(Request $request) {
         $slider = new Proyecto;
 
@@ -274,8 +296,8 @@ class SeccionController extends Controller
     public function clientesSlider(Request $request) {
         $slider = new Cliente;
 
-        if ($request->hasFile('logo')) {
-            $file = $request->file('logo');
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
             $extension = $file->getClientOriginalExtension();
             $namefile = Str::random(30).'.'.$extension;
 
@@ -304,6 +326,16 @@ class SeccionController extends Controller
         }
 
         $slider->save();
+        \Toastr::success('Guardado');
+        return redirect()->back();
+    }
+
+    public function perlitaMineralVentaja(Request $request) {
+        $ventaja = new VentajasUso;
+
+        $ventaja->texto = $request->texto;
+
+        $ventaja->save();
         \Toastr::success('Guardado');
         return redirect()->back();
     }
@@ -348,6 +380,15 @@ class SeccionController extends Controller
         return redirect()->back();
     }
 
+    public function delRespaldos(Respaldo $respaldo) {
+        $imgDel = 'img2/photos/respaldos/'.$respaldo->foto;
+        unlink($imgDel);
+
+        $respaldo->delete();
+
+        return redirect()->back();
+    }
+
     public function delProceso(ProcesoPerlitaMineral $proceso) {
         $imgDel = 'img2/photos/perlita_mineral/'.$proceso->foto;
         unlink($imgDel);
@@ -362,6 +403,30 @@ class SeccionController extends Controller
         unlink($imgDel);
 
         $proyecto->delete();
+
+        return redirect()->back();
+    }
+
+    public function delClientes(Cliente $cliente) {
+        $imgDel = 'img2/photos/clientes/'.$cliente->logo;
+        unlink($imgDel);
+
+        $cliente->delete();
+
+        return redirect()->back();
+    }
+
+    public function delCertificaciones(Certificacion $certificacion) {
+        $imgDel = 'img2/photos/certificaciones/'.$certificacion->logo;
+        unlink($imgDel);
+
+        $certificacion->delete();
+
+        return redirect()->back();
+    }
+
+    public function delValores(VentajasUso $ventaja) {
+        $ventaja->delete();
 
         return redirect()->back();
     }

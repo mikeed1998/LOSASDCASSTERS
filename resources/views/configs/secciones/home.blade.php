@@ -2637,7 +2637,8 @@
             </div>
         </div>
         <div class="container-fluid mt-5">
-            <div class="row" style="background-color: #F5F5F5; padding-bottom: 200px;">
+            {{-- <div class="row" style="background-color: #F5F5F5; padding-bottom: 200px;"> --}}
+            <div class="row" style="background-color: white; padding-bottom: 200px;">
                 <div class="col py-5">
                     <div class="row">
                         <div class="col text-center fs-2" style="color: #388050;">
@@ -2650,8 +2651,12 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col text-center">
-                            <a href="#/" class="btn btn-outline border">Agregar nuevo respaldo</a>
+                        <div class="col-6 mx-auto">
+                            <form id="form_respaldos_slider" action="respaldosSlider" method="POST"  class="file-upload mt-2" style="" enctype="multipart/form-data">
+                                @csrf
+                                <input id="input_slider_respaldos" class="m-0 p-0" type="file" name="foto">
+                                <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" for="input_slider_respaldos" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Agregar nuevo</label>
+                            </form>
                         </div>
                     </div>
                     <div class="row mt-5 py-5">
@@ -2661,21 +2666,28 @@
                         <div class="col-9 mx-auto">
                             <div class="row">
                                 <div class="respaldos">
-                                    <div>
-                                        <img src="{{ asset('img/design/home/cliente_01.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div>
-                                        <img src="{{ asset('img/design/home/cliente_02.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div>
-                                        <img src="{{ asset('img/design/home/cliente_03.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div>
-                                        <img src="{{ asset('img/design/home/cliente_04.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div>
-                                        <img src="{{ asset('img/design/home/cliente_04.png') }}" alt="" class="img-fluid">
-                                    </div>
+                                    @foreach ($respaldos as $res)
+                                        <div style="
+                                            background-color: white;
+                                            background-image: url('{{ asset('img2/photos/respaldos/'.$res->foto) }}');
+                                            background-size: contain;
+                                            background-position: center center;
+                                            background-repeat: no-repeat;
+                                            margin-left: 10px;
+                                            height: 160px;
+                                            width: 100%;
+                                        ">
+                                            <div class="col position-relative">
+                                                <div class="col-4 py-3 bg-danger position-absolute top-0 end-0">
+                                                    <form action="{{ route('config.seccion.delRespaldos', [$res->id]) }}" method="POST" style="display: inline;">						
+                                                        @csrf
+                                                        @method('DELETE') 
+                                                        <button type="submit" class="btn btn-danger btn-block bg-danger rounded-pill"><i class="fas fa-trash"></i></button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -2891,6 +2903,10 @@
 
 <script>
     
+    $('#input_slider_respaldos').change(function(e) {
+		$('#form_respaldos_slider').trigger('submit');
+	});
+
     $('#input_imagen-static').change(function(e) {
 		$('#form_imagen-static').trigger('submit');
 	});
