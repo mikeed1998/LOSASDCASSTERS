@@ -136,10 +136,12 @@ class FrontController extends Controller
 	}
 
 	public function contacto(){
-		$seccion = Seccion::find(6);
-		$elements = Elemento::where('seccion', $seccion->id)->get();
+		// $seccion = Seccion::find(6);
+		// $elements = Elemento::where('seccion', $seccion->id)->get();
+		$config = Configuracion::first();
+		$elements = Elemento::all();
 
-		return view('front.contacto',compact('elements'));
+		return view('front.contacto',compact('elements', 'config'));
 	}
 
 	public function losas() {
@@ -186,10 +188,12 @@ class FrontController extends Controller
 	}
 
 	public function aboutus(){
-		$seccion = Seccion::find(5);
-		$elements  = Elemento::where('seccion',$seccion->id)->get();
+		// $seccion = Seccion::find(5);
+		// $elements  = Elemento::where('seccion',$seccion->id)->get();
+		$certificaciones = Certificacion::all();
+		$elements = Elemento::all();
 
-		return view('front.aboutus', compact('elements', 'seccion',));
+		return view('front.aboutus', compact('elements', 'certificaciones'));
 		// return view('front.aboutus');
 	}
 	public function vacantes(){

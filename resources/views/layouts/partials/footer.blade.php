@@ -28,8 +28,8 @@
 
     #raya {
         background: linear-gradient(to right, #FFEC23 0%, #FFEC23 75%, black 75%, black 100%);
-        background-size: 100% 5px;
-        margin-top: 5px;
+        background-size: 100% 4px;
+        margin-top: 4px;
         background-repeat: no-repeat;
         background-position: bottom;
     }
@@ -45,7 +45,9 @@
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto py-1">
                         <div class="row">
                             <div class="col text-center">
-                                <img src="{{ asset('img/design/footer/logo_02.png') }}" alt="" class="img-fluid">
+                                <a href="{{ route('front.index') }}">
+                                    <img src="{{ asset('img/design/footer/logo_02.png') }}" alt="" class="img-fluid">
+                                </a>
                             </div>
                         </div>
                         <div class="row">
@@ -127,24 +129,20 @@
                                     </div>
                                     <div class="col-12 mt-1">
                                         <h3 class="text-white m-0">
-                                            Tel. 33 33 33 33 33                               
+                                            Tel. {{ $config->telefono }}                          
                                         </h3>
                                     </div>
                                     <div class="col-12 mt-1">
                                         <h3 class="text-white m-0">
-                                            contacto@losasdcassters.mx                               
+                                            {{ $config->destinatario }}                             
                                         </h3>
                                     </div>
                                     <div class="col-12 mt-5">
                                         <h3 class="text-white m-0">
-                                            Dirección de la empresa                               
+                                            {{ $config->direccion }}                             
                                         </h3>
                                     </div>
-                                    <div class="col-12 mt-1">
-                                        <h3 class="text-white m-0">
-                                            Guadalajara                               
-                                        </h3>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

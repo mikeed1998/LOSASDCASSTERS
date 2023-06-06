@@ -1704,7 +1704,7 @@
     <div class="row">
         <div class="col position-relative slider-principal" style="
             background-color: black;
-            background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[81]->imagen) }}');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -1714,7 +1714,7 @@
             <div class="col-12 position-absolute top-50 start-50 translate-middle">
                 <div class="row py-5">
                     <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                        <div class="titulo-slider_principal" style=""><strong>Ponte en contacto</strong></div>
+                        <div class="titulo-slider_principal" style=""><strong>{{ $elements[82]->texto }}</strong></div>
                     </div>
                 </div>
             </div>
@@ -1732,7 +1732,7 @@
                             <img src="{{ asset('img/design/contacto/telefono.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="col-10 fs-3 py-4">
-                            Tel. 33 33 33 33 33
+                            Tel. {{ $config->telefono }}
                         </div>
                     </div>
                     <div class="row text-white">
@@ -1740,7 +1740,7 @@
                             <img src="{{ asset('img/design/contacto/mail.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="col-10 fs-3 py-4">
-                            contacto@losasdcassers.com
+                            {{ $config->destinatario }}
                         </div>
                     </div>
                     <div class="row text-white">
@@ -1748,14 +1748,14 @@
                             <img src="{{ asset('img/design/contacto/gps.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="col-10 fs-3 py-4">
-                            C. Volcán Vesubio 6579, Colli Urbano 45070 Zapopan, Jal.
+                            {{ $config->direccion }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-11 mx-auto py-5 text-start">
-                            <a href="" uk-icon="icon: whatsapp; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
-                            <a href="" uk-icon="icon: facebook; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
-                            <a href="" uk-icon="icon: instagram; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                            <a href="https://wa.me/{{ $config->whatsapp }}" uk-icon="icon: whatsapp; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                            <a href="{{ $config->facebook }}" uk-icon="icon: facebook; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                            <a href="{{ $config->instagram }}" uk-icon="icon: instagram; ratio: 2;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
                         </div>
                     </div>
                 </div>

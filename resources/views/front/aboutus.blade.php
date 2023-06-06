@@ -2108,7 +2108,7 @@
     <div class="row">
         <div class="col position-relative slider-principal" style="
             background-color: black;
-            background-image: url('{{ asset('img/design/home/slider.jpg') }}');
+            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[65]->imagen) }}');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -2118,7 +2118,7 @@
             <div class="col-12 position-absolute top-50 start-50 translate-middle">
                 <div class="row py-5">
                     <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 text-center text-white mx-auto">
-                        <div class="titulo-slider_principal" style=""><strong>Empresas que llevan nuestro producto</strong></div>
+                        <div class="titulo-slider_principal" style=""><strong>{{ $elements[66]->texto }}</strong></div>
                     </div>
                 </div>
             </div>
@@ -2137,17 +2137,17 @@
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 col-xs-12 col-12 py-5 mx-auto px-5">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="m-0" style="color: #388050;">Te contamos sobre</h3>
+                                    <h3 class="m-0" style="color: #388050;">{{ $elements[69]->texto }}</h3>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <h1 class="display-2 fw-semibold">Nosotros</h1>
+                                    <h1 class="display-2 fw-semibold">{{ $elements[70]->texto }}</h1>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col m-0 nos-scroll">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit illum dolorum, aut odit sunt ipsam molestiae incidunt maiores temporibus doloribus ab officia placeat ratione veniam quidem molestias accusamus quo nam mollitia in dolor ipsum asperiores saepe beatae. Eveniet rerum incidunt corporis veritatis in, reiciendis, quod mollitia accusamus magnam architecto minima magni quidem. Eum explicabo aperiam corrupti doloribus quibusdam perspiciatis optio omnis sunt quam totam necessitatibus commodi quia, qui laboriosam alias mollitia est illum expedita consectetur dignissimos incidunt assumenda ducimus. Totam dolorem nemo officia eos quis omnis maiores voluptatibus, facere consequatur temporibus! Dolore debitis exercitationem illo quos qui ut distinctio suscipit.
+                                    {{ $elements[71]->texto }}
                                 </div>
                             </div>
                         </div>
@@ -2164,7 +2164,7 @@
                         <br>
                         <div class="imagen-nosotros_big" style="
                             background-color: black;
-                            background-image: url('{{ asset('img/design/home/imagen_01.png') }}');
+                            background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[67]->imagen) }}');
                             background-position: center center;
                             background-size: cover;
                             background-repeat: no-repeat;
@@ -2174,7 +2174,7 @@
                                 <div class="col-12 px-0 mt-5" style="background-color: #FFEC23; height: 340px;">
                                     <div class="imagen-nosotros_small" style="
                                         background-color: black;
-                                        background-image: url('{{ asset('img/design/home/imagen_02.png') }}');
+                                        background-image: url('{{ asset('img2/photos/imagenes_estaticas/'.$elements[68]->imagen) }}');
                                         background-position: center center;
                                         background-size: cover;
                                         background-repeat: no-repeat;
@@ -2216,17 +2216,17 @@ border-bottom: var(--height) solid #f00;
                             width: 150px; 
                             background-color: #FFEC23;
                             ">
-                            <img src="{{ asset('img/design/nosotros/vision.png') }}" alt="" class="img-fluid" style="">
+                            <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[72]->imagen) }}" alt="" class="img-fluid" style="">
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 mx-auto text-white display-4 fw-bolder py-0">
-                            Visión
+                            {{ $elements[73]->texto }}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 text-white fs-5 mx-auto py-1 scroll-tan">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                            {{ $elements[74]->texto }}
                         </div>
                     </div>
                 </div>
@@ -2247,17 +2247,17 @@ border-bottom: var(--height) solid #f00;
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-m-6 col-sm-11 col-xs-11 col-11 py-5" style="background-color: #388050;">
                     <div class="row">
                         <div class="col-4 mx-auto d-flex align-items-center justify-content-center"" style="border-radius: 100%; height: 150px; width: 150px; background-color: #FFEC23;">
-                            <img src="{{ asset('img/design/nosotros/mision.png') }}" alt="" class="img-fluid" style="">
+                            <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[75]->imagen) }}" alt="" class="img-fluid" style="">
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 mx-auto text-white display-4 fw-bolder">
-                            Misión
+                            {{ $elements[76]->texto }}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 mx-auto text-white fs-5 scroll-tan">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                            {{ $elements[77]->texto }}
                         </div>
                     </div>
                 </div>
@@ -2278,17 +2278,17 @@ border-bottom: var(--height) solid #f00;
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-m-6 col-sm-11 col-xs-11 col-11 py-5" style="background-color: #388050;">
                     <div class="row">
                         <div class="col-4 mx-auto d-flex align-items-center justify-content-center"" style="border-radius: 100%; height: 150px; width: 150px; background-color: #FFEC23;">
-                            <img src="{{ asset('img/design/nosotros/valores.png') }}" alt="" class="img-fluid" style="">
+                            <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[78]->imagen) }}" alt="" class="img-fluid" style="">
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 mx-auto text-white display-4 fw-bolder">
-                            Valores
+                            {{ $elements[79]->texto }}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 mx-auto text-white fs-5 scroll-tan">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                            {{ $elements[80]->texto }}
                         </div>
                     </div>
                 </div>
@@ -2309,17 +2309,17 @@ border-bottom: var(--height) solid #f00;
                             width: 150px; 
                             background-color: #FFEC23;
                             ">
-                            <img src="{{ asset('img/design/nosotros/vision.png') }}" alt="" class="img-fluid" style="">
+                            <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[72]->imagen) }}" alt="" class="img-fluid" style="">
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 mx-auto text-white display-4 fw-bolder py-0">
-                            Visión
+                            {{ $elements[73]->texto }}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 text-white fs-5 mx-auto py-1 scroll-tan">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                            {{ $elements[74]->texto }}
                         </div>
                     </div>
                 </div>
@@ -2344,17 +2344,17 @@ border-bottom: var(--height) solid #f00;
                 <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-10 col-sm-10 col-xs-10 col-10 py-5" style="background-color: #388050;">
                     <div class="row">
                         <div class="col-4 mx-auto d-flex align-items-center justify-content-center"" style="border-radius: 100%; height: 150px; width: 150px; background-color: #FFEC23;">
-                            <img src="{{ asset('img/design/nosotros/mision.png') }}" alt="" class="img-fluid" style="">
+                            <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[75]->imagen) }}" alt="" class="img-fluid" style="">
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12 mx-auto text-white display-4 fw-bolder">
-                            Misión
+                            {{ $elements[76]->texto }}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12 mx-auto text-white fs-5 scroll-tan">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                            {{ $elements[77]->texto }}
                         </div>
                     </div>
                 </div>
@@ -2379,17 +2379,17 @@ border-bottom: var(--height) solid #f00;
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-m-6 col-sm-11 col-xs-11 col-11 py-5" style="background-color: #388050;">
                     <div class="row">
                         <div class="col-4 mx-auto d-flex align-items-center justify-content-center"" style="border-radius: 100%; height: 150px; width: 150px; background-color: #FFEC23;">
-                            <img src="{{ asset('img/design/nosotros/valores.png') }}" alt="" class="img-fluid" style="">
+                            <img src="{{ asset('img2/photos/imagenes_estaticas/'.$elements[78]->imagen) }}" alt="" class="img-fluid" style="">
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 mx-auto text-white display-4 fw-bolder">
-                            Valores
+                            {{ $elements[79]->texto }}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-9 mx-auto text-white fs-5 scroll-tan">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quibusdam mollitia deserunt iure voluptate libero nobis doloremque culpa placeat odio iusto, cumque repellendus eaque quaerat, nihil maxime quasi dolorem.
+                            {{ $elements[80]->texto }}
                         </div>
                     </div>
                 </div>
@@ -2420,10 +2420,11 @@ border-bottom: var(--height) solid #f00;
                 <div class="col-9 text-center mx-auto">
                     <div class="row">
                         <div class="certificaciones">
+                            @foreach ($certificaciones as $ce)
                             <div class="col-3 text-center d-flex align-items-center justify-content-center">
                                 <div class="" style="
                                     background-color: ;
-                                    background-image: url('{{ asset('img/design/nosotros/certificacion_01.png') }}');
+                                    background-image: url('{{ asset('img2/photos/certificaciones/'.$ce->logo) }}');
                                     background-size: contain;
                                     background-repeat: no-repeat;
                                     background-position: center center;
@@ -2431,50 +2432,7 @@ border-bottom: var(--height) solid #f00;
                                     height: 200px;     
                                 "></div>
                             </div>
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/nosotros/certificacion_02.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/nosotros/certificacion_03.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/nosotros/certificacion_04.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
-                            <div class="col-3 text-center d-flex align-items-center justify-content-center">
-                                <div class="" style="
-                                    background-color: ;
-                                    background-image: url('{{ asset('img/design/nosotros/certificacion_04.png') }}');
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center center;
-                                    width: 100%;  
-                                    height: 200px;     
-                                "></div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

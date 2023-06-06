@@ -44,15 +44,15 @@
           <!-- Filas y columnas personalizadas -->
           <div class="row" id="bar-a" style="background-color: #3C3C3C;">
               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12 col-12 text-center py-xxl-4 py-xl-4 py-lg-4 py-md-3 py-sm-3 py-xs-4 py-4">
-                  <a href="" uk-icon="icon: whatsapp; ratio: 1.8;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
-                  <a href="" uk-icon="icon: facebook; ratio: 1.8;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
-                  <a href="" uk-icon="icon: instagram; ratio: 1.8;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                  <a href="https://wa.me/{{ $config->whatsapp }}" uk-icon="icon: whatsapp; ratio: 1.8;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                  <a href="{{ $config->facebook }}" uk-icon="icon: facebook; ratio: 1.8;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
+                  <a href="{{ $config->instagram }}" uk-icon="icon: instagram; ratio: 1.8;" class="px-xxl-3 px-xl-1 px-lg-1 px-md-1 px-sm-3 px-xs-3 px-3" style="color: #FFEC23;"></a>
               </div>
               <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-8 col-sm-12 col-xs-12 col-12 py-3">
-                  <h3 class="m-0 text-white">contacto@losasdcassters.mx</h3>
+                  <h3 class="m-0 text-white">{{ $config->destinatario }}</h3>
               </div>
               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 py-xxl-3 py-xl-3 py-lg-3 py-md-0 py-sm-3 py-xs-3 py-3">
-                 <h3 class="m-0 text-white">Tel. 33 33 33 33 33</h3>
+                 <h3 class="m-0 text-white">Tel. {{ $config->telefono }}</h3>
               </div>
           </div>
 
