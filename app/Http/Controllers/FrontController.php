@@ -219,7 +219,15 @@ class FrontController extends Controller
 
 	public function aviso(){
 		$politica = Politica::find(1);
-		return view('front.politicas',compact("politica"));
+		$metodos_pago = Politica::find(2);
+		$devoluciones = Politica::find(3);
+		$terminos_condiciones = Politica::find(4);
+		$garantias = Politica::find(5);
+		$politica_envio = Politica::find(6);
+		$pagina = 'aviso';
+        $data = Configuracion::first();
+
+		return view('front.politicas_aviso',compact("data", "politica", "metodos_pago", "devoluciones", "terminos_condiciones", "garantias", "politica_envio", "pagina"));
 	}
 
 	public function pagos(){
@@ -239,7 +247,10 @@ class FrontController extends Controller
 
 	public function preguntas(){
 		$preguntas = Faq::all();
-		return view('front.faq',compact("preguntas"));
+		$pagina = "preguntas";
+		$data = Configuracion::first();
+
+		return view('front.faq',compact("data", "preguntas", "pagina"));
 	}
 
 	// correo de contacto normal

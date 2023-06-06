@@ -20,9 +20,10 @@
 			border-radius: 15px;
 		}
 		/* mas estilisado */
+
 	</style>
 		
-		
+
 		 <div id="slide-out" class="side-nav  fixed">
 			<ul class="custom-scrollbar" >
 				<li class="logo-sn waves-effect py-3">

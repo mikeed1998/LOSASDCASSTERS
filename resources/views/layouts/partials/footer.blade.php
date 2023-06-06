@@ -28,8 +28,8 @@
 
     #raya {
         background: linear-gradient(to right, #FFEC23 0%, #FFEC23 75%, black 75%, black 100%);
-        background-size: 100% 4px;
-        margin-top: 4px;
+        background-size: 100% 5px;
+        margin-top: 5px;
         background-repeat: no-repeat;
         background-position: bottom;
     }
@@ -103,12 +103,12 @@
                                     </div>
                                     <div class="col-12 mt-1 linea">
                                         <h3 class="text-white m-0">
-                                            <a href="{{ route('front.faq') }}" style="text-decoration: none;" class="text-white">Preguntas frecuentes</a>                                 
+                                            <a href="{{ route('front.preguntas') }}" style="text-decoration: none;" class="text-white">Preguntas frecuentes</a>                                 
                                         </h3>
                                     </div>
                                     <div class="col-12 mt-1 linea">
                                         <h3 class="text-white m-0">
-                                            <a href="{{ route('front.contacto') }}" style="text-decoration: none;" class="text-white">Contacto</a>                                 
+                                            <a href="{{ route('front.avisoPrivacidad') }}" style="text-decoration: none;" class="text-white">Aviso de privacidad</a>                                 
                                         </h3>
                                     </div>
                                 </div>

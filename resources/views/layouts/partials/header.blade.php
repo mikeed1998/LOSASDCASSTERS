@@ -33,11 +33,25 @@
           display: none;
       }
   }
+  
+  @media (min-width: 1501px) {
+    .co-i {
+        padding-top: 15px; 
+        padding-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 1500px) {
+    .co-i {
+        padding-top: 30px; 
+        padding-bottom: 30px;
+    }
+  }
 </style>
 
 <div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-light row" style="margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;">      
-      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto text-center" style="background-color: #388050; padding-top: 15px; padding-bottom: 30px;">
+      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mx-auto text-center co-i" style="background-color: #388050;">
           <img src="{{ asset('img/design/header/logo.png') }}" alt="" class="img-fluid">
       </div>
       <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 mx-auto">                   

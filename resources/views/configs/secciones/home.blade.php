@@ -1708,8 +1708,7 @@
 		<a href="{{ route('config.index') }}" class="col col-md-2 btn btn-sm grey darken-2 text-white mr-auto"><i class="fa fa-reply"></i> Regresar</a>
 	</div>
 
-
-    <div>
+    <div class="front_home">
         {{-- <div class="row">
             <div class="col text-center">
                 <!-- Button trigger modal -->

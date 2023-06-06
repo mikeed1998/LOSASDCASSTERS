@@ -28,6 +28,8 @@ Route::name('front.')->group(function(){
 	Route::get('servicios/{serv?}', 'FrontController@servicios')->name('servicios');
 	Route::post('getServicio', 'FrontController@getServicio')->name('getServicio');
 	Route::get('contacto', 'FrontController@contacto')->name('contacto');
+	Route::get('aviso_privacidad', 'FrontController@aviso')->name('avisoPrivacidad');
+	Route::get('preguntas', 'FrontController@preguntas')->name('preguntas');
 	Route::get('vacantes', 'FrontController@vacantes')->name('vacantes');
 	Route::get('faq', 'FrontController@faq')->name('faq');
 	Route::get('soluciones', 'FrontController@soluciones')->name('soluciones');
