@@ -143,7 +143,7 @@
     
                 .col-verde {
                     margin-top: 230px; 
-                    margin-left: 240px;
+                    margin-left: 270px;
                     height: 500px;
                 }
     

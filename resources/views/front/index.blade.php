@@ -243,7 +243,7 @@
     
                 .col-verde {
                     margin-top: 380px; 
-                    margin-left: 220px;
+                    margin-left: 240px;
                     height: 800px;
                 }
     
@@ -604,7 +604,7 @@
                 }
     
                 .imagen-proyectos {
-                    height: 460px;
+                    height: 465px;
                 }
     
                 .col-amarilla {
@@ -1459,7 +1459,7 @@
                 }
     
                 .imagen-proyectos {
-                    height: 402px;
+                    height: 410px;
                 }
     
                 .col-amarilla {

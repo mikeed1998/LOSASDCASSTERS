@@ -219,15 +219,10 @@ class FrontController extends Controller
 
 	public function aviso(){
 		$politica = Politica::find(1);
-		$metodos_pago = Politica::find(2);
-		$devoluciones = Politica::find(3);
-		$terminos_condiciones = Politica::find(4);
-		$garantias = Politica::find(5);
-		$politica_envio = Politica::find(6);
 		$pagina = 'aviso';
         $data = Configuracion::first();
 
-		return view('front.politicas_aviso',compact("data", "politica", "metodos_pago", "devoluciones", "terminos_condiciones", "garantias", "politica_envio", "pagina"));
+		return view('front.politicas_aviso',compact("data", "politica", "pagina"));
 	}
 
 	public function pagos(){

@@ -68,7 +68,7 @@
         }
 
         .imagen-proyectos {
-            height: 459px;
+            height: 440px;
         }
 
         .col-amarilla {
@@ -78,7 +78,7 @@
 
         .col-verde {
             margin-top: 280px; 
-            margin-left: 170px;
+            margin-left: 250px;
             height: 670px;
         }
 
@@ -130,17 +130,17 @@
         }
 
         .imagen-proyectos {
-            height: 460px;
+            height: 380px;
         }
 
         .col-amarilla {
             margin-top: 20px;
-            height: 670px;
+            height: 600px;
         }
 
         .col-verde {
             margin-top: 280px; 
-            margin-left: 220px;
+            margin-left: 180px;
             height: 600px;
         }
     }
@@ -177,17 +177,17 @@
         }
 
         .imagen-proyectos {
-            height: 460px;
+            height: 360px;
         }
 
         .col-amarilla {
             margin-top: 20px;
-            height: 670px;
+            height: 600px;
         }
 
         .col-verde {
             margin-top: 280px; 
-            margin-left: 170px;
+            margin-left: 140px;
             height: 600px;
         }
 
@@ -231,17 +231,17 @@
         }
 
         .imagen-proyectos {
-            height: 460px;
+            height: 360px;
         }
 
         .col-amarilla {
             margin-top: 20px;
-            height: 670px;
+            height: 600px;
         }
 
         .col-verde {
             margin-top: 280px; 
-            margin-left: 150px;
+            margin-left: 120px;
             height: 600px;
         }
 
@@ -285,17 +285,17 @@
         }
 
         .imagen-proyectos {
-            height: 400px;
+            height: 360px;
         }
 
         .col-amarilla {
             margin-top: 20px;
-            height: 610px;
+            height: 600px;
         }
 
         .col-verde {
             margin-top: 280px; 
-            margin-left: 135px;
+            margin-left: 120px;
             height: 600px;
         }
 
@@ -908,7 +908,7 @@
                                         </div>
                                         <div class="col-10 position-relative fs-2 fw-bolder text-white text-start">
                                             <input class="form-control fs-2 text-white fw-bolder text-start bg-transparent editarajax" name="texto" data-id="{{ $ve->id }}" data-table="VentajasUso" data-campo="texto" value="{{ $ve->texto }}">
-                                            <div class="col-2 py-1 position-absolute end-0 top-0">
+                                            <div class="col-3 py-1 position-absolute end-0 top-0">
                                                 <form action="{{ route('config.seccion.delValores', [$ve->id]) }}" method="POST" style="display: inline;">						
                                                     @csrf
                                                     @method('DELETE') 
@@ -1055,20 +1055,20 @@
                 <div class="col-12 d-flex justify-content-center align-items-center flex-column mt-2 text-center">
                     <form id="form_image_slider" action="perlitaMineralSlider" method="POST"  class="mt-2" style="" enctype="multipart/form-data">
                         @csrf
-                        <div class="row">
+                        <div class="row mt-3 mb-3">
                             <div class="col">
-                                <input type="text" name="nombre" placeholder="Nombre">
+                                <input type="text" name="nombre" class="form-control" placeholder="Nombre del proceso">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-3 mb-3">
                             <div class="col">
-                                <input class="cla m-0 p-0" type="file" name="foto"  style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">
+                                <input class="cla m-0 p-0" type="file" name="foto" class="form-control" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">
                                 {{-- <label class="col-12 m-0 p-2 d-flex justify-content-center align-items-center" style="opacity: 100%; background: #d89d8f !important; border-radius: 26px;">Agregar</label> --}}
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-3 mb-3">
                             <div class="col">
-                                <button id="input_slider_img">Agregar proceso</button>
+                                <button id="input_slider_img" class="form-control btn-primary">Agregar proceso</button>
                             </div>
                         </div>           
                     </form>
@@ -1087,14 +1087,14 @@
                             <div class="slider-proyectos">
                                 @foreach ($procesos_perlita as $pp)
                                 <div class="mt-5">
-                                    <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
+                                    <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
                                         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #3867AD;">
                                             <div class="row">
                                                 <div class="col position-relative">
                                                     <div class="row">
                                                         <div class="col mt-5 text-center">
-                                                            <p class="fs-3" style="color: #FFEC23;">{{ $pp->nombre }}</p>
-                                                            <input class="form-control text-center bg-transparent editarajax" name="nombre" data-id="{{ $pp->id }}" data-table="ProcesoPerlitaMineral" data-campo="nombre" value="{{ $pp->nombre }}">
+                                                            {{-- <p class="fs-3" style="color: #FFEC23;">{{ $pp->nombre }}</p> --}}
+                                                            <input style="color: #FFEC23;" class="form-control fs-3 text-center bg-transparent editarajax" name="nombre" data-id="{{ $pp->id }}" data-table="ProcesoPerlitaMineral" data-campo="nombre" value="{{ $pp->nombre }}">
                                                         </div>
                                                     </div>
                                                     <div class="row py-5">
@@ -1209,7 +1209,7 @@
             arrows: false,
             speed: 300,
             rows: 2,
-            slidesPerRow: 3,
+            slidesPerRow: 2,
             responsive: [
             {
                 breakpoint: 1024,

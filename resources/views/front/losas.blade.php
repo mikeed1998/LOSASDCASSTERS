@@ -128,7 +128,7 @@
         }
 
         .contenedor-texto_scroll {
-            max-height: 400px;
+            max-height: 300px;
             overflow: auto;
         }
 

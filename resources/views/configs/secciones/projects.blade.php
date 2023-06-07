@@ -178,7 +178,7 @@
                 }
     
                 .imagen-proyectos {
-                    height: 500px;
+                    height: 440px;
                 }
     
                 .col-amarilla {
@@ -188,10 +188,9 @@
     
                 .col-verde {
                     margin-top: 380px; 
-                    margin-left: 180px;
+                    margin-left: 240px;
                     height: 800px;
                 }
-    
     
                 .circulo-caracteristicas {
                     height: 600px; 
@@ -298,18 +297,18 @@
                 }
     
                 .imagen-proyectos {
-                    height: 400px;
+                    height: 440px;
                 }
     
                 .col-amarilla {
                     margin-top: 20px;
-                    height: 660px;
+                    height: 800px;
                 }
     
                 .col-verde {
-                    margin-top: 290px; 
-                    margin-left: 140px;
-                    height: 700px;
+                    margin-top: 380px; 
+                    margin-left: 190px;
+                    height: 800px;
                 }
     
                 .circulo-caracteristicas {
@@ -416,18 +415,18 @@
                 }
     
                 .imagen-proyectos {
-                    height: 250px;
+                    height: 440px;
                 }
     
                 .col-amarilla {
                     margin-top: 20px;
-                    height: 560px;
+                    height: 800px;
                 }
     
                 .col-verde {
-                    margin-top: 250px; 
-                    margin-left: 110px;
-                    height: 580px;
+                    margin-top: 380px; 
+                    margin-left: 150px;
+                    height: 800px;
                 }
     
                 .circulo-caracteristicas {
@@ -534,7 +533,7 @@
                 }
     
                 .imagen-proyectos {
-                    height: 226px;
+                    height: 200px;
                 }
     
                 .col-amarilla {
@@ -544,7 +543,7 @@
     
                 .col-verde {
                     margin-top: 270px; 
-                    margin-left: 90px;
+                    margin-left: 130px;
                     height: 560px;
                 }
     
@@ -652,18 +651,18 @@
                 }
     
                 .imagen-proyectos {
-                    height: 410px;
+                    height: 200px;
                 }
     
                 .col-amarilla {
                     margin-top: 20px;
-                    height: 740px;
+                    height: 570px;
                 }
     
                 .col-verde {
-                    margin-top: 360px; 
-                    margin-left: 100px;
-                    height: 740px;
+                    margin-top: 270px; 
+                    margin-left: 140px;
+                    height: 560px;
                 }
     
                 .circulo-caracteristicas {
@@ -1717,7 +1716,7 @@
                                     
                                 
                                 <div>
-                                    <div class="col-xxl-11 col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
+                                    <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-10 col-sm-10 col-xs-11 col-10 mx-auto position-relative col-amarilla" style="background-color: #FFEC23;">
                                         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 position-absolute top-0 start-0 translate-middle col-verde" style="background-color: #388050;">
                                             <div class="row">
                                                 <div class="col position-relative">
@@ -1859,7 +1858,7 @@
             arrows: false,
             speed: 300,
             rows: 3,
-            slidesPerRow: 3,
+            slidesPerRow: 2,
             responsive: [
             {
                 breakpoint: 1024,
@@ -1892,7 +1891,7 @@
             dots: true,
             infinite: true,
             speed: 300,
-            slidesToShow: 4,
+            slidesToShow: 3,
             slidesToScroll: 1,
             arrows: true,
 
